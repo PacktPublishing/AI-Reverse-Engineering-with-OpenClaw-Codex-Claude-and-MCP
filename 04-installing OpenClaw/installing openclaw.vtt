@@ -1,0 +1,197 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:08.540
+Welcome back. In this lesson, we will install OpenClaw in Windows 11 Virtual Machine, which is running in Oracle VirtualBox.
+
+00:00:08.860 --> 00:00:12.180
+It is recommended to use virtual machines for several reasons.
+
+00:00:12.460 --> 00:00:20.260
+First, you can create snapshots and then revert back to these snapshots after completing your reverse engineering or malware analysis projects.
+
+00:00:20.700 --> 00:00:29.160
+Secondly, if OpenClaw accidentally damages your system or makes unwanted changes, you can also easily revert back to earlier snapshots.
+
+00:00:29.160 --> 00:00:32.000
+This is my Windows 11 virtual machine.
+
+00:00:32.280 --> 00:00:34.440
+The first thing I did was to take a snapshot.
+
+00:00:36.610 --> 00:00:38.870
+This is the official website for OpenClaw.
+
+00:00:39.490 --> 00:00:42.730
+And this is the official documentation for OpenClaw.
+
+00:00:43.050 --> 00:00:46.330
+If you need help, you can refer to this documentation.
+
+00:00:52.790 --> 00:00:56.710
+OpenClaw recommends Node version 24 at time of this recording.
+
+00:00:57.330 --> 00:01:01.950
+My virtual machine has no Node installed, but you do not need to manually install it.
+
+00:01:02.390 --> 00:01:08.840
+Instead, use the one-liner installation command here.
+
+00:01:08.920 --> 00:01:17.850
+It will automatically install Node.js.
+
+00:01:17.850 --> 00:01:23.510
+Next we will open a PowerShell command line as administrator, search for PowerShell, then
+
+00:01:23.510 --> 00:01:35.060
+right click and run as administrator, copy the one-liner installation command and paste
+
+00:01:35.060 --> 00:01:40.020
+it into PowerShell and hit enter, and then just wait for it to install.
+
+00:01:40.020 --> 00:01:41.860
+It will take about 5 minutes.
+
+00:01:41.860 --> 00:01:47.500
+Take note that, for Windows installation, the OpenClaw documentation requires administrator
+
+00:01:47.500 --> 00:02:07.900
+PowerShell. Installing it without administrator PowerShell might produce error. It has now finished
+
+00:02:07.900 --> 00:02:13.820
+installing and now doing the setup phase. Use your arrow key to select yes and hit enter.
+
+00:02:18.680 --> 00:02:28.720
+Select quick start and hit enter. Next, select your model provider. There are two ways to set up the
+
+00:02:28.720 --> 00:02:35.420
+AI provider. OpenAI allows you to use your ChatGPT subscription to link to OpenClaw. All the other
+
+00:02:35.420 --> 00:02:40.740
+companies require you to use API key. For this course, I will use the ChatGPT OAuth
+
+00:02:40.740 --> 00:02:45.100
+but for those of you who prefer to use API keys, I will now show you where to
+
+00:02:45.100 --> 00:02:51.140
+get those API keys. For Claude API key, go to this page after logging in and click
+
+00:02:51.140 --> 00:02:57.500
+on the button get API key. Then just top up some money and get your API key. API
+
+00:02:57.500 --> 00:03:02.660
+keys are pay as you go. So each time you call the API, it will use your credit and
+
+00:03:02.660 --> 00:03:05.020
+and when credit is low, you need to top up.
+
+00:03:05.680 --> 00:03:07.840
+Another option is to use Open Router.
+
+00:03:08.320 --> 00:03:11.180
+With Open Router, you just need to get one API key,
+
+00:03:11.480 --> 00:03:14.260
+and you will then have access to more than 300 models.
+
+00:03:28.260 --> 00:03:33.280
+Now coming back to the setup, I will use my ChatGPT subscription via OAuth.
+
+00:03:33.840 --> 00:03:37.280
+So I scroll down and select OpenAI Codex and hit enter.
+
+00:03:42.960 --> 00:03:45.920
+It will open a browser to ask you to log in to authenticate.
+
+00:03:46.420 --> 00:03:50.140
+Then you need to click continue to sign in to Codex with ChatGPT.
+
+00:03:53.400 --> 00:03:59.260
+Then, head back to the setup screen and under Default Model, select Keep Current which is
+
+00:03:59.260 --> 00:04:02.460
+OpenAI Codex GPT 5.4.
+
+00:04:02.460 --> 00:04:03.720
+Hit enter.
+
+00:04:03.720 --> 00:04:08.940
+If you had chose Other Providers, it would have asked you to paste in your API key.
+
+00:04:08.940 --> 00:04:11.840
+Now it will ask you to select Channel.
+
+00:04:11.840 --> 00:04:16.800
+This will link your OpenClaw to social media for example Telegram, WhatsApp or Discord.
+
+00:04:16.800 --> 00:04:21.980
+You can skip for now and set it up later if you want, but I will select Telegram.
+
+00:04:21.980 --> 00:04:37.680
+follow the instructions. Open telegram and search for botfather. Enter the command newbot.
+
+00:04:37.680 --> 00:04:52.800
+Enter a name for your bot. Then enter a username for your bot. Click on the bot token to copy
+
+00:04:52.800 --> 00:04:59.960
+it to clipboard. Then go back to the setup screen. Select enter telegram bot token. Then
+
+00:04:59.960 --> 00:05:15.740
+paste the bot token here. Next, for search provider, just scroll down and select Tavily
+
+00:05:15.740 --> 00:05:30.480
+search and hit enter. Go to the Tavily website and sign up for free to get an API key. Copy your API
+
+00:05:30.480 --> 00:05:44.560
+key and paste it into the setup screen. For the configure skills, use arrow key to select no and
+
+00:05:44.560 --> 00:05:53.540
+hit enter. We can configure this later. For hooks, use spacebar one by one to select all and then hit
+
+00:05:53.540 --> 00:06:19.200
+enter. It will install the gateway service and start it and finally onboarding is complete
+
+00:06:21.960 --> 00:06:36.400
+close the terminal and open a cmd line terminal. Open the web ui by typing open claw dashboard
+
+00:06:41.360 --> 00:07:16.080
+and you can chat with open claw here. accessnswer the questions tell it its name and also your name
+
+00:07:23.460 --> 00:07:37.400
+tell it what you want it to be. Ask it to choose an emoji for itself
+
+00:07:50.610 --> 00:07:53.170
+Tell it what type of personality you'd like it to have.
+
+00:08:08.040 --> 00:08:13.080
+Now, let's test Telegram. You can either use your mobile phone or the desktop.
+
+00:08:15.990 --> 00:08:19.990
+Click on the Telegram bot link that Botfather created for you.
+
+00:08:21.430 --> 00:08:33.160
+Then click start. It will ask you to pair. Just copy the pairing command and paste it into a
+
+00:08:33.160 --> 00:08:50.680
+CMD terminal and it will pair the Telegram account. If you have any errors like what
+
+00:08:50.680 --> 00:08:57.400
+you are seeing here for me regarding PowerShell, just ask OpenClaw how to fix. I ran the PowerShell
+
+00:08:57.400 --> 00:09:02.680
+command that it recommended and it fixed the permission issue. After making any changes,
+
+00:09:02.680 --> 00:09:08.520
+be sure to restart the OpenClaw Gateway for it to take effect. Use the command OpenClaw Gateway
+
+00:09:08.520 --> 00:09:15.560
+restart. When you reboot your PC, OpenClaw Gateway service should auto restart. If it does not auto
+
+00:09:15.560 --> 00:09:23.160
+restart do the command: open claw gateway status then open claw gateway start. Remember, if you need
+
+00:09:23.160 --> 00:09:27.880
+to do anything or need any help with the configuration just ask open claw. It has
+
+00:09:27.880 --> 00:09:34.120
+access to your machine and can directly fix it. That's all for this lesson thank you for watching.
+

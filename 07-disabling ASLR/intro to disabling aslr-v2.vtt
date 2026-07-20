@@ -1,0 +1,128 @@
+WEBVTT
+
+00:00:00.160 --> 00:00:05.440
+Hello and welcome back. In this section, we are going to learn how to disable ASLR,
+
+00:00:06.000 --> 00:00:12.960
+also known as address space layout randomization. So ASLR must be disabled from two aspects.
+
+00:00:16.610 --> 00:00:24.370
+You have the system level ASLR and also the program level ASLR. If we just disable the
+
+00:00:24.370 --> 00:00:31.810
+system level ASLR, the program level ASLR, if it's enabled, will still override the system level
+
+00:00:31.810 --> 00:00:41.360
+and the effect will still be there. So in order to properly disable the ASLR,
+
+00:00:41.360 --> 00:00:49.410
+we have to disable not only the system level settings, but we also need to disable it in
+
+00:00:49.410 --> 00:00:56.130
+the individual programs for every single software or program that we run. We have to go into the
+
+00:00:56.130 --> 00:01:04.210
+program and modify its header to disable it. So for the system level, if we want to disable the ASLR,
+
+00:01:04.210 --> 00:01:09.410
+we have to go into the exploit protection menu. Over there we can disable it.
+
+00:01:11.330 --> 00:01:18.130
+So the exploit protection menu looks like this. We have the system settings and you have to go
+
+00:01:18.130 --> 00:01:26.290
+to the menu item called force randomization for images mandatory ASLR and then click on
+
+00:01:26.290 --> 00:01:32.850
+this drop down list here and select off by default and then do the same thing for the
+
+00:01:32.850 --> 00:01:41.010
+other menu item called randomize memory allocations bottom up ASLR click the drop down
+
+00:01:41.010 --> 00:01:51.380
+list here select off by default so you need to do this change both of these two settings here
+
+00:01:51.940 --> 00:01:58.420
+after you have done that you need to restart reboot your pc then you have disabled the system
+
+00:01:58.420 --> 00:02:05.300
+level ASLR and then for every single program that has got ASLR enabled you need to modify the
+
+00:02:05.300 --> 00:02:14.880
+program header file. There is a certain part of the program header file called the dll characteristics
+
+00:02:15.600 --> 00:02:23.040
+so the dll characteristics is part of the field of the pe header and the dll characteristics
+
+00:02:23.040 --> 00:02:36.450
+consists of a two byte field and you need to modify the lower byte. So, every exe file every
+
+00:02:36.450 --> 00:02:43.010
+executable file for windows has got a structure called the pe file format structure so the header
+
+00:02:43.010 --> 00:02:53.940
+of the file for every executable file looks like this. It has a header, the DOS stub. And then you
+
+00:02:53.940 --> 00:03:00.580
+have the PE header and the rest of the sections, various sections and the DLL characteristics
+
+00:03:00.580 --> 00:03:09.380
+is found in this location here, under this here. So DLL characteristics consist of two bytes.
+
+00:03:11.380 --> 00:03:17.940
+If you were to open any PE file, PE files mean any executable file that runs on Windows
+
+00:03:17.940 --> 00:03:24.020
+and go to that dll characteristics if you were to open it with the detect it
+
+00:03:24.020 --> 00:03:27.780
+easy program and go to the dll characteristics you
+
+00:03:27.780 --> 00:03:33.220
+will be able to view it so you can see here for this particular
+
+00:03:33.220 --> 00:03:39.700
+example the 2 byte value is 81 and 60. 81 is the higher byte and 60 is the
+
+00:03:39.700 --> 00:03:43.380
+lower byte so it is the lower byte that we are
+
+00:03:43.380 --> 00:03:47.540
+interested in if the lower byte value is from hex 40
+
+00:03:47.540 --> 00:03:53.700
+to 0x7f. That means it falls anywhere between these two values, including these two values,
+
+00:03:57.300 --> 00:04:07.120
+then, it means that ASLR is enabled. So to disable the program's ASLR, all we need to do is
+
+00:04:07.120 --> 00:04:17.040
+minus 0x40 from this value. So take this example here. The DLL characteristics lower byte is 0x60.
+
+00:04:17.040 --> 00:04:26.620
+to disable this program we just minus hex 40 and so it becomes hex 20 so we just need to change
+
+00:04:26.620 --> 00:04:34.280
+this value to hex 20 and the ASLR will have been disabled for this program. So that's it.
+
+00:04:34.280 --> 00:04:41.060
+So remember, in summary, to disable ASLR completely you have to disable it at the system level
+
+00:04:41.060 --> 00:04:44.480
+and also for each individual program that you want to run.
+
+00:04:45.720 --> 00:04:47.600
+So that concludes this video.
+
+00:04:48.420 --> 00:04:51.700
+In the next one, we'll be doing some hands-on practical
+
+00:04:51.700 --> 00:04:54.660
+so that all this will become clearer to you.
+
+00:04:55.520 --> 00:04:56.860
+That's all for this video.
+
+00:04:57.840 --> 00:04:58.920
+Thank you for watching.
+

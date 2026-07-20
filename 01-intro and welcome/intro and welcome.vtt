@@ -1,0 +1,134 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.680
+Hi, I'm Dr. Paul Chin.
+
+00:00:02.160 --> 00:00:05.880
+Welcome to AI Reverse Engineering with OpenClaw and MCP.
+
+00:00:06.740 --> 00:00:08.500
+Reverse engineering is changing.
+
+00:00:09.120 --> 00:00:12.260
+For decades, reverse engineers have relied on powerful tools
+
+00:00:12.260 --> 00:00:15.400
+such as debuggers, disassemblers, and decompilers.
+
+00:00:16.100 --> 00:00:18.380
+But no matter how advanced the tools became,
+
+00:00:18.920 --> 00:00:21.660
+the analysts still had to perform most of the work manually.
+
+00:00:22.620 --> 00:00:24.640
+Today, a new approach is emerging.
+
+00:00:25.400 --> 00:00:27.200
+By combining large language models,
+
+00:00:27.200 --> 00:00:30.700
+the Model Context Protocol or MCP and OpenCLAW,
+
+00:00:31.080 --> 00:00:36.360
+we can create AI-powered workflows where intelligent agents interact directly with reverse engineering tools
+
+00:00:36.360 --> 00:00:38.960
+and help automate complex analysis tasks.
+
+00:00:39.560 --> 00:00:43.660
+In this course, you'll learn how to connect AI to real reverse engineering tools,
+
+00:00:44.200 --> 00:00:48.300
+enabling it to inspect binaries, gather information, analyze results,
+
+00:00:48.600 --> 00:00:50.760
+and assist you throughout the reversing process.
+
+00:00:51.180 --> 00:00:55.340
+This is much more than simply asking ChatGPT to explain assembly code.
+
+00:00:55.340 --> 00:01:01.700
+You learn how OpenCLAW acts as the orchestrator, how MCP acts as the bridge between AI and tools,
+
+00:01:02.100 --> 00:01:06.580
+and how multiple tools can work together as part of a coordinated reverse engineering workflow.
+
+00:01:07.560 --> 00:01:12.200
+Whether you're a reverse engineer, malware analyst, ethical hacker, penetration tester,
+
+00:01:12.540 --> 00:01:15.480
+or simply curious about the future of AI-driven cybersecurity,
+
+00:01:16.260 --> 00:01:20.280
+this course will give you a practical introduction to the next generation of reverse engineering.
+
+00:01:20.860 --> 00:01:22.860
+AI is no longer just a helper.
+
+00:01:22.860 --> 00:01:28.060
+It can become a collaborator, a tool operator, and a workflow orchestrator.
+
+00:01:29.060 --> 00:01:30.220
+What you will learn.
+
+00:01:30.220 --> 00:01:36.180
+What is Model Context Protocol, MCP, and how it connects AI to tools.
+
+00:01:36.600 --> 00:01:39.440
+What is OpenClaw and how it enables multi-tool workflows.
+
+00:01:39.960 --> 00:01:42.040
+How AI agents remember workflows.
+
+00:01:42.680 --> 00:01:46.420
+Connecting AI to debuggers, prompt engineering for binary analysis.
+
+00:01:46.960 --> 00:01:49.380
+How to easily fix OpenClaw issues.
+
+00:01:49.900 --> 00:01:51.460
+Managing different AI models.
+
+00:01:51.460 --> 00:01:56.820
+Using Codex and Claude code with OpenClaw. Dynamic and static analysis.
+
+00:01:56.820 --> 00:02:02.680
+Connecting OpenClaw to x64DBG, Ghidra and dnSpy using MCP.
+
+00:02:02.680 --> 00:02:07.180
+Using OpenClaw to interpret assembly code to derive serial key.
+
+00:02:07.180 --> 00:02:12.940
+Using OpenClaw to create keygens, bypass trial period, disable nags, and more.
+
+00:02:12.940 --> 00:02:18.620
+Who this course is for. Reverse engineers who want to increase
+
+00:02:18.620 --> 00:02:24.380
+their productivity by using AI,  malware analysts looking to automate workflows, ethical hackers
+
+00:02:24.380 --> 00:02:30.060
+and pen testers exploring AI driven tooling. Team developers curious about multi-tooling ai systems.
+
+00:02:30.780 --> 00:02:34.860
+Anyone interested in AI plus cyber security integration using open claw.
+
+00:02:36.460 --> 00:02:42.540
+Prerequisites. Familiarity with tools like debuggers or disassemblers helpful - not required.
+
+00:02:42.540 --> 00:02:47.540
+No prior AI experience needed, you'll learn everything step by step.
+
+00:02:47.540 --> 00:02:53.980
+Windows PC running Windows 11 in Oracle VirtualBox.
+
+00:02:53.980 --> 00:03:01.980
+My background. I am a semi-retired college lecturer and cybersecurity industry trainer with PhD in computer science.
+
+00:03:01.980 --> 00:03:05.980
+I have more than 30 years experience teaching computer science and IT.
+
+00:03:05.980 --> 00:03:08.980
+I welcome you to this course and I'll see you inside.
+

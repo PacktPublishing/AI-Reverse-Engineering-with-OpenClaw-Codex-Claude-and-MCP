@@ -1,0 +1,164 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.040
+Hello and welcome back. In this video, I will show you how to use OpenClaw to bypass trial period.
+
+00:00:07.680 --> 00:00:13.660
+I'm going to use this crack me called days remaining. When I run it, it shows the trial
+
+00:00:13.660 --> 00:00:22.720
+period remaining. I want to patch it so that it never expires. I start x64dbg which is a 32-bit
+
+00:00:22.720 --> 00:00:36.400
+version as administrator. Next, I open the target CrackMe. In Telegram, I ask OpenClaw to list some
+
+00:00:36.400 --> 00:00:50.250
+Win32 API that checks for time or date. It lists down some API. Let's try GetLocalTime. I copy its
+
+00:00:50.250 --> 00:01:00.250
+name. Back in x64dbg, I right-click and search for current module intermodular calls. There is a long
+
+00:01:00.250 --> 00:01:08.750
+list in the search results. I then filter out, get local time. There are four results. So I add
+
+00:01:08.750 --> 00:01:17.900
+breakpoints on all of them, select all four, right click and toggle breakpoint. Then click on the
+
+00:01:17.900 --> 00:01:24.120
+breakpoints tab to confirm and right now we see that hits are zero. Run the debugger and one of
+
+00:01:24.120 --> 00:01:32.960
+the breakpoints is hit. The program shows the window with the message trial period remaining
+
+00:01:32.960 --> 00:01:38.840
+2. I double click on the breakpoint address that was hit and that takes me to the location
+
+00:01:38.840 --> 00:01:44.900
+where the getLocalTime API was triggered. Scrolling up, I take note the start of this
+
+00:01:44.900 --> 00:01:51.820
+function at the instruction push EBP. I scroll down and look for the RET instruction which marks
+
+00:01:51.820 --> 00:01:59.240
+the end of the function. In Telegram, I ask OpenClaw to connect to the debugger using MCP
+
+00:01:59.240 --> 00:02:02.140
+and to refer to memory on how to do that.
+
+00:02:05.310 --> 00:02:09.830
+It then replies saying it is ready to connect and lists down the method to do so.
+
+00:02:10.250 --> 00:02:16.030
+I then copy the address of the start of the function by right-clicking and selecting copy address.
+
+00:02:19.380 --> 00:02:24.720
+I then ask OpenClaw to disassemble the function and paste in the address.
+
+00:02:25.180 --> 00:02:33.360
+I also ask it to understand how remaining days is calculated and to show me the lines where it does so.
+
+00:02:36.020 --> 00:02:37.440
+OpenClaw goes to work.
+
+00:02:37.660 --> 00:02:43.420
+And bit by bit, it disassembles the binary, analyzes it, and reports back its findings.
+
+00:02:44.660 --> 00:02:49.300
+Finally, it shows me the instructions where remaining days are being calculated.
+
+00:02:49.640 --> 00:02:52.680
+I copy those lines and ask it to explain them.
+
+00:02:57.050 --> 00:02:59.910
+OpenClaw then gives an in-depth explanation.
+
+00:03:00.470 --> 00:03:08.970
+Basically, the target program is taking the constant 28, which in hex is 1c, and deducting 28 from the current day of the week.
+
+00:03:08.970 --> 00:03:17.380
+I then ask it what is the maximum possible days remaining.
+
+00:03:17.380 --> 00:03:24.810
+It then performs some calculation and informs me that the maximum is 28.
+
+00:03:24.810 --> 00:03:36.390
+I then ask it which instruction limits the remaining days to 28 days maximum.
+
+00:03:36.390 --> 00:03:42.670
+It then tells me that the instruction move EAX, 1C sets the maximum to 28 because it loads
+
+00:03:42.670 --> 00:03:46.290
+the constant 28 to be used in the calculation.
+
+00:03:46.290 --> 00:03:51.670
+I ask it what other values could be loaded instead of 1C that would affect the maximum
+
+00:03:51.670 --> 00:03:59.140
+days remaining.
+
+00:03:59.140 --> 00:04:04.880
+And it gives a list of examples that could be used instead of 1C and concludes by saying
+
+00:04:04.880 --> 00:04:13.690
+that whatever replaces 1C becomes the new ceiling for the days remaining calculation.
+
+00:04:13.690 --> 00:04:23.090
+I then ask it if we use 0xFF, which in decimal is 255, what would be the maximum days remaining.
+
+00:04:23.090 --> 00:04:27.850
+It replies saying the maximum would be 255 days.
+
+00:04:27.850 --> 00:04:34.460
+I will now modify the code to replace 1c with ff.
+
+00:04:34.460 --> 00:04:40.900
+Copy the address of the target instruction.
+
+00:04:40.900 --> 00:04:46.380
+In the debugger, right click and select go to expression.
+
+00:04:46.380 --> 00:04:49.970
+Paste in the address.
+
+00:04:49.970 --> 00:04:54.330
+To modify this instruction, press spacebar.
+
+00:04:54.330 --> 00:05:01.370
+Or you can right click and select assemble.
+
+00:05:01.370 --> 00:05:06.130
+Change the constant from 0x1c to 0xff.
+
+00:05:06.130 --> 00:05:11.050
+Click the checkbox, keep size so that it will not overwrite the next instruction.
+
+00:05:11.050 --> 00:05:18.530
+To patch it, click on file then patch file.
+
+00:05:18.530 --> 00:05:25.350
+Give a new name with "-v2", at the end of the file name.
+
+00:05:25.350 --> 00:05:28.270
+This will be version 2.
+
+00:05:28.270 --> 00:05:32.660
+Close the debugger.
+
+00:05:32.660 --> 00:05:37.780
+Run the patch file and we get 229 days remaining.
+
+00:05:37.780 --> 00:05:40.200
+Previously, it was 2 days.
+
+00:05:40.200 --> 00:05:41.580
+So it works.
+
+00:05:41.580 --> 00:05:45.880
+So this is how we can use OpenCLAW to bypass trial periods.
+
+00:05:45.880 --> 00:05:47.380
+That's all for this video.
+
+00:05:47.380 --> 00:05:48.280
+Thanks for watching.
+

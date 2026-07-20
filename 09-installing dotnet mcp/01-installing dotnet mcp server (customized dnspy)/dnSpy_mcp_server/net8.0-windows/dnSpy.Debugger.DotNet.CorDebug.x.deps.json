@@ -1,0 +1,728 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "dnSpy.Debugger.DotNet.CorDebug.x/6.5.1.0": {
+        "dependencies": {
+          "Iced": "1.21.0",
+          "Microsoft.Diagnostics.DbgShim": "9.0.621003",
+          "Microsoft.Diagnostics.Runtime": "1.1.142101",
+          "Microsoft.VisualStudio.Text.UI.Wpf": "15.5.27130",
+          "dnSpy.Contracts.Debugger": "6.5.1",
+          "dnSpy.Contracts.Debugger.DotNet": "6.5.1",
+          "dnSpy.Contracts.Debugger.DotNet.CorDebug": "6.5.1",
+          "dnSpy.Contracts.DnSpy": "6.5.1",
+          "dnSpy.Contracts.Logic": "6.5.1",
+          "dnSpy.Debugger.DotNet.Metadata": "6.5.1"
+        },
+        "runtime": {
+          "dnSpy.Debugger.DotNet.CorDebug.x.dll": {}
+        },
+        "resources": {
+          "cs/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "cs"
+          },
+          "de/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "de"
+          },
+          "es-ES/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "es-ES"
+          },
+          "fa/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "fa"
+          },
+          "fr/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "fr"
+          },
+          "hu/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "hu"
+          },
+          "it/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "it"
+          },
+          "pt-BR/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "pt-PT/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "ru/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "ru"
+          },
+          "tr/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "tr"
+          },
+          "uk/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "uk"
+          },
+          "vi/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "vi"
+          },
+          "zh-CN/dnSpy.Debugger.DotNet.CorDebug.x.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
+      "dnlib/4.4.0": {
+        "runtime": {
+          "lib/net6.0/dnlib.dll": {
+            "assemblyVersion": "4.4.0.0",
+            "fileVersion": "4.4.0.0"
+          }
+        }
+      },
+      "Iced/1.21.0": {
+        "runtime": {
+          "lib/netstandard2.1/Iced.dll": {
+            "assemblyVersion": "1.21.0.0",
+            "fileVersion": "1.21.0.0"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.DbgShim/9.0.621003": {
+        "dependencies": {
+          "Microsoft.Diagnostics.DbgShim.linux-arm": "9.0.621003",
+          "Microsoft.Diagnostics.DbgShim.linux-arm64": "9.0.621003",
+          "Microsoft.Diagnostics.DbgShim.linux-musl-arm": "9.0.621003",
+          "Microsoft.Diagnostics.DbgShim.linux-musl-arm64": "9.0.621003",
+          "Microsoft.Diagnostics.DbgShim.linux-musl-x64": "9.0.621003",
+          "Microsoft.Diagnostics.DbgShim.linux-x64": "9.0.621003",
+          "Microsoft.Diagnostics.DbgShim.osx-arm64": "9.0.621003",
+          "Microsoft.Diagnostics.DbgShim.osx-x64": "9.0.621003",
+          "Microsoft.Diagnostics.DbgShim.win-arm64": "9.0.621003",
+          "Microsoft.Diagnostics.DbgShim.win-x64": "9.0.621003",
+          "Microsoft.Diagnostics.DbgShim.win-x86": "9.0.621003"
+        }
+      },
+      "Microsoft.Diagnostics.DbgShim.linux-arm/9.0.621003": {
+        "runtimeTargets": {
+          "runtimes/linux-arm/native/libdbgshim.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.DbgShim.linux-arm64/9.0.621003": {
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libdbgshim.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.DbgShim.linux-musl-arm/9.0.621003": {
+        "runtimeTargets": {
+          "runtimes/linux-musl-arm/native/libdbgshim.so": {
+            "rid": "linux-musl-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.DbgShim.linux-musl-arm64/9.0.621003": {
+        "runtimeTargets": {
+          "runtimes/linux-musl-arm64/native/libdbgshim.so": {
+            "rid": "linux-musl-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.DbgShim.linux-musl-x64/9.0.621003": {
+        "runtimeTargets": {
+          "runtimes/linux-musl-x64/native/libdbgshim.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.DbgShim.linux-x64/9.0.621003": {
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libdbgshim.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.DbgShim.osx-arm64/9.0.621003": {
+        "runtimeTargets": {
+          "runtimes/osx-arm64/native/libdbgshim.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.DbgShim.osx-x64/9.0.621003": {
+        "runtimeTargets": {
+          "runtimes/osx-x64/native/libdbgshim.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.DbgShim.win-arm64/9.0.621003": {
+        "runtimeTargets": {
+          "runtimes/win-arm64/native/dbgshim.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "9.0.12.21003"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.DbgShim.win-x64/9.0.621003": {
+        "runtimeTargets": {
+          "runtimes/win-x64/native/dbgshim.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "9.0.12.21003"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.DbgShim.win-x86/9.0.621003": {
+        "runtimeTargets": {
+          "runtimes/win-x86/native/dbgshim.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "9.0.12.21003"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.Runtime/1.1.142101": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Diagnostics.Runtime.dll": {
+            "assemblyVersion": "1.1.2.42101",
+            "fileVersion": "1.1.2.42101"
+          }
+        }
+      },
+      "Microsoft.VisualStudio.CoreUtility/15.5.27130": {
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.CoreUtility.dll": {
+            "assemblyVersion": "15.0.0.0",
+            "fileVersion": "15.3.1711.902"
+          }
+        }
+      },
+      "Microsoft.VisualStudio.Language.Intellisense/15.5.27130": {
+        "dependencies": {
+          "Microsoft.VisualStudio.Text.UI": "15.5.27130"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Language.Intellisense.dll": {
+            "assemblyVersion": "15.0.0.0",
+            "fileVersion": "15.3.1711.902"
+          }
+        }
+      },
+      "Microsoft.VisualStudio.Text.Data/15.5.27130": {
+        "dependencies": {
+          "Microsoft.VisualStudio.CoreUtility": "15.5.27130"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Text.Data.dll": {
+            "assemblyVersion": "15.0.0.0",
+            "fileVersion": "15.3.1711.902"
+          }
+        }
+      },
+      "Microsoft.VisualStudio.Text.Logic/15.5.27130": {
+        "dependencies": {
+          "Microsoft.VisualStudio.CoreUtility": "15.5.27130",
+          "Microsoft.VisualStudio.Text.Data": "15.5.27130"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Text.Logic.dll": {
+            "assemblyVersion": "15.0.0.0",
+            "fileVersion": "15.3.1711.902"
+          }
+        }
+      },
+      "Microsoft.VisualStudio.Text.UI/15.5.27130": {
+        "dependencies": {
+          "Microsoft.VisualStudio.CoreUtility": "15.5.27130",
+          "Microsoft.VisualStudio.Text.Data": "15.5.27130",
+          "Microsoft.VisualStudio.Text.Logic": "15.5.27130"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Text.UI.dll": {
+            "assemblyVersion": "15.0.0.0",
+            "fileVersion": "15.3.1711.902"
+          }
+        }
+      },
+      "Microsoft.VisualStudio.Text.UI.Wpf/15.5.27130": {
+        "dependencies": {
+          "Microsoft.VisualStudio.CoreUtility": "15.5.27130",
+          "Microsoft.VisualStudio.Text.Data": "15.5.27130",
+          "Microsoft.VisualStudio.Text.Logic": "15.5.27130",
+          "Microsoft.VisualStudio.Text.UI": "15.5.27130"
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Text.UI.Wpf.dll": {
+            "assemblyVersion": "15.0.0.0",
+            "fileVersion": "15.3.1711.902"
+          }
+        }
+      },
+      "NuGet.Common/6.13.2": {
+        "dependencies": {
+          "NuGet.Frameworks": "6.13.2",
+          "System.Collections.Immutable": "8.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NuGet.Common.dll": {
+            "assemblyVersion": "6.13.2.1",
+            "fileVersion": "6.13.2.1"
+          }
+        }
+      },
+      "NuGet.Configuration/6.13.2": {
+        "dependencies": {
+          "NuGet.Common": "6.13.2",
+          "System.Security.Cryptography.ProtectedData": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NuGet.Configuration.dll": {
+            "assemblyVersion": "6.13.2.1",
+            "fileVersion": "6.13.2.1"
+          }
+        }
+      },
+      "NuGet.Frameworks/6.13.2": {
+        "runtime": {
+          "lib/netstandard2.0/NuGet.Frameworks.dll": {
+            "assemblyVersion": "6.13.2.1",
+            "fileVersion": "6.13.2.1"
+          }
+        }
+      },
+      "Ookii.Dialogs.Wpf/5.0.1": {
+        "runtime": {
+          "lib/net6.0-windows7.0/Ookii.Dialogs.Wpf.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.1.0"
+          }
+        }
+      },
+      "System.Collections.Immutable/8.0.0": {},
+      "System.ComponentModel.Composition/9.0.4": {
+        "runtime": {
+          "lib/net8.0/System.ComponentModel.Composition.dll": {
+            "assemblyVersion": "9.0.0.4",
+            "fileVersion": "9.0.425.16305"
+          }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/4.4.0": {},
+      "dnSpy.Contracts.Debugger/6.5.1": {
+        "dependencies": {
+          "Microsoft.VisualStudio.Text.UI.Wpf": "15.5.27130",
+          "dnSpy.Contracts.DnSpy": "6.5.1",
+          "dnSpy.Contracts.Logic": "6.5.1"
+        },
+        "runtime": {
+          "dnSpy.Contracts.Debugger.dll": {
+            "assemblyVersion": "6.5.1",
+            "fileVersion": "6.5.1.0"
+          }
+        }
+      },
+      "dnSpy.Contracts.Debugger.DotNet/6.5.1": {
+        "dependencies": {
+          "dnSpy.Contracts.Debugger": "6.5.1",
+          "dnSpy.Contracts.DnSpy": "6.5.1",
+          "dnSpy.Contracts.Logic": "6.5.1",
+          "dnSpy.Debugger.DotNet.Metadata": "6.5.1"
+        },
+        "runtime": {
+          "dnSpy.Contracts.Debugger.DotNet.dll": {
+            "assemblyVersion": "6.5.1",
+            "fileVersion": "6.5.1.0"
+          }
+        }
+      },
+      "dnSpy.Contracts.Debugger.DotNet.CorDebug/6.5.1": {
+        "dependencies": {
+          "dnSpy.Contracts.Debugger": "6.5.1",
+          "dnSpy.Contracts.Debugger.DotNet": "6.5.1",
+          "dnSpy.Contracts.Logic": "6.5.1"
+        },
+        "runtime": {
+          "dnSpy.Contracts.Debugger.DotNet.CorDebug.dll": {
+            "assemblyVersion": "6.5.1",
+            "fileVersion": "6.5.1.0"
+          }
+        }
+      },
+      "dnSpy.Contracts.DnSpy/6.5.1": {
+        "dependencies": {
+          "Microsoft.VisualStudio.Language.Intellisense": "15.5.27130",
+          "Microsoft.VisualStudio.Text.UI.Wpf": "15.5.27130",
+          "Ookii.Dialogs.Wpf": "5.0.1",
+          "System.ComponentModel.Composition": "9.0.4",
+          "dnSpy.Contracts.Logic": "6.5.1"
+        },
+        "runtime": {
+          "dnSpy.Contracts.DnSpy.dll": {
+            "assemblyVersion": "6.5.1",
+            "fileVersion": "6.5.1.0"
+          }
+        },
+        "resources": {
+          "es-ES/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "es-ES"
+          },
+          "cs/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "cs"
+          },
+          "fa/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "fa"
+          },
+          "fr/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "fr"
+          },
+          "de/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "de"
+          },
+          "hu/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "hu"
+          },
+          "it/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "it"
+          },
+          "pt-BR/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "pt-PT/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "tr/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "tr"
+          },
+          "ru/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "ru"
+          },
+          "uk/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "uk"
+          },
+          "vi/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "vi"
+          },
+          "zh-CN/dnSpy.Contracts.DnSpy.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
+      "dnSpy.Contracts.Logic/6.5.1": {
+        "dependencies": {
+          "NuGet.Configuration": "6.13.2",
+          "dnlib": "4.4.0"
+        },
+        "runtime": {
+          "dnSpy.Contracts.Logic.dll": {
+            "assemblyVersion": "6.5.1",
+            "fileVersion": "6.5.1.0"
+          }
+        },
+        "resources": {
+          "es-ES/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "es-ES"
+          },
+          "cs/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "cs"
+          },
+          "fa/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "fa"
+          },
+          "fr/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "fr"
+          },
+          "hu/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "hu"
+          },
+          "de/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "de"
+          },
+          "it/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "it"
+          },
+          "pt-BR/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "pt-PT/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "tr/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "tr"
+          },
+          "ru/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "ru"
+          },
+          "uk/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "uk"
+          },
+          "vi/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "vi"
+          },
+          "zh-CN/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
+      "dnSpy.Debugger.DotNet.Metadata/6.5.1": {
+        "dependencies": {
+          "dnlib": "4.4.0"
+        },
+        "runtime": {
+          "dnSpy.Debugger.DotNet.Metadata.dll": {
+            "assemblyVersion": "6.5.1",
+            "fileVersion": "6.5.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "dnSpy.Debugger.DotNet.CorDebug.x/6.5.1.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "dnlib/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cKHI720q+zfEEvzklWVGt6B0TH3AibAyJbpUJl4U6KvTP13tycfnqJpkGHRZ/oQ45BTIoIxIwltHIJVDN+iCqQ==",
+      "path": "dnlib/4.4.0",
+      "hashPath": "dnlib.4.4.0.nupkg.sha512"
+    },
+    "Iced/1.21.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dv5+81Q1TBQvVMSOOOmRcjJmvWcX3BZPZsIq31+RLc5cNft0IHAyNlkdb7ZarOWG913PyBoFDsDXoCIlKmLclg==",
+      "path": "iced/1.21.0",
+      "hashPath": "iced.1.21.0.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.DbgShim/9.0.621003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8iKU0cMEbUazT62sR+1sQndCjpkdrTtkP7PnTrAb2fHzuaYeJyZQSAmmbQCklFeYc6xtbCWC8SMfG/hxy0ts3A==",
+      "path": "microsoft.diagnostics.dbgshim/9.0.621003",
+      "hashPath": "microsoft.diagnostics.dbgshim.9.0.621003.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.DbgShim.linux-arm/9.0.621003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dNLuNDyeeiTBEe3fsPXHqWLSii3NesMQAhumljMSO+3OwZE/PjjLQMVmvc4AayFyWFeSdkwi0ZrsQwqhwSsi9g==",
+      "path": "microsoft.diagnostics.dbgshim.linux-arm/9.0.621003",
+      "hashPath": "microsoft.diagnostics.dbgshim.linux-arm.9.0.621003.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.DbgShim.linux-arm64/9.0.621003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DW4wK/3FeSiD1x4ohDGM6QryBGRQ4DBw9bFErMHKz/HKh+lyAlwXNnuK/VhkjV1ty+LBioil+lFhSMAxcCHfzw==",
+      "path": "microsoft.diagnostics.dbgshim.linux-arm64/9.0.621003",
+      "hashPath": "microsoft.diagnostics.dbgshim.linux-arm64.9.0.621003.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.DbgShim.linux-musl-arm/9.0.621003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Dn2uLsFYC10IEfA5DzVPB2t6zAYyPEfibMSXjYu1n9AslH9UcaV5MrQP1vV7Hs9C3KNvdzIkEcbIRj8mN4joig==",
+      "path": "microsoft.diagnostics.dbgshim.linux-musl-arm/9.0.621003",
+      "hashPath": "microsoft.diagnostics.dbgshim.linux-musl-arm.9.0.621003.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.DbgShim.linux-musl-arm64/9.0.621003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iGmFfNPTi0b1JxclrPAJmQZiHZBBhSyKrC+uu6AvIWVL4eFCrZXIuBPbtH3r56YpysxvXKlPcZM3qb6Yzzg5LA==",
+      "path": "microsoft.diagnostics.dbgshim.linux-musl-arm64/9.0.621003",
+      "hashPath": "microsoft.diagnostics.dbgshim.linux-musl-arm64.9.0.621003.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.DbgShim.linux-musl-x64/9.0.621003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cy/WSm+RZ3Xio59HVqgxTAOPaz6SU5WjOjXc2RZiJy7qJ7U2apQlAcQsPUZQf0amBmTfX0fg6ddnp9gdJB3vfQ==",
+      "path": "microsoft.diagnostics.dbgshim.linux-musl-x64/9.0.621003",
+      "hashPath": "microsoft.diagnostics.dbgshim.linux-musl-x64.9.0.621003.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.DbgShim.linux-x64/9.0.621003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZJaimGrBhb29UBAWL1maTvu8V/VkFz514M4FN3parMROYXWAdhktHUVZbs2yFj2+904EB/Fu8hFBV6oalA0hOg==",
+      "path": "microsoft.diagnostics.dbgshim.linux-x64/9.0.621003",
+      "hashPath": "microsoft.diagnostics.dbgshim.linux-x64.9.0.621003.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.DbgShim.osx-arm64/9.0.621003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SojyNT9FSZ0WU0ttOycoyVx5voMs5XssI+QhnFPZ/FURia9gfPbmXFg5XgNBFqNUtmgnfXecWwv1tH2lTn0jhQ==",
+      "path": "microsoft.diagnostics.dbgshim.osx-arm64/9.0.621003",
+      "hashPath": "microsoft.diagnostics.dbgshim.osx-arm64.9.0.621003.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.DbgShim.osx-x64/9.0.621003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qFak3ghpUz3yKWa0lZD9W3BS4nwrNc+Pg1CV6lUaRrYBvZnh863SBLH8doFT793tz6M3GxPtdBQj8OmS1wnIXQ==",
+      "path": "microsoft.diagnostics.dbgshim.osx-x64/9.0.621003",
+      "hashPath": "microsoft.diagnostics.dbgshim.osx-x64.9.0.621003.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.DbgShim.win-arm64/9.0.621003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Pyts9h7p3eBmE8ZlM2wv2b4z4KyktgFfsaxr1LiVFJ+WMzzXfD4em2F/cEx7kQnibhBgw+7jUi1/ChrFn8eBcw==",
+      "path": "microsoft.diagnostics.dbgshim.win-arm64/9.0.621003",
+      "hashPath": "microsoft.diagnostics.dbgshim.win-arm64.9.0.621003.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.DbgShim.win-x64/9.0.621003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IARPSz40/W8AEEq25WyosMihKmeCPtD5WUAFWt7ct8BKXqw8kN+1znVN2WIdKSMO6+guD5am2Ai6bQDqgjRedQ==",
+      "path": "microsoft.diagnostics.dbgshim.win-x64/9.0.621003",
+      "hashPath": "microsoft.diagnostics.dbgshim.win-x64.9.0.621003.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.DbgShim.win-x86/9.0.621003": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FbxLABPyXqsWBC4gMhEQqX7SeK7oUbKE/DtoUpVKXQ59ef/+NM8uHGNsZ7fKGWIVdKM03hvoDQUwQHPdMcCkiw==",
+      "path": "microsoft.diagnostics.dbgshim.win-x86/9.0.621003",
+      "hashPath": "microsoft.diagnostics.dbgshim.win-x86.9.0.621003.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.Runtime/1.1.142101": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TeopXpYRAoVX6UCtQpz/wqNrR+p/ruWEJnpOgcr63TI4a5y9nE5yofe8KMoEW2RKnomAa+s2qBcw9QsJ9qUbxw==",
+      "path": "microsoft.diagnostics.runtime/1.1.142101",
+      "hashPath": "microsoft.diagnostics.runtime.1.1.142101.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.CoreUtility/15.5.27130": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zteI/2y13GcSVEr7PDRrShEu/7xbSH9HIKIeH/syaldjsi+I7iLrh/FSu+ErBoNvHgcU7WnXY3l8VKsA5JxC+g==",
+      "path": "microsoft.visualstudio.coreutility/15.5.27130",
+      "hashPath": "microsoft.visualstudio.coreutility.15.5.27130.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Language.Intellisense/15.5.27130": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OYi2RbIBNxNMms8uaOtEXuEB4mEgEmSvBwh3S+C2G35l7+wLAICa/UC6CZxf1rVwCRiyRS9Uv9Gs7Z4n+mmbXw==",
+      "path": "microsoft.visualstudio.language.intellisense/15.5.27130",
+      "hashPath": "microsoft.visualstudio.language.intellisense.15.5.27130.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Text.Data/15.5.27130": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HCtsfpb1BH3q7f6rszkpA09JTF4lgx8BCZxOM2L+AB+j4bgtq1GoN4WOUSBgJamEtmU2moiXFQumEtZEFvaAxA==",
+      "path": "microsoft.visualstudio.text.data/15.5.27130",
+      "hashPath": "microsoft.visualstudio.text.data.15.5.27130.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Text.Logic/15.5.27130": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Dx2D7gsGzrFCCacVxgEfwPypUoOy3pc1EamF9RapOjMKQEfgYaOewRDeZ+qgQowe8CKB7GVi7RvOXVUQObedcg==",
+      "path": "microsoft.visualstudio.text.logic/15.5.27130",
+      "hashPath": "microsoft.visualstudio.text.logic.15.5.27130.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Text.UI/15.5.27130": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LUR3tY1bTf6NchU8kC/JTLI+Mr81fpxvmxrdoXiS6vtuZHSwnA4fQbMLchTFdLDGeX2gvDBHRIa9AJew5gvmOg==",
+      "path": "microsoft.visualstudio.text.ui/15.5.27130",
+      "hashPath": "microsoft.visualstudio.text.ui.15.5.27130.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Text.UI.Wpf/15.5.27130": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lUSExNfNKTM/Ym0m1NPJPB7fFZ8IH5xO+g25+cEH+j0P/0Fo92nOBdocVzh9u28VoYAQ+QkjnxhiKPb1pEJnZA==",
+      "path": "microsoft.visualstudio.text.ui.wpf/15.5.27130",
+      "hashPath": "microsoft.visualstudio.text.ui.wpf.15.5.27130.nupkg.sha512"
+    },
+    "NuGet.Common/6.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JnUbEq6XtyF6+mPbGx3ZjTD07SCx39EL0wZ5RCXaHkstI3J4uK9OcofTbYDmKSKEUt6CU6UaNM5kE+n1HXtL0w==",
+      "path": "nuget.common/6.13.2",
+      "hashPath": "nuget.common.6.13.2.nupkg.sha512"
+    },
+    "NuGet.Configuration/6.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ByqCXO43kRdG0hLt1/izvHr/eswT0k1hspTaQxAxOq02MDw1j9RGzic+8F6NJwP4FhWBKhXOEReboIcEDt+1eg==",
+      "path": "nuget.configuration/6.13.2",
+      "hashPath": "nuget.configuration.6.13.2.nupkg.sha512"
+    },
+    "NuGet.Frameworks/6.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SQKUf56j7IdJL//fU7fcmn234awjRA2qLvgbfs/TxmY7oJrNOxaaDxASyCbS4eJW3LCOd6ONHMZ/cPlbQh4xVg==",
+      "path": "nuget.frameworks/6.13.2",
+      "hashPath": "nuget.frameworks.6.13.2.nupkg.sha512"
+    },
+    "Ookii.Dialogs.Wpf/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iZNnZwqTpK0cfR0vkotncP1c025/PHlIdzc7iEKBYwhVv1V0zXp9/RT/O0kMhsmlwXqRxxbE4pdhfinbJXtjPg==",
+      "path": "ookii.dialogs.wpf/5.0.1",
+      "hashPath": "ookii.dialogs.wpf.5.0.1.nupkg.sha512"
+    },
+    "System.Collections.Immutable/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AurL6Y5BA1WotzlEvVaIDpqzpIPvYnnldxru8oXJU2yFxFUy3+pNXjXd1ymO+RA0rq0+590Q8gaz2l3Sr7fmqg==",
+      "path": "system.collections.immutable/8.0.0",
+      "hashPath": "system.collections.immutable.8.0.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Composition/9.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8iLE2dR3kQuj8vOQFBIGXwSb9oDCwlbO6YskpS3nbxb58xtombuqmILuw1u3GNWREOiQa9VleGBQh7hgU9Gc2w==",
+      "path": "system.componentmodel.composition/9.0.4",
+      "hashPath": "system.componentmodel.composition.9.0.4.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cJV7ScGW7EhatRsjehfvvYVBvtiSMKgN8bOVI0bQhnF5bU7vnHVIsH49Kva7i7GWaWYvmEzkYVk1TC+gZYBEog==",
+      "path": "system.security.cryptography.protecteddata/4.4.0",
+      "hashPath": "system.security.cryptography.protecteddata.4.4.0.nupkg.sha512"
+    },
+    "dnSpy.Contracts.Debugger/6.5.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "dnSpy.Contracts.Debugger.DotNet/6.5.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "dnSpy.Contracts.Debugger.DotNet.CorDebug/6.5.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "dnSpy.Contracts.DnSpy/6.5.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "dnSpy.Contracts.Logic/6.5.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "dnSpy.Debugger.DotNet.Metadata/6.5.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

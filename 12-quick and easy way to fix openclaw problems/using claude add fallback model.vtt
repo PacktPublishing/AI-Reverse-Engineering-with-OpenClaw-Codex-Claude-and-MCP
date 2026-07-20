@@ -1,0 +1,218 @@
+WEBVTT
+
+00:00:00.260 --> 00:00:02.000
+Hello and welcome back.
+
+00:00:02.000 --> 00:00:06.880
+In this lesson, I will show you how to use Claude code to add a fallback model.
+
+00:00:06.880 --> 00:00:12.120
+A fallback model is the model that OpenClaw will automatically use when the primary model
+
+00:00:12.120 --> 00:00:15.480
+becomes rate-limited or unavailable.
+
+00:00:15.480 --> 00:00:20.080
+Head over to the OpenRouter list of free models.
+
+00:00:20.080 --> 00:00:25.640
+Remember that we can list the free models by typing in free in the search box.
+
+00:00:25.640 --> 00:00:31.160
+In the previous lesson, we have already set NVIDIA's Nemotron as the primary model.
+
+00:00:31.160 --> 00:00:39.950
+Nemotron is a 120 billion parameter model with 1 million context.
+
+00:00:39.950 --> 00:00:47.090
+DeepSeek V4 Flash is a 284 billion parameter model with 1.05 million context.
+
+00:00:47.090 --> 00:00:48.470
+Both are good.
+
+00:00:48.470 --> 00:00:55.840
+Let's use DeepSeek V4 Flash free as the fallback model.
+
+00:00:55.840 --> 00:01:08.820
+First, we copy the official name and paste it into Notepad.
+
+00:01:08.820 --> 00:01:14.640
+Then we list the existing models using the command openclaw models list.
+
+00:01:14.640 --> 00:01:18.120
+We can see that the default model is Nemotron.
+
+00:01:18.120 --> 00:01:22.600
+We also have DeepSeek V4 Pro which is a paid model.
+
+00:01:22.600 --> 00:01:27.580
+And we also have GPT 5.4 which is also a paid model.
+
+00:01:27.580 --> 00:01:32.480
+Note that although we already have these other models, they are not automatically set as
+
+00:01:32.480 --> 00:01:34.120
+fallback models.
+
+00:01:34.120 --> 00:01:39.800
+Now we want to add deepseek 4 flash free from open router as the fallback.
+
+00:01:39.800 --> 00:01:42.100
+Let's run claude desktop.
+
+00:01:42.100 --> 00:01:48.740
+If you don't have a claude subscription, then use codex, it will also work just fine.
+
+00:01:48.740 --> 00:01:51.460 
+Just follow along in this lesson using codex.
+
+00:01:51.460 --> 00:01:55.380
+But for this lesson, I will use claude code.
+
+00:01:55.380 --> 00:02:05.460
+Search for claude and pin it to the taskbar, so that in future, it is easier for us to
+
+00:02:05.460 --> 00:02:18.000
+find it.
+
+00:02:18.000 --> 00:02:22.960
+Make sure you are on the Code tab, since we want to use Claude Code.
+
+00:02:22.960 --> 00:02:28.620
+Just ignore this warning, it is from one of my previously set up MCP server from a different
+
+00:02:28.620 --> 00:02:31.960
+course.
+
+00:02:31.960 --> 00:02:36.080
+Let's get the path to where OpenClaw is installed.
+
+00:02:36.080 --> 00:02:42.800
+We want to give this path to Claude Code.
+
+00:02:42.800 --> 00:02:51.100
+It is normally a hidden folder because it has a dot in front of the name OpenClaw.
+
+00:02:51.100 --> 00:02:53.580
+Then type in the prompt.
+
+00:02:53.580 --> 00:02:57.500
+You can download this prompt from the resource section for this lesson.
+
+00:02:57.500 --> 00:03:01.860
+However, note that you need to change the paths to match your machine.
+
+00:03:01.860 --> 00:03:07.100
+The prompt should contain all the relevant information needed to add DeepSeek V4 Flash
+
+00:03:07.100 --> 00:03:09.020
+as a fallback model.
+
+00:03:09.020 --> 00:03:14.240
+Also, be sure to tell Claude Code not to remove any existing models. 
+
+00:03:14.240 --> 00:03:19.300
+Also inform it where the previously saved API keys are found and that you have already
+
+00:03:19.300 --> 00:03:22.840
+set the OpenRouter API keys and you want to use that.
+
+00:03:22.840 --> 00:03:28.280
+If you do not know the path to the file, it is okay, just ask Claude Code to look for the
+
+00:03:28.280 --> 00:03:35.440
+authprofiles.json file.
+
+00:03:35.440 --> 00:03:49.190
+I will show you where the authprofiles.json file is found.
+
+00:03:49.190 --> 00:03:53.710
+You should also tell Claude Code that you want the ability to switch to the fallback model
+
+00:03:53.710 --> 00:04:10.150
+and set it as the default model at any time in future.
+
+00:04:10.150 --> 00:04:28.640
+Click Send and let Claude Code work its magic.
+
+00:04:28.640 --> 00:04:41.570
+Whenever it asks you for permission, just click Always Allow.
+
+00:04:41.570 --> 00:04:46.010
+After a while, it reports back saying that it has made the changes.
+
+00:04:46.010 --> 00:04:54.720
+Let's read what it says.
+
+00:04:54.720 --> 00:05:00.440
+The important part says when Nemotron fails or rate limits, OpenClaw will hand off to
+
+00:05:00.440 --> 00:05:07.190
+DeepSeek V4 Flash automatically.
+
+00:05:07.190 --> 00:05:25.470
+Now we open a command prompt to restart the OpenClaw gateway.
+
+00:05:25.470 --> 00:05:28.850
+After restarting, we open Telegram.
+
+00:05:28.850 --> 00:05:36.920
+I have cleared the chat history and typed in slash new to get a new session.
+
+00:05:36.920 --> 00:05:42.920
+Meanwhile, we open the command prompt and list the models.
+
+00:05:42.920 --> 00:05:48.580
+Back in telegram, I had asked it what model are you on and it replies that it is on nemotron
+
+00:05:48.580 --> 00:05:49.580
+free.
+
+00:05:49.580 --> 00:05:54.420
+I then asked it what is its fallback model and it says that the fallback is deepseek
+
+00:05:54.420 --> 00:05:56.600
+v4 flash free.
+
+00:05:56.600 --> 00:05:59.320
+So it works.
+
+00:05:59.320 --> 00:06:06.820
+Also the models listing also confirms that deepseek v4 flash free is the fallback model.
+
+00:06:06.820 --> 00:06:12.820
+Note that you could also have done the same thing using codex.
+
+00:06:12.820 --> 00:06:17.100
+The next thing to do is to take a snapshot of this virtual machine.
+
+00:06:17.100 --> 00:06:23.820
+First, we will shut down this virtual machine.
+
+00:06:23.820 --> 00:06:28.120
+In VirtualBox Manager, click on button Take to take a snapshot.
+
+00:06:28.120 --> 00:06:30.220
+Give it a suitable name.
+
+00:06:30.220 --> 00:06:36.820
+For example, Backup set to DeepSeek V4 Flash Free.
+
+00:06:36.820 --> 00:06:42.820
+You can also delete any previous snapshots in order to recover some disk storage space.
+
+00:06:42.820 --> 00:06:49.180
+So this is how you can use Claude Code or Codex to set up a fallback model.
+
+00:06:49.180 --> 00:06:54.820
+Remember you could also use them to configure anything else or to troubleshoot and fix any
+
+00:06:54.820 --> 00:06:55.820
+issues.
+
+00:06:55.820 --> 00:06:58.060
+That's all for this video.
+
+00:06:58.060 --> 00:06:58.900
+Thanks for watching.
+

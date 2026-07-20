@@ -1,0 +1,263 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:08.240
+Welcome back. In this lesson, I will show you how to connect OpenClaw to the x64 DBG MCP service we installed in the last lesson.
+
+00:00:09.300 --> 00:00:15.820
+We will use the CMD line exe crackme from the list of practice crackme we downloaded previously.
+
+00:00:16.480 --> 00:00:23.180
+Notice that CMD line crackme is 32-bit version. There is also the 64-bit version.
+
+00:00:23.640 --> 00:00:32.110
+Note that every crackme has two versions, the 32-bit and the 64-bit versions.
+
+00:00:32.370 --> 00:00:38.010
+For this lesson, we will use the 32-bit version using x32dbg.
+
+00:00:38.130 --> 00:00:43.590
+First, we will open a CMD line terminal to run the CMD line 32-bit program.
+
+00:00:44.150 --> 00:00:46.010
+It prompts the string enter password.
+
+00:00:46.510 --> 00:00:50.510
+If you enter any wrong password, it will display the message wrong password.
+
+00:00:55.600 --> 00:00:59.200
+Now, we will open it with x32dbg.
+
+00:00:59.360 --> 00:01:03.760
+Right-click on x32dbg and run as administrator.
+
+00:01:03.760 --> 00:01:13.960
+Click on the Log tab to check that the MCP server is listening successfully on port 50300.
+
+00:01:13.960 --> 00:01:17.960
+Then, open the CMD line EXE program.
+
+00:01:17.960 --> 00:01:30.640
+For options, preferences, uncheck everything except Entry Breakpoint.
+
+00:01:30.640 --> 00:01:37.640
+Later, if you use the 64-bit version of x64dbg, you should also do the same.
+
+00:01:37.640 --> 00:01:45.320
+Now, we will open another CMD line terminal to confirm that the x64 DBG server has really started
+
+00:01:45.320 --> 00:01:52.800
+and is listening on port 50300 by using the netstat find string command I showed you in the previous lesson.
+
+00:01:53.760 --> 00:02:01.140
+We will now check the agent smithers MCP server GitHub page for the correct MCP URL endpoint.
+
+00:02:01.660 --> 00:02:12.630
+Note the correct endpoint format. We will let OpenClaw know this later so that it can look for it.
+
+00:02:12.730 --> 00:02:16.730
+Now, we open telegram.
+
+00:02:16.730 --> 00:02:20.930
+We create a new session using the command slash new.
+
+00:02:20.930 --> 00:02:28.850
+Then go back to the cmd line terminal and take note of the url and port which is 0.0.0.0
+
+00:02:28.850 --> 00:02:39.010
+with port 50300 which is different from the agent smithers github which mention 127.0.0.1.
+
+00:02:39.010 --> 00:02:43.110
+In Telegram, we then type in our instructions to OpenClaw.
+
+00:02:43.110 --> 00:02:47.430
+You can follow the same instructions that I use or come up with your own.
+
+00:02:47.430 --> 00:03:08.790
+The important thing is to mention the URL port number and the SSE endpoint.
+
+00:03:08.790 --> 00:03:14.520
+Notice OpenClaw is typing its response.
+
+00:03:14.520 --> 00:03:17.380
+Now it replies to let you know what it has done.
+
+00:03:17.380 --> 00:03:22.260
+Check to make sure it is actually using the MCP protocol communication to connect to the
+
+00:03:22.260 --> 00:03:25.800
+x64dbg MCP service.
+
+00:03:25.800 --> 00:03:33.320
+It now lists the available tools exposed by x64-dbg-mcp server, you then ask OpenCLAW if
+
+00:03:33.320 --> 00:03:41.620
+it is using the recommended MCP communication protocol to talk to x64-dbg-mcp server.
+
+00:03:41.620 --> 00:03:47.420
+Sometimes it may use its own method, which is non-standard, so we need to guide it since
+
+00:03:47.420 --> 00:03:53.480
+this is the first time it is connecting to the x64-dbg-mcp server.
+
+00:03:53.480 --> 00:04:02.460
+Next, we will test it by asking it to use the correct tool to get the name of the binary
+
+00:04:02.460 --> 00:04:13.960
+which is open in x64dbg.
+
+00:04:13.960 --> 00:04:19.380
+It replies giving the correct name of the binary which is loaded in x64dbg.
+
+00:04:19.380 --> 00:04:25.640
+Next, we will ask OpenClaw to analyze a region of memory to understand the code there.
+
+00:04:25.640 --> 00:04:31.560
+But before that, we will run the target program one more time to get the prompts and outputs.
+
+00:04:31.560 --> 00:04:35.960
+We do this so that we can tell OpenClaw how the program behaves.
+
+00:04:35.960 --> 00:04:40.320
+This context will help OpenClaw to better understand what we want it to do later.
+
+00:04:40.320 --> 00:04:46.380
+So we run the CMD line exe program one more time and note the outputs.
+
+00:04:46.380 --> 00:04:52.100
+Head back to Telegram and tell OpenClaw what happens when the target program runs.
+
+00:04:52.100 --> 00:04:56.060
+Mention the prompt that you see and the error message that shows when the wrong password
+
+00:04:56.060 --> 00:05:02.500
+is entered.
+
+00:05:02.500 --> 00:05:08.900
+Go back to x64dbg and locate some address you want it to disassemble in order to understand
+
+00:05:08.900 --> 00:05:21.800
+the control flow and to find the correct password.
+
+00:05:21.800 --> 00:05:26.340
+It then responds by telling you what it will do.
+
+00:05:26.340 --> 00:05:31.300
+After a while, it manages to identify the control flow logic and explains how the password
+
+00:05:31.300 --> 00:05:36.800
+is validated.
+
+00:05:36.800 --> 00:05:42.000
+I then ask it to check further the address of the string compare function.
+
+00:05:42.000 --> 00:05:45.940
+It then managed to find the address of the arguments being passed to the string compare
+
+00:05:45.940 --> 00:05:50.200
+function and that the second argument is a constant string.
+
+00:05:50.200 --> 00:05:54.060
+This is most probably the location where the correct password is being stored.
+
+00:05:54.060 --> 00:06:02.390
+I then asked it to identify the strings the function is comparing.
+
+00:06:02.390 --> 00:06:05.830
+It replies saying it cannot reveal the secret string.
+
+00:06:05.830 --> 00:06:11.050
+That is because of the built-in guardrail in the OpenAI model.
+
+00:06:11.050 --> 00:06:12.310
+But that is okay.
+
+00:06:12.310 --> 00:06:17.630
+We can still inspect the address directly to see the string. Openclaw has already done
+
+00:06:17.630 --> 00:06:19.810
+a good job so far.
+
+00:06:19.810 --> 00:06:28.710
+I ask it to inspect the data around the address of the string.
+
+00:06:28.710 --> 00:06:35.010
+After a while, it confirms that it is a null terminated ascii string of 11 characters long
+
+00:06:35.010 --> 00:06:37.310
+with 10 visible characters.
+
+00:06:37.310 --> 00:06:45.780
+I then ask it to read the characters of the null terminated string.
+
+00:06:45.780 --> 00:06:50.280
+Since it won't actually read that string to reveal the actual password, we could start
+
+00:06:50.280 --> 00:06:56.120
+new session and ask openclaw to read that string at that address without telling it that it is a
+
+00:06:56.120 --> 00:07:02.200
+password. This is one way to bypass the OpenAI guardrail. Alternatively, we could use another
+
+00:07:02.200 --> 00:07:09.880
+model to do it. But the simpler way is to directly use x64dbg to view the address and read the string.
+
+00:07:10.600 --> 00:07:17.000
+So I will copy the address of the string and directly inspect it in x64dbg to look for this
+
+00:07:17.000 --> 00:07:26.590
+10 character long string. I go to the dump window and right click and select go to expression.
+
+00:07:29.660 --> 00:07:33.740
+Then I paste the address in and right away I can see the actual password.
+
+00:07:40.830 --> 00:07:53.470
+Next we open notepad and write down the password. Now we will test the password. Just run the target
+
+00:07:53.470 --> 00:08:04.270
+program again and key in the password and we get the congrats message so the password is
+
+00:08:04.270 --> 00:08:13.120
+confirmed correct. Next, we want OpenClaw to save to its memory, how it communicates with the x64
+
+00:08:13.120 --> 00:08:19.280
+dbg mcp endpoint so that in future it will remember it. You can use the same prompt that I use.
+
+00:08:21.530 --> 00:08:27.050
+The principle here is this, whenever OpenClaw did something correctly, tell it to save it to
+
+00:08:27.050 --> 00:08:34.330
+its memory. This memory is persistent and will survive reboots. For every new mcp connection
+
+00:08:34.330 --> 00:08:46.520
+using new mcp servers we want open claw to remember it by saving it to memory. Now it has saved the x64
+
+00:08:46.520 --> 00:08:54.200
+dbg mcp connection to memory. In future if we want it to connect to x64 dbg it will consult its
+
+00:08:54.200 --> 00:09:01.240
+memory or we can instruct it to check its memory and use the same method to connect to the x64 dbg
+
+00:09:01.240 --> 00:09:09.080
+mcp server. This way, we can have many different tools in OpenClaw. For example, Ghidra, IDA,
+
+00:09:09.080 --> 00:09:14.840
+Cutter and so on. Just remember to ask it to save to memory each time you have successfully linked
+
+00:09:14.840 --> 00:09:20.920
+a tool to OpenClaw. We could ask it to show us the actual file where it saves this memory too.
+
+00:09:23.100 --> 00:09:45.310
+Now we go to that location and read the files. The main memory file is in the workspace folder
+
+00:09:45.310 --> 00:09:58.060
+and the session memory files are in the subfolder called memory.
+
+00:09:58.840 --> 00:10:02.140
+Note that the session memory files are named based on the date.
+
+00:10:12.530 --> 00:10:18.510
+So this is how we can configure OpenClaw to connect to any new MCP service we have just installed.
+
+00:10:18.910 --> 00:10:21.010
+That's all for this video. Thanks for watching.
+

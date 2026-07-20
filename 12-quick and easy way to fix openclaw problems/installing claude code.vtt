@@ -1,0 +1,176 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.040
+Hello and welcome back. In the previous lessons, I have shown you how to install Codex and use it
+
+00:00:06.040 --> 00:00:18.240
+to fix openclaw issues. In this lesson and the next, I will show you how to use Claude Code
+
+00:00:18.240 --> 00:00:25.180
+instead. If you do not wish to use Claude, you may skip this video. Just like Codex, in order to use
+
+00:00:25.180 --> 00:00:35.050
+Claude Code, you will need to have a subscription plan with Claude. I am using the pro plan billed
+
+00:00:35.050 --> 00:00:44.010
+at $20 monthly. If billed annually, it is $17 per month. You will get Claude chat and also Claude code
+
+00:00:44.010 --> 00:00:51.150
+just like in OpenAI subscription, you get chatGPT and also codex. Head over to this website
+
+00:00:51.150 --> 00:00:57.810
+to download Claude desktop. Claude desktop will give you both Claude chat and also Claude code.
+
+00:00:57.810 --> 00:01:04.490
+Note that Claude code can also be command line based, but I prefer Claude Desktop as
+
+00:01:04.490 --> 00:01:08.770
+it is more user friendly and has session history on the left panel.
+
+00:01:08.770 --> 00:01:17.500
+Click to download Claude Desktop.
+
+00:01:17.500 --> 00:01:26.620
+Click Download for Windows.
+
+00:01:26.620 --> 00:01:59.100
+Head over to the Downloads folder and double click on the setup file.
+
+00:01:59.100 --> 00:02:02.930
+Login to Claude.
+
+00:02:02.930 --> 00:02:13.910
+For me, I use Google Authentication.
+
+00:02:13.910 --> 00:02:22.140
+After authentication, click Open Claude.
+
+00:02:22.140 --> 00:02:28.140
+On the top left corner, there are 3 tabs, chat, co-work and code.
+
+00:02:28.140 --> 00:02:34.050
+We are interested only in chat and code.
+
+00:02:34.050 --> 00:02:36.530
+Click on the chat tab.
+
+00:02:36.530 --> 00:02:38.430
+Here we can select the model.
+
+00:02:38.430 --> 00:02:43.550
+At time of recording, Opus 4.7 is the most powerful model.
+
+00:02:43.550 --> 00:02:48.810
+It has better ability to solve complex problems, but it may consume more tokens and hit rate
+
+00:02:48.810 --> 00:02:50.270
+limits faster.
+
+00:02:50.270 --> 00:02:56.590
+We could also use Sonnet 4.6, which is almost as good as Opus when it comes to coding.
+
+00:02:56.590 --> 00:03:01.010
+Let's test the chat by saying hello.
+
+00:03:01.010 --> 00:03:02.850
+I get a reply.
+
+00:03:02.850 --> 00:03:09.500
+It works.
+
+00:03:09.500 --> 00:03:21.610
+Now we try Claude code.
+
+00:03:21.610 --> 00:03:26.010
+Click on this icon here to see the rate limit status.
+
+00:03:26.010 --> 00:03:36.400
+Note the 5-hour limit and the weekly limits and when they reset.
+
+00:03:36.400 --> 00:03:40.540
+There are 4 permission modes, Accept edits is the best balance.
+
+00:03:40.540 --> 00:03:45.720
+It can auto create files but for other tasks, it will ask for permission.
+
+00:03:45.720 --> 00:03:51.560
+'Ask permissions': will ask permission for everything and 'bypass permissions' will not ask you at
+
+00:03:51.560 --> 00:03:52.860
+all.
+
+00:03:52.860 --> 00:03:57.080
+'Plan mode' is used when you are planning but don't want to execute anything yet.
+
+00:03:57.080 --> 00:04:02.910
+I normally leave it at its default which is: 'Accept edits.'
+
+00:04:02.910 --> 00:04:04.610
+Here is where you set the model.
+
+00:04:04.610 --> 00:04:07.810
+There is also the effort level.
+
+00:04:07.810 --> 00:04:12.250
+High means more reasoning for complex problems or bugs.
+
+00:04:12.250 --> 00:04:14.670
+Low means no reasoning.
+
+00:04:14.670 --> 00:04:19.630
+If you set the effort to high, it will consume token and get slower responses, but it can
+
+00:04:19.630 --> 00:04:21.810
+solve complex problems.
+
+00:04:21.810 --> 00:04:27.330
+I normally set it to high for Opus 4.7 and Sonnet 4.6.
+
+00:04:27.330 --> 00:04:29.970
+Let's test Claude code.
+
+00:04:29.970 --> 00:05:01.150
+I will ask it to create a folder on my desktop called Test Claude, and it works.
+
+00:05:01.150 --> 00:05:06.370
+Now I ask it to write a Python program that prompts the user for name and prints a greeting
+
+00:05:06.370 --> 00:06:00.710
+using that name and put the program in the newly created folder.
+
+00:06:00.710 --> 00:06:13.130
+Let's check it out.
+
+00:06:13.130 --> 00:06:30.840
+I open a PowerShell terminal here and run the script.
+
+00:06:30.840 --> 00:06:33.940
+I enter my name.
+
+00:06:33.940 --> 00:06:36.240
+It works.
+
+00:06:36.240 --> 00:06:54.980
+You can also open a CMD terminal to run it.
+
+00:06:54.980 --> 00:07:02.890
+Another way is to ask Claude Code to run it.
+
+00:07:02.890 --> 00:07:09.390
+It asks for permission.
+
+00:07:09.390 --> 00:07:25.740
+I click always allow and it works.
+
+00:07:25.740 --> 00:07:29.700
+So this is how we install Claude code.
+
+00:07:29.700 --> 00:07:35.700
+You can use Claude code to configure OpenClaw or to fix any problems.
+
+00:07:35.700 --> 00:07:38.100
+That's all for this video.
+
+00:07:38.100 --> 00:07:38.900
+Thanks for watching.
+

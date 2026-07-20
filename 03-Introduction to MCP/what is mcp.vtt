@@ -1,0 +1,122 @@
+WEBVTT
+
+00:00:00.620 --> 00:00:05.620
+Welcome back. In this lecture, we are going to understand one of the most important concepts
+
+00:00:05.620 --> 00:00:11.820
+in this entire course, MCP or Model Context Protocol. If open-claw is the brain, then
+
+00:00:11.820 --> 00:00:16.460
+MCP is the nervous system that connects it to the outside world including reverse engineering
+
+00:00:16.460 --> 00:00:23.140
+tools like x64 DBG, Ghidra and IDA. It is the backbone of open-claw automation.
+
+00:00:24.140 --> 00:00:29.700
+Large language modules like ChatGPT or Claude are incredibly powerful, but they have a major
+
+00:00:29.700 --> 00:00:35.300
+limitation. They can think and generate text, but they cannot actually do anything in your system.
+
+00:00:35.820 --> 00:00:43.040
+They cannot open x64 DBG, inspect registers, or analyze a binary unless we give them a way to
+
+00:00:43.040 --> 00:00:49.800
+interact with these tools. MCP is essentially a bridge. It allows an AI agent to communicate
+
+00:00:49.800 --> 00:00:55.000
+with external tools in a structured and standardized way. Instead of the AI trying
+
+00:00:55.000 --> 00:01:01.600
+to guess how to interact with software, MCP provides a clean interface for doing so.
+
+00:01:01.600 --> 00:01:04.380
+At a high level, here's what happens.
+
+00:01:04.380 --> 00:01:09.140
+The AI agent, OpenClaw, sends a request to the MCP server.
+
+00:01:09.140 --> 00:01:13.840
+The MCP server then routes that request to the appropriate tool plugin, for example,
+
+00:01:13.840 --> 00:01:19.260
+a x64 dbg plugin or other plugin.
+
+00:01:19.260 --> 00:01:26.780
+That tool executes the action and returns the result back through mcp to the ai. MCP consists of several
+
+00:01:26.780 --> 00:01:33.420
+important components the ai client is open claw the mcp server acts as a central hub
+
+00:01:34.060 --> 00:01:40.140
+then we have mcp tools which are essentially plugins that expose functionality these tools
+
+00:01:40.140 --> 00:01:46.620
+define functions that the ai can call such as read memory disassemble function or set breakpoint
+
+00:01:46.620 --> 00:01:51.980
+which are called tool schemas. Let's make this concrete. Imagine the AI wants to read
+
+00:01:51.980 --> 00:01:59.900
+memory at a specific address. It sends a request through MCP. The MCP plugin connected to x64dbg
+
+00:01:59.900 --> 00:02:03.980
+executes that command and returns the memory contents back to the AI.
+
+00:02:04.620 --> 00:02:07.900
+Now the AI can reason about it and decide what to do next.
+
+00:02:09.260 --> 00:02:12.780
+Without MCP, OpenClaw would just be another chatbot.
+
+00:02:12.780 --> 00:02:19.820
+MCP is what gives OpenClaw the ability to actually do work, to control tools, run analysis
+
+00:02:19.820 --> 00:02:22.180
+and interact with real systems.
+
+00:02:22.180 --> 00:02:27.920
+OpenClaw also has built-in system-level capabilities, running shell commands, reading and writing
+
+00:02:27.920 --> 00:02:31.380
+files, executing scripts, and generating code.
+
+00:02:31.380 --> 00:02:35.340
+These work without MCP through OpenClaw's native skill layer.
+
+00:02:35.340 --> 00:02:40.600
+MCP extends this further, it's the protocol that lets OpenClaw discover and call external
+
+00:02:40.600 --> 00:02:46.520
+tools connect to specialized servers and integrate with systems beyond the local machine together
+
+00:02:46.520 --> 00:02:53.320
+these capabilities transform ai from passive to active. Traditionally you would automate reverse
+
+00:02:53.320 --> 00:03:02.200
+engineering using scripts python scripts plugins x64 dbg scripts or apis but each tool has its own
+
+00:03:02.200 --> 00:03:09.480
+api its own quirks and its own learning curve mcp abstracts all of that into a unified interface
+
+00:03:09.480 --> 00:03:17.400
+allowing ai to dynamically decide what to do. In this course you will not just learn what mcp is
+
+00:03:17.400 --> 00:03:23.160
+you will actually use it we will connect open claw to real reverse engineering tools
+
+00:03:23.160 --> 00:03:27.080
+build mcp integrations and automate complex workflows
+
+00:03:28.520 --> 00:03:35.880
+a useful way to think about mcp is this the ai is the brain mcp is the hands and your reverse
+
+00:03:35.880 --> 00:03:42.520
+engineering tools are the instruments. Without hands, the brain cannot act. MCP gives AI those
+
+00:03:42.520 --> 00:03:48.920
+hands. Now that you understand what MCP is and why it is important, in the next lecture,
+
+00:03:48.920 --> 00:03:54.200
+we will start setting it up step by step and connect it to real tools. Thank you for watching.
+

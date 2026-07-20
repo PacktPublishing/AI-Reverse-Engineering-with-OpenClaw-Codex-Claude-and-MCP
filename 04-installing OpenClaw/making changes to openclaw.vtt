@@ -1,0 +1,128 @@
+WEBVTT
+
+00:00:00.160 --> 00:00:05.200
+Hello and welcome back. In this lesson, I will show you what to do if you make a mistake in
+
+00:00:05.200 --> 00:00:10.480
+the setup of OpenClaw or if you want to make changes to existing configurations.
+
+00:00:11.360 --> 00:00:18.080
+Just open a new command line terminal and type in the command openclaw onboard. Use the arrow
+
+00:00:18.080 --> 00:00:28.000
+key and select yes, then hit enter. Choose either quick start or manual. I will choose manual. Here,
+
+00:00:28.000 --> 00:00:34.240
+if you want to make changes to the configuration choose update values then hit enter
+
+00:00:35.280 --> 00:00:42.640
+do not change anything leave it at local gateway this machine just hit enter accept the default
+
+00:00:42.640 --> 00:00:50.480
+workspace directory just hit enter now you can add additional model provider or you can update
+
+00:00:50.480 --> 00:00:56.560
+api keys for existing provider if you do not wish to change anything but wish to keep the existing
+
+00:00:56.560 --> 00:01:02.640
+model you have previously configured, just scroll down and select skip for now.
+
+00:01:02.640 --> 00:01:05.680
+Here choose the model you previously configured.
+
+00:01:05.680 --> 00:01:09.540
+For me, I choose OpenAI Codex.
+
+00:01:09.540 --> 00:01:13.960
+Here is where you can change to a different model if you want to, but I will keep current
+
+00:01:13.960 --> 00:01:18.100
+model which is GPT 5.4 and hit enter.
+
+00:01:18.100 --> 00:01:23.240
+I will keep the default port and just hit enter.
+
+00:01:23.240 --> 00:01:29.600
+Next I will also keep the default gateway bind to loopback and just hit enter.
+
+00:01:29.600 --> 00:01:34.460
+I will keep the gateway auth to token, just hit enter.
+
+00:01:34.460 --> 00:01:40.300
+I will leave tail scale exposure to off, just hit enter.
+
+00:01:40.300 --> 00:01:44.080
+Select the default generate plaintext token, just hit enter.
+
+00:01:44.080 --> 00:01:50.040
+It will show the token, I will keep it, so I hit enter.
+
+00:01:50.040 --> 00:01:55.180
+Next if you want to add another chat channel for example discord or whatsapp or others
+
+00:01:55.180 --> 00:01:56.580
+choose yes.
+
+00:01:56.580 --> 00:02:01.800
+For me I already configured telegram previously and I do not wish to add another channel for
+
+00:02:01.800 --> 00:02:06.400
+now so I will choose no then hit enter.
+
+00:02:06.400 --> 00:02:10.160
+Here you can add additional search provider if you wish.
+
+00:02:10.160 --> 00:02:14.780
+Previously I already added tavily search and do not wish to add another so I choose
+
+00:02:14.780 --> 00:02:18.700
+skip for now and hit enter.
+
+00:02:18.700 --> 00:02:23.660
+Next, you can add new skills for OpenClaw if you wish, and you could browse the list
+
+00:02:23.660 --> 00:02:29.440
+of skills by going to clawhub.ai and selecting the name of the skill you want to add.
+
+00:02:29.440 --> 00:02:34.960
+At the moment, I do not need to add any new skills, so I will choose no.
+
+00:02:34.960 --> 00:02:40.660
+For plugins, press spacebar to select skip for now and hit enter.
+
+00:02:40.660 --> 00:02:46.180
+For hooks, I had previously already enabled all hooks and do not wish to make any changes,
+
+00:02:46.180 --> 00:02:50.500
+So I press spacebar to select skip for now and hit enter.
+
+00:02:50.500 --> 00:02:55.380
+I select yes to install gateway service and hit enter.
+
+00:02:55.380 --> 00:03:02.420
+For gateway service runtime, just accept the default which is node and hit enter.
+
+00:03:02.420 --> 00:03:07.920
+Gateway service already installed, select the restart and hit enter.
+
+00:03:07.920 --> 00:03:14.180
+Just accept the default enable zsh shell completion for openclaw and hit enter.
+
+00:03:14.180 --> 00:03:15.800
+Onboard completed.
+
+00:03:15.800 --> 00:03:20.000
+So this is how you make changes to configurations the easy way.
+
+00:03:20.000 --> 00:03:23.480
+We just use the command: openclaw onboard.
+
+00:03:23.480 --> 00:03:30.140
+You can now chat with openclaw by using the command: openclaw dashboard or use telegram.
+
+00:03:30.140 --> 00:03:31.140
+That's all for this video.
+
+00:03:31.140 --> 00:03:31.960
+Thanks for watching.
+

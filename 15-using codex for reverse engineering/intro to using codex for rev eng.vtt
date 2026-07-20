@@ -1,0 +1,143 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:06.040
+Hello and welcome back. In this new lesson, we are going to take a look at
+
+00:00:06.040 --> 00:00:11.020
+how we can use Codex for reverse engineering. This means we are not going
+
+00:00:11.020 --> 00:00:16.840
+to use OpenCLAW. Instead, we will use Codex directly to connect to the MCP
+
+00:00:16.840 --> 00:00:26.890
+services. This is the Codex strategy to simulate OpenCLAW. So these are the
+
+00:00:26.890 --> 00:00:35.770
+points. First, we will prompt Codex to find out how to use MCP endpoints. Each MCP will have different
+
+00:00:36.730 --> 00:00:44.010
+endpoints. For example, the x64 debugger will have an endpoint running on a specific port.
+
+00:00:45.450 --> 00:00:52.170
+The Ghidra will have another different port number and the DNSpy will have a different port number.
+
+00:00:52.170 --> 00:01:04.050
+So each different MCP endpoints are unique. So the strategy is, we will let Codex know the port
+
+00:01:04.050 --> 00:01:11.850
+number and the IP address for the service, the MCP service that is running. And then we will
+
+00:01:11.850 --> 00:01:21.870
+tell Codex to use MCP protocol and JSON to try to connect to that endpoint. Codex might
+
+00:01:21.870 --> 00:01:29.150
+stumble and make some attempts and eventually Codex will figure it out. Now once Codex has
+
+00:01:29.150 --> 00:01:35.470
+figured out how to connect to that specific endpoint, we will then save it as a skill
+
+00:01:36.110 --> 00:01:45.230
+in a Markdown file format. This is crucial. This is what allows Codex to behave like OpenClaw.
+
+00:01:45.230 --> 00:01:54.230
+So we need to save the skill in a file and we will use the Markdown file format which
+
+00:01:54.230 --> 00:01:56.650
+OpenClaw uses.
+
+00:01:56.650 --> 00:02:05.010
+And not only that, Markdown files which have the .md extension are the default text files
+
+00:02:05.010 --> 00:02:12.270
+for all AI agents when they are saving data, knowledge, skills and memory.
+
+00:02:12.270 --> 00:02:18.110
+So they are universally accepted file format for AI agents to use.
+
+00:02:18.110 --> 00:02:24.790
+So that is the reason why we are also following this universal standard.
+
+00:02:24.790 --> 00:02:29.870
+So each skill will have its own skills markdown file.
+
+00:02:29.870 --> 00:02:37.030
+So for example, if we are going to teach codex or ask codex to figure out how to
+
+00:02:37.030 --> 00:02:42.310
+connect to x64 dbg debugger, at the end of the session,
+
+00:02:42.310 --> 00:02:48.110
+we will save a skill file for x64dbg debugger.
+
+00:02:48.110 --> 00:02:51.110
+And then we will repeat the process
+
+00:02:51.110 --> 00:02:53.770
+if we want Codex to learn how to connect
+
+00:02:53.770 --> 00:02:58.370
+to another different tool, for example, Ghidra.
+
+00:02:58.370 --> 00:03:00.550
+And then at the end of the Ghidra session,
+
+00:03:00.550 --> 00:03:03.710
+we will again repeat the same strategy.
+
+00:03:03.710 --> 00:03:12.110
+That is, we will ask Codex to save the Ghidra MCP connection skills in another Markdown file.
+
+00:03:12.110 --> 00:03:17.470
+And same thing repeats with DnSpy and just about any other tools.
+
+00:03:17.470 --> 00:03:22.190
+So for each specific tool, we will use the same strategy.
+
+00:03:22.190 --> 00:03:26.910
+In the end, we will have several Markdown files.
+
+00:03:26.910 --> 00:03:30.790
+Each file will be specific for a specific skill.
+
+00:03:30.790 --> 00:03:39.890
+So in future, if we ever again wanted to use codex to connect to, for example, x64 debugger,
+
+00:03:39.890 --> 00:03:43.570
+then all we need to do is just refer codex to that file.
+
+00:03:43.570 --> 00:03:46.470
+So codex will just read the file.
+
+00:03:46.470 --> 00:03:52.830
+The file will tell codex how it previously managed to connect to x64 dbg debugger.
+
+00:03:52.830 --> 00:03:55.550
+So it doesn't have to start from scratch.
+
+00:03:55.550 --> 00:04:02.430
+So this is the secret of how we can use Codex to simulate openclaw.
+
+00:04:02.430 --> 00:04:07.590
+And the same thing could be said for Claude code as well.
+
+00:04:07.590 --> 00:04:14.830
+If you want to use Claude code for reverse engineering, you will also do the same workflow.
+
+00:04:14.830 --> 00:04:18.190
+So this is quite flexible, this strategy.
+
+00:04:18.190 --> 00:04:23.190
+It can be used for just about any AI agent that you want.
+
+00:04:23.190 --> 00:04:29.030
+So in this section, I will use Codex to demonstrate the idea.
+
+00:04:29.030 --> 00:04:31.350
+So that's all for this lesson.
+
+00:04:31.350 --> 00:04:33.050
+I will see you in the next one.
+
+00:04:33.050 --> 00:04:33.710
+Thanks for watching.
+

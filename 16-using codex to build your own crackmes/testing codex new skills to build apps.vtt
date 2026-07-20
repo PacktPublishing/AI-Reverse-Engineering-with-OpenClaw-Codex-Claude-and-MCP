@@ -1,0 +1,282 @@
+WEBVTT
+
+00:00:00.500 --> 00:00:06.380
+Hello and welcome back. In the previous lesson, we have already given Codex a new skill,
+
+00:00:06.940 --> 00:00:13.600
+the ability to build EXE programs. So in this lesson, we are going to test it.
+
+00:00:13.960 --> 00:00:22.490
+So let's open Codex now and let's start a new project, new chat. Now we are going to
+create
+
+00:00:22.490 --> 00:00:30.230
+a new folder to put all our projects for crackmes. So we go to C drive and over here,
+
+00:00:30.230 --> 00:00:39.510
+we create a new folder, crackmes. You can say my crackmes or maybe we say
+
+00:00:39.510 --> 00:00:51.720
+yeah, you can say my crackmes. Yes, so now we give this path to Codex. Use this
+
+00:00:51.720 --> 00:01:02.370
+folder and then paste the folder there for this project and now we refer to the
+
+00:01:02.370 --> 00:01:12.690
+AI skill this is right-click, copy this get a path copy as path with this skill
+
+00:01:12.690 --> 00:01:33.060
+then build a simple CLI program called crackme1
+
+00:01:33.060 --> 00:01:50.060
+will ask a user to input a serial number, and if the serial number is wrong, it
+
+00:01:50.060 --> 00:02:04.800
+will print wrong key or wrong serial, and if it is correct, it will print congrats if you
+
+00:02:04.800 --> 00:02:23.080
+are unsure of anything, ask me. Put the EXE that you built into the folder, then copy and
+
+00:02:23.080 --> 00:02:29.890
+paste this folder again down here so this is a simple prompt just ask it to use this
+
+00:02:29.890 --> 00:02:35.330
+folder ask it to read this skill, and then build a simple command-line interface program
+called
+
+00:02:35.330 --> 00:02:45.890
+crackme1 that will prompt a user to input a serial number, and if the serial number is
+wrong
+
+00:02:45.890 --> 00:02:50.930
+it will print wrong serial, and if it's correct, it will print congrats if you are unsure
+of anything
+
+00:02:50.930 --> 00:02:59.680
+ask me. Then put that EXE that you built into this folder so let's go ahead. So now it has
+gone to
+
+00:02:59.680 --> 00:03:06.240
+work that was very fast it has succeeded in building it, and now it's doing a quick
+command
+
+00:03:06.240 --> 00:03:14.880
+line test notice that its initial build failed to run because there were dependencies, and
+now
+
+00:03:14.880 --> 00:03:23.120
+it has learned to statically build the EXE with all the required libraries baked in
+
+00:03:23.120 --> 00:03:29.600
+so let's check it out. Go to that my crackmes folder and run this. So we open a
+command-line
+
+00:03:29.600 --> 00:03:39.480
+terminal here, CMD, and we will run this crackme, crackme1.exe. Input serial number
+
+00:03:40.840 --> 00:03:48.200
+Alright, wrong serial. Okay, so if you want to crack this you can use Codex to crack it if
+you
+
+00:03:48.200 --> 00:03:55.240
+want, but I don't think I'll do that I'll just ask it what is the correct serial? Alright,
+so
+
+00:03:55.240 --> 00:04:05.320
+the correct serial is this. So let's test it out. We just copy this and paste it here. Hit
+enter. Congrats.
+
+00:04:05.320 --> 00:04:11.080
+So it works. So you see how easy it is to build your own crackmes. This is only a very
+
+00:04:11.080 --> 00:04:17.800
+simple one. If you really want to be complex you can ask it to make a very difficult
+crackme
+
+00:04:18.520 --> 00:04:25.080
+probably with encoding and encryption and whatever you can think of or obfuscation and so
+on
+
+00:04:25.080 --> 00:04:30.040
+Right, so it's just proof of concept. So it seems to be working. Right now we are
+
+00:04:30.040 --> 00:04:35.700
+going to ask it to build another crackme, which is a GUI crackme, so say, okay,
+
+00:04:35.700 --> 00:04:49.680
+now build another crackme, or build another app called crackme2 which is a
+
+00:04:49.680 --> 00:04:57.200
+GUI app that does the same thing. Remember
+
+00:04:57.200 --> 00:05:06.800
+to statically link all dependencies into the app. Right, because previously
+
+00:05:06.800 --> 00:05:09.760
+when you built this first crackme, you found that it
+
+00:05:09.760 --> 00:05:14.240
+can't run because it depended on many DLL files
+
+00:05:14.240 --> 00:05:21.120
+and so it is smart enough to build a statically linked app that
+
+00:05:21.120 --> 00:05:26.080
+includes all the dependencies. In other words a standalone EXE
+
+00:05:26.080 --> 00:05:32.800
+so I just remind remind it and I say now if you are unsure
+
+00:05:32.800 --> 00:05:42.170
+of of anything, ask me put the crackme 2
+
+00:05:42.170 --> 00:05:49.050
+in the same folder as before, and then we remind it this folder just
+
+00:05:49.050 --> 00:05:55.070
+copy this, and that is this folder okay let's go see
+
+00:05:55.070 --> 00:06:01.640
+what it does so it has started working on what we
+
+00:06:01.640 --> 00:06:04.600
+want what we are doing is actually called
+
+00:06:04.600 --> 00:06:09.240
+vibe coding, and Codex and Claude Code are very
+
+00:06:09.240 --> 00:06:12.760
+strong in vibe coding. In vibe coding, we
+
+00:06:12.760 --> 00:06:21.000
+basically tell the AI what we want and the AI will build it for us it is now finished
+building and
+
+00:06:21.000 --> 00:06:26.600
+now doing some tests and it even tells me the correct serial is set for it is verified so
+
+00:06:26.600 --> 00:06:32.680
+let's go there and check it out this is the one let's run it and so now it asks you to
+input
+
+00:06:32.680 --> 00:06:38.360
+serial number first you enter a wrong serial number if you click on check, and it says
+wrong
+
+00:06:38.360 --> 00:06:46.200
+serial and now we copy the correct serial number right-click, copy and paste it in here
+right-click
+
+00:06:46.200 --> 00:06:53.400
+paste and we hit check and it says congrats So it works. So you see how easy it is to use
+
+00:06:54.760 --> 00:07:01.880
+AI to build apps for you. So again this is just proof of concept if you wanted to make a
+
+00:07:01.880 --> 00:07:09.160
+a crackme that is very difficult to crack then just tell your Codex what you want right
+you can
+
+00:07:09.160 --> 00:07:14.120
+encrypt it obfuscate the strings hide your strings and and do encoding and encryption
+
+00:07:14.120 --> 00:07:19.800
+and whatever. You can build a crackme which is very challenging and then practice your AI
+
+00:07:19.800 --> 00:07:26.920
+your reverse engineering skills using AI even to crack it so with this you have unlimited
+
+00:07:26.920 --> 00:07:35.240
+possibilities to build your own reverse engineering crackmes and practice reverse
+engineering
+
+00:07:35.240 --> 00:07:45.400
+on it. Of course, using AI to crack. Okay, so now that you have successfully built one
+command-line
+
+00:07:45.400 --> 00:07:52.280
+interface crackme and one GUI crackme, it is important to update your skills. Alright, so
+now
+
+00:07:52.280 --> 00:07:56.620
+Now we ask it, remember the skills for this skill file?
+
+00:07:56.620 --> 00:08:05.100
+So we copy this file again, copy this file, and we ask it, would you like to update the
+
+00:08:05.100 --> 00:08:20.720
+skill file, paste the skill file there to improve it or add new insights if any.
+
+00:08:20.720 --> 00:08:32.140
+And then we give an example, for example, the need to statically link dependencies so
+
+00:08:32.140 --> 00:08:47.610
+that it is capable of running standalone as a standalone EXE.
+
+00:08:47.610 --> 00:08:50.970
+Just give it this type of prompt and let it decide whether it wants to update the skill
+
+00:08:50.970 --> 00:08:58.810
+file So you notice the pattern that we are using here. Every time after successfully
+completing a
+
+00:08:58.810 --> 00:09:05.390
+task, we always think of the skill file. If we have no skill file we should create one,
+and if we
+
+00:09:05.390 --> 00:09:11.310
+already have a skill file we should update it if necessary to include new discoveries and
+improved
+
+00:09:11.310 --> 00:09:17.810
+ways of working so this is how you develop your AI agent ability to
+
+00:09:17.810 --> 00:09:24.370
+solve problems. So always remember this paradigm, this way of working. Upon
+
+00:09:24.370 --> 00:09:30.110
+successful completion of a task, create a skill file. If there's already a skill file,
+update it.
+
+00:09:30.110 --> 00:09:36.170
+And then in future, whenever you want it to perform similar task, ask it to read
+
+00:09:36.170 --> 00:09:41.690
+the skill file for the tasks that you need. So just remember this
+
+00:09:41.690 --> 00:09:47.750
+workflow and you should be okay. You will be able to use AI to its
+
+00:09:47.750 --> 00:09:54.050
+maximum benefit. Okay, so now we're going to ask it and see what it does. Yes, so it
+
+00:09:54.050 --> 00:10:00.050
+replied that it updated with the new insights and so on. And
+
+00:10:00.050 --> 00:10:05.510
+whatever new insights that it has learned from this session, it is now entered into the
+
+00:10:05.510 --> 00:10:09.410
+skill file. So you can see your AI agent is getting smarter every time it performs
+
+00:10:09.410 --> 00:10:16.450
+task. So that's how useful it is so the next task you need to do is remember to copy this
+out and
+
+00:10:16.450 --> 00:10:22.610
+whatever skill files you have copy them out to another safe location outside of the
+virtual
+
+00:10:22.610 --> 00:10:27.810
+machine as usual, so that in case you were to restore your virtual machine to a previous
+
+00:10:27.810 --> 00:10:33.090
+snapshot or an earlier snapshot, you won't lose everything. You still have your skill
+files
+
+00:10:33.090 --> 00:10:39.010
+somewhere else that you can just copy back into this machine. So that's all for this
+lesson
+
+00:10:39.010 --> 00:10:42.450
+Thank you for watching

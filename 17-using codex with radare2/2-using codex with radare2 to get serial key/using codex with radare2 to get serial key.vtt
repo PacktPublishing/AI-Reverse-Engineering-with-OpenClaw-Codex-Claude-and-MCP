@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00:00.690 --> 00:00:08.050
+Hello and welcome back. In the previous lesson, we have already installed radare2. So now we are going
+
+00:00:08.050 --> 00:00:16.610
+to use it to solve the crackme1, which we created in the previous lessons. So if you remember, we
+
+00:00:16.610 --> 00:00:24.850
+used Codex to create this crackme1 and crackme2. So let's try it now. Just open a command
+
+00:00:24.850 --> 00:00:34.530
+line terminal here, and we will run crackme1. It asks for a serial number. Let us try one two three
+
+00:00:34.530 --> 00:00:42.530
+four five six and press enter, and it says wrong serial. So we are now going to use radare2 to
+
+00:00:42.530 --> 00:00:52.060
+solve this crackme. So let's open Codex, start a new chat, and now we got to look for the AI skill.
+
+00:00:52.060 --> 00:00:58.900
+So go to the AI skills folder and look for the skill for radare2, which is this skill file here.
+
+00:00:58.900 --> 00:01:09.340
+So we right click to copy the path, and over here we ask Codex to read this skill file.
+
+00:01:09.340 --> 00:01:22.080
+Read the skill file, then analyze the crackme. So we give it the location of the crackme.
+
+00:01:22.080 --> 00:01:27.320
+Our crackme is in the location, my crackmes folder.
+
+00:01:27.320 --> 00:01:37.040
+So we right click the path to this crackme1, copy as path, then analyze this to find
+
+00:01:37.040 --> 00:01:54.050
+the function where the logic, where the control flow logic exists to decide to show the string
+
+00:01:54.050 --> 00:02:17.520
+wrong serial. Then explain it to me. So let's, we also say, if you are unsure of anything, ask me.
+
+00:02:17.520 --> 00:02:29.990
+So here we give it extra high reasoning and hit Run. So it is now reading the skill file, and now
+
+00:02:29.990 --> 00:02:39.230
+it has started working, and now it is looking for the strings and also disassembling the
+
+00:02:39.230 --> 00:02:43.700
+references around it.
+
+00:02:43.700 --> 00:02:51.700
+So now it is going to disassemble the main function and then create readable pseudocode,
+
+00:02:51.700 --> 00:02:55.320
+and finally it managed to get the serial key for you.
+
+00:02:55.320 --> 00:03:00.080
+It says the disassembled function is readable, and it compares the user input string against
+
+00:03:00.080 --> 00:03:01.080
+this literal.
+
+00:03:01.080 --> 00:03:03.740
+So this is the serial key.
+
+00:03:03.740 --> 00:03:10.120
+So we can actually now go here and try running crackme1. Input serial, and we copy this serial
+
+00:03:10.120 --> 00:03:18.440
+key, right click, copy, and right click, paste, hit enter, and that's it. It solved it for us.
+
+00:03:18.440 --> 00:03:24.980
+See how powerful Codex can be when it is working directly with your tools.
+
+00:03:24.980 --> 00:03:32.620
+So in this case, we are using Codex with radare2, and you could solve it so easily.
+
+00:03:32.620 --> 00:03:40.280
+So now it is printing the final report out, and this is the key logic of the assembly
+
+00:03:40.280 --> 00:03:44.520
+code, and here is the pseudocode.
+
+00:03:44.520 --> 00:03:51.160
+So this pseudocode is an approximation of a C program for the assembly here.
+
+00:03:51.160 --> 00:03:57.020
+And here you can see it prompts the user to input a serial number and then creates a variable
+
+00:03:57.020 --> 00:03:58.020
+for input.
+
+00:03:58.020 --> 00:04:03.780
+It gets the input from the user and stores it into input, and then it compares whether the input is
+
+00:04:03.780 --> 00:04:10.020
+equal to this serial number. If it is, it will print congrats; else, it will print wrong serial.
+
+00:04:11.060 --> 00:04:20.820
+That's it. So it works. So this is how useful Codex can be when given the tools
+
+00:04:20.820 --> 00:04:27.620
+you can work with directly. So that's all for this video. Thank you for watching.

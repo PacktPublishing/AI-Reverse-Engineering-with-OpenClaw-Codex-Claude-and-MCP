@@ -1,0 +1,218 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.020
+Hello and welcome back. In this lesson, I will use OpenClaw to disable nag screens.
+
+00:00:07.180 --> 00:00:14.460
+Go to your practice CrackMe folder. I will use this nag screen 64-bit CrackMe.
+
+00:00:14.980 --> 00:00:19.700
+When I click on it, it will show an opening nag message box with the message
+
+00:00:19.700 --> 00:00:26.720
+please register. When I click ok, it shows the main window. The instruction says remove the
+
+00:00:26.720 --> 00:00:31.940
+opening and closing nags. If I close the window, the closing nag message box shows
+
+00:00:31.940 --> 00:00:46.100
+with the message, kindly register. I will record the message strings in notepad. Open
+
+00:00:46.100 --> 00:00:58.710
+notepad and write down the opening nag and closing nag strings. Next, I run x64dbg as
+
+00:00:58.710 --> 00:01:08.870
+administrator. Be sure to run the 64-bit version of x64dbg because our crack me is 64-bit.
+
+00:01:08.870 --> 00:01:52.180
+the crack me. Next, run Ghidra. Drag the crack me into Ghidra. Then, analyze it. Note that in order
+
+00:01:52.180 --> 00:01:59.480
+for the base address in Ghidra to match the addresses in x64 dbg, you should have disabled
+
+00:01:59.480 --> 00:02:06.540
+ASLR as taught in earlier lessons. In telegram, I clear history and start a new session.
+
+00:02:06.540 --> 00:02:12.720
+I then give open claw the instructions.
+
+00:02:12.720 --> 00:02:16.530
+You can use the same prompt.
+
+00:02:16.530 --> 00:02:24.070
+If the backend open AI GPT 5.5 refuses to help due to ethical reasons, just restart
+
+00:02:24.070 --> 00:02:26.250
+but give fewer details in the prompt.
+
+00:02:26.250 --> 00:02:30.850
+For example, do not say you are trying to disable the nag.
+
+00:02:30.850 --> 00:02:35.530
+Also don't give the full string: "please register" or "kindly register".
+
+00:02:35.530 --> 00:02:53.860
+Instead, just ask to look for the message box where the message says: "please" or "kindly".
+
+00:02:53.860 --> 00:02:58.000
+OpenClaw says Ghidra MCP is not reachable.
+
+00:02:58.000 --> 00:03:02.020
+It seems I have forgotten to start the Ghidra MCP server.
+
+00:03:02.020 --> 00:03:04.000
+Let's do that now.
+
+00:03:04.000 --> 00:03:08.100
+Go to the Ghidra MCP folder.
+
+00:03:08.100 --> 00:03:11.440
+Open a CMD terminal.
+
+00:03:11.440 --> 00:03:20.440
+Activate the Python virtual environment. 
+
+00:03:20.440 --> 00:03:30.870
+start the Ghidra MCP bridge. Back in Telegram, OpenClaw is refusing to patch the binary to
+
+00:03:30.870 --> 00:03:41.400
+disable nag screens. This is because OpenAI GPT 5.5 is refusing to do it. Remember we are using
+
+00:03:41.400 --> 00:03:51.750
+OpenAI codex as the brains for OpenClaw. I ask it to try Ghidra again. OpenClaw replies
+
+00:03:51.750 --> 00:03:59.270
+saying it managed to connect with Ghidra. It suggests locating the strings using ghidra.
+
+00:04:01.190 --> 00:04:09.030
+I say yes, do it. Again, OpenClaw says it cannot continue, presumably due to ethical reasons.
+
+00:04:11.140 --> 00:04:20.120
+I reassure it that I wrote the crack me and it is for educational purposes. It stubbornly refuses.
+
+00:04:20.120 --> 00:04:25.160
+I try a different approach.
+
+00:04:25.160 --> 00:04:32.150
+I ask it to identify the address of the control flow logic that shows the strings.
+
+00:04:32.150 --> 00:04:36.160
+Still, it refuses.
+
+00:04:36.160 --> 00:04:40.390
+Let's try another way.
+
+00:04:40.390 --> 00:04:51.240
+I will clear a chat history and start a new session.
+
+00:04:51.240 --> 00:04:53.960
+This time I won't reveal too much in my prompt.
+
+00:04:53.960 --> 00:05:02.880
+Instead, I only provide the bare minimum information so as not to tip it off that I am trying to
+
+00:05:02.880 --> 00:05:08.010
+to bypass software protection security.
+
+00:05:08.010 --> 00:05:09.690
+I think this is the same problem we
+
+00:05:09.690 --> 00:05:15.870
+might face with frontier models like GPT-5.5 or Claude.
+
+00:05:15.870 --> 00:05:19.330
+We need to be careful when prompting.
+
+00:05:19.330 --> 00:05:22.730
+I just ask it to locate the control flow logic, which
+
+00:05:22.730 --> 00:05:25.890
+shows a message box containing the string:
+
+00:05:25.890 --> 00:05:36.120
+"Please"
+
+00:05:36.120 --> 00:05:41.780
+And it managed to find it.
+
+00:05:41.780 --> 00:05:46.590
+It lists down several critical addresses.
+
+00:05:46.590 --> 00:05:50.370
+I would skip the video to the important part.
+
+00:05:50.370 --> 00:05:54.710
+I asked it how to prevent the message box from showing.
+
+00:05:54.710 --> 00:05:59.730
+And it gave me two clean options involving two addresses.
+
+00:05:59.730 --> 00:06:05.850
+I had used x64dbg to put two breakpoints at those addresses
+
+00:06:05.850 --> 00:06:08.430
+and confirm those breakpoints were hit just
+
+00:06:08.430 --> 00:06:10.590
+before the message box showed.
+
+00:06:10.590 --> 00:06:17.940
+I skipped those part of the videos to keep things short.
+
+00:06:17.940 --> 00:06:36.210
+I then no-op one of the breakpoints to disable the jump to the message box, and ran the program.
+
+00:06:36.210 --> 00:06:37.790
+And it works.
+
+00:06:37.790 --> 00:06:45.860
+It skipped the first nag screen and only shows the second nag screen.
+
+00:06:45.860 --> 00:07:14.260
+I then patch it, and give it a new name, calling it version 2.
+
+00:07:14.260 --> 00:07:19.910
+Next we will target the second nag screen.
+
+00:07:19.910 --> 00:07:27.550
+So we load the version 2 into x64dbg.
+
+00:07:27.550 --> 00:07:38.120
+We test version 2 directly and true enough, the first nag does not show.
+
+00:07:38.120 --> 00:07:43.120
+We then close the main window and the second nag shows.
+
+00:07:43.120 --> 00:07:48.060
+Now we will attack this second nag.
+
+00:07:48.060 --> 00:07:56.200
+I ask openclaw to find the address for when the message box will show the string: "Kindly".
+
+00:07:56.200 --> 00:08:03.240
+After a while, it found the address.
+
+00:08:03.240 --> 00:08:20.310
+I then go to that address in x64dbg, and also do a no-op here to disable the jump to the
+
+00:08:20.310 --> 00:08:30.190
+message box, and run the program.
+
+00:08:30.190 --> 00:08:35.220
+The main window shows.
+
+00:08:35.220 --> 00:08:40.940
+When I close it, the second nag does not show, so it works.
+
+00:08:40.940 --> 00:08:56.460
+Now we need to reopen in x64dbg and do a patch, we go back to that same address previously,
+
+00:08:56.460 --> 00:09:22.830
+do a no op and then patch it. Give it another name version 3. Now we run version 3.
+
+00:09:22.830 --> 00:09:33.650
+The main windows shows. We close it and the second nag does not show. So we have finally
+
+00:09:33.650 --> 00:09:39.510
+patched the crack me to disable both nags. That's all for this video thanks for watching.
+

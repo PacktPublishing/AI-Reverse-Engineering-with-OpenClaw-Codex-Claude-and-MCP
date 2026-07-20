@@ -1,0 +1,276 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "dnSpy.Console/6.5.1.0": {
+        "dependencies": {
+          "dnSpy.Contracts.Logic": "6.5.1",
+          "dnSpy.Decompiler": "6.5.1"
+        },
+        "runtime": {
+          "dnSpy.Console.dll": {}
+        },
+        "resources": {
+          "cs/dnSpy.Console.resources.dll": {
+            "locale": "cs"
+          },
+          "de/dnSpy.Console.resources.dll": {
+            "locale": "de"
+          },
+          "es-ES/dnSpy.Console.resources.dll": {
+            "locale": "es-ES"
+          },
+          "fa/dnSpy.Console.resources.dll": {
+            "locale": "fa"
+          },
+          "fr/dnSpy.Console.resources.dll": {
+            "locale": "fr"
+          },
+          "hu/dnSpy.Console.resources.dll": {
+            "locale": "hu"
+          },
+          "it/dnSpy.Console.resources.dll": {
+            "locale": "it"
+          },
+          "pt-BR/dnSpy.Console.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "pt-PT/dnSpy.Console.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "ru/dnSpy.Console.resources.dll": {
+            "locale": "ru"
+          },
+          "tr/dnSpy.Console.resources.dll": {
+            "locale": "tr"
+          },
+          "uk/dnSpy.Console.resources.dll": {
+            "locale": "uk"
+          },
+          "vi/dnSpy.Console.resources.dll": {
+            "locale": "vi"
+          },
+          "zh-CN/dnSpy.Console.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
+      "dnlib/4.4.0": {
+        "runtime": {
+          "lib/net6.0/dnlib.dll": {
+            "assemblyVersion": "4.4.0.0",
+            "fileVersion": "4.4.0.0"
+          }
+        }
+      },
+      "NuGet.Common/6.13.2": {
+        "dependencies": {
+          "NuGet.Frameworks": "6.13.2",
+          "System.Collections.Immutable": "8.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NuGet.Common.dll": {
+            "assemblyVersion": "6.13.2.1",
+            "fileVersion": "6.13.2.1"
+          }
+        }
+      },
+      "NuGet.Configuration/6.13.2": {
+        "dependencies": {
+          "NuGet.Common": "6.13.2",
+          "System.Security.Cryptography.ProtectedData": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NuGet.Configuration.dll": {
+            "assemblyVersion": "6.13.2.1",
+            "fileVersion": "6.13.2.1"
+          }
+        }
+      },
+      "NuGet.Frameworks/6.13.2": {
+        "runtime": {
+          "lib/netstandard2.0/NuGet.Frameworks.dll": {
+            "assemblyVersion": "6.13.2.1",
+            "fileVersion": "6.13.2.1"
+          }
+        }
+      },
+      "System.Collections.Immutable/8.0.0": {},
+      "System.Security.Cryptography.ProtectedData/4.4.0": {},
+      "dnSpy.Contracts.Logic/6.5.1": {
+        "dependencies": {
+          "NuGet.Configuration": "6.13.2",
+          "dnlib": "4.4.0"
+        },
+        "runtime": {
+          "dnSpy.Contracts.Logic.dll": {
+            "assemblyVersion": "6.5.1",
+            "fileVersion": "6.5.1.0"
+          }
+        },
+        "resources": {
+          "es-ES/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "es-ES"
+          },
+          "cs/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "cs"
+          },
+          "fa/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "fa"
+          },
+          "fr/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "fr"
+          },
+          "hu/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "hu"
+          },
+          "de/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "de"
+          },
+          "it/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "it"
+          },
+          "pt-BR/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "pt-PT/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "tr/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "tr"
+          },
+          "ru/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "ru"
+          },
+          "uk/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "uk"
+          },
+          "vi/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "vi"
+          },
+          "zh-CN/dnSpy.Contracts.Logic.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      },
+      "dnSpy.Decompiler/6.5.1": {
+        "dependencies": {
+          "dnSpy.Contracts.Logic": "6.5.1"
+        },
+        "runtime": {
+          "dnSpy.Decompiler.dll": {
+            "assemblyVersion": "6.5.1",
+            "fileVersion": "6.5.1.0"
+          }
+        },
+        "resources": {
+          "es-ES/dnSpy.Decompiler.resources.dll": {
+            "locale": "es-ES"
+          },
+          "fr/dnSpy.Decompiler.resources.dll": {
+            "locale": "fr"
+          },
+          "cs/dnSpy.Decompiler.resources.dll": {
+            "locale": "cs"
+          },
+          "fa/dnSpy.Decompiler.resources.dll": {
+            "locale": "fa"
+          },
+          "hu/dnSpy.Decompiler.resources.dll": {
+            "locale": "hu"
+          },
+          "de/dnSpy.Decompiler.resources.dll": {
+            "locale": "de"
+          },
+          "it/dnSpy.Decompiler.resources.dll": {
+            "locale": "it"
+          },
+          "pt-BR/dnSpy.Decompiler.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "pt-PT/dnSpy.Decompiler.resources.dll": {
+            "locale": "pt-PT"
+          },
+          "tr/dnSpy.Decompiler.resources.dll": {
+            "locale": "tr"
+          },
+          "ru/dnSpy.Decompiler.resources.dll": {
+            "locale": "ru"
+          },
+          "uk/dnSpy.Decompiler.resources.dll": {
+            "locale": "uk"
+          },
+          "vi/dnSpy.Decompiler.resources.dll": {
+            "locale": "vi"
+          },
+          "zh-CN/dnSpy.Decompiler.resources.dll": {
+            "locale": "zh-CN"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "dnSpy.Console/6.5.1.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "dnlib/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cKHI720q+zfEEvzklWVGt6B0TH3AibAyJbpUJl4U6KvTP13tycfnqJpkGHRZ/oQ45BTIoIxIwltHIJVDN+iCqQ==",
+      "path": "dnlib/4.4.0",
+      "hashPath": "dnlib.4.4.0.nupkg.sha512"
+    },
+    "NuGet.Common/6.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JnUbEq6XtyF6+mPbGx3ZjTD07SCx39EL0wZ5RCXaHkstI3J4uK9OcofTbYDmKSKEUt6CU6UaNM5kE+n1HXtL0w==",
+      "path": "nuget.common/6.13.2",
+      "hashPath": "nuget.common.6.13.2.nupkg.sha512"
+    },
+    "NuGet.Configuration/6.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ByqCXO43kRdG0hLt1/izvHr/eswT0k1hspTaQxAxOq02MDw1j9RGzic+8F6NJwP4FhWBKhXOEReboIcEDt+1eg==",
+      "path": "nuget.configuration/6.13.2",
+      "hashPath": "nuget.configuration.6.13.2.nupkg.sha512"
+    },
+    "NuGet.Frameworks/6.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SQKUf56j7IdJL//fU7fcmn234awjRA2qLvgbfs/TxmY7oJrNOxaaDxASyCbS4eJW3LCOd6ONHMZ/cPlbQh4xVg==",
+      "path": "nuget.frameworks/6.13.2",
+      "hashPath": "nuget.frameworks.6.13.2.nupkg.sha512"
+    },
+    "System.Collections.Immutable/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AurL6Y5BA1WotzlEvVaIDpqzpIPvYnnldxru8oXJU2yFxFUy3+pNXjXd1ymO+RA0rq0+590Q8gaz2l3Sr7fmqg==",
+      "path": "system.collections.immutable/8.0.0",
+      "hashPath": "system.collections.immutable.8.0.0.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cJV7ScGW7EhatRsjehfvvYVBvtiSMKgN8bOVI0bQhnF5bU7vnHVIsH49Kva7i7GWaWYvmEzkYVk1TC+gZYBEog==",
+      "path": "system.security.cryptography.protecteddata/4.4.0",
+      "hashPath": "system.security.cryptography.protecteddata.4.4.0.nupkg.sha512"
+    },
+    "dnSpy.Contracts.Logic/6.5.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "dnSpy.Decompiler/6.5.1": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

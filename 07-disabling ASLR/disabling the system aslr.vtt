@@ -1,0 +1,26 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.440
+Welcome back. In this practical, we will disable the system's ASLR.
+
+00:00:05.800 --> 00:00:24.170
+I am on my Windows 11 virtual machine. Search for exploit protection. Go to the system settings tab.
+
+00:00:28.550 --> 00:00:34.290
+Scroll down to look for force randomization for images. I have already turned mine off.
+
+00:00:34.970 --> 00:00:40.670
+Just click on the drop-down list and select off by default. Do the same for randomized memory
+
+00:00:40.670 --> 00:00:46.770
+allocations. Click on the drop-down list and select off by default. Once you have
+
+00:00:46.770 --> 00:00:51.530
+done that, reboot your virtual machine for it to take effect. In the next
+
+00:00:51.530 --> 00:00:55.670
+practical, we will do the same for the CrackMe programs you want to run. That's
+
+00:00:55.670 --> 00:01:00.290
+all for this video. Thanks for watching!
+

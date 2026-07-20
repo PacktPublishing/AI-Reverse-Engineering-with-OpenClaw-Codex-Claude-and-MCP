@@ -1,0 +1,299 @@
+WEBVTT
+
+00:00:00.430 --> 00:00:10.870
+Hello and welcome back. In this lesson, I will show you how to use the skills that we created in the previous lesson.
+
+00:00:12.010 --> 00:00:19.210
+And if you remember, we saved the skill in this folder called AI skills. And this is the skill.
+
+00:00:19.210 --> 00:00:30.550
+So, in this exercise, we are going to use this skill to do reverse engineering on another CrackMe,
+
+00:00:30.550 --> 00:00:40.750
+and we are going to use this CrackMe client and the server. So, let us first run this and see
+
+00:00:40.750 --> 00:00:50.530
+how it works. We will run the activation server, and we will click Start. Then we
+
+00:00:50.530 --> 00:00:59.700
+will run the client, so the client will connect to the server. So, make sure you
+
+00:00:59.700 --> 00:01:04.780
+use the correct version of the client for the activation server, which is 32-
+
+00:01:04.780 --> 00:01:12.180
+bit. You need to use the 32-bit client. If you are using the activation server, which is
+
+00:01:12.180 --> 00:01:19.320
+64-bit, then make sure you also use the corresponding 64-bit client. In this
+
+00:01:19.320 --> 00:01:26.520
+exercise, I am using the 32-bit. So, that is why I ran the 32-bit activation
+
+00:01:26.520 --> 00:01:35.140
+server and the corresponding 32-bit client. So, here is how it works. When the
+
+00:01:35.140 --> 00:01:40.660
+client starts, it will ask you to enter a serial number. Let's say I enter
+
+00:01:40.660 --> 00:01:49.900
+something which is wrong, and then I click Activate. It tells me, "Wrong serial."
+
+00:01:49.900 --> 00:01:56.280
+So what happens behind the scenes is that the client connects to the server
+
+00:01:56.280 --> 00:02:01.560
+over the network. In this case, both are on the same network, same computer. We are
+
+00:02:01.560 --> 00:02:10.220
+simulating a server activation system, and so when a client sends this serial
+
+00:02:10.220 --> 00:02:15.600
+number to the server, the server will check it and then return whether it's
+
+00:02:15.600 --> 00:02:21.020
+correct or wrong. So when the client receives the message that the number
+
+00:02:21.020 --> 00:02:27.320
+that was sent is wrong, it will then pop up the error message, "Wrong serial." So
+
+00:02:27.320 --> 00:02:34.340
+this simulates the actual scenario where you install software, and then when you
+
+00:02:34.340 --> 00:02:39.380
+want to activate or register, your software will connect to the Internet to
+
+00:02:39.380 --> 00:02:45.920
+connect to the activation server on the Internet. So, to make this a realistic
+
+00:02:45.920 --> 00:02:52.220
+experience, we will assume that this activation server is also not within our
+
+00:02:52.220 --> 00:02:56.420
+reach. We are not going to hack the activation server. So we are going to
+
+00:02:56.420 --> 00:03:00.920
+crack the client because the client is on our machine. So we assume this
+
+00:03:00.920 --> 00:03:05.660
+activation server is somewhere on the Internet. So I hope that clarifies the
+
+00:03:05.660 --> 00:03:14.840
+scenario of this exercise. So, now we are going to fire up our Codex, so let's
+
+00:03:14.840 --> 00:03:23.640
+click on the Codex here. And notice that my Codex is now in dark mode. If you want
+
+00:03:23.640 --> 00:03:33.920
+to also have a dark mode like this, then click on the settings. Go to Settings. Go
+
+00:03:33.920 --> 00:03:43.120
+to Appearance, and under here, click on this selection: Dark. If you click on
+
+00:03:43.120 --> 00:03:48.820
+Light, then you will get a light mode. So, just click on Dark to get the dark
+
+00:03:48.820 --> 00:03:58.640
+mode. Thereafter, you will be having a dark mode. Let's close the sidebar. So, now
+
+00:03:58.640 --> 00:04:14.040
+I will tell this Codex to read the skill file, read the skill file on how
+
+00:04:14.040 --> 00:04:29.430
+to connect to the x64dbg MCP server. Then I give the path, so I just copy the path, or
+
+00:04:29.430 --> 00:04:36.870
+maybe I just right-click the file itself and copy as a path, and then I paste it
+
+00:04:36.870 --> 00:04:42.990
+here. After that, I will close this, and I will take note of the error message,
+
+00:04:42.990 --> 00:04:49.790
+which is saying, "Wrong serial." So, I just type in here first. Press Shift+Enter to go to a new line,
+
+00:04:50.350 --> 00:05:02.140
+and then type in, uh, "Wrong serial," just as a temporary scratch pad. I just write
+
+00:05:02.140 --> 00:05:07.900
+it here first. So, now I'm going to close this so that I won't forget what the error message was.
+
+00:05:10.400 --> 00:05:14.240
+So, I will close the client, but I won't close the server. The server will still be running,
+
+00:05:14.240 --> 00:05:23.400
+and then I will right-click to start my x32dbg. So, right-click on x32dbg and run as administrator.
+
+00:05:23.400 --> 00:05:39.980
+Then I'll open the client, the correct client, which is the 32-bit client. Okay, so now I will
+
+00:05:39.980 --> 00:05:49.620
+search for this string, "Wrong serial." So, what I do is I right-click here. I search for current module
+
+00:05:50.340 --> 00:06:00.470
+string references. Then I'll narrow down by filtering this string, "Wrong serial." So, I just
+
+00:06:00.470 --> 00:06:09.170
+cut out this thing from here now and paste it here, and I've got an address, so I just go to that
+
+00:06:09.170 --> 00:06:16.370
+address by double-clicking on it, and I can see it here: "Wrong serial." Now let me scroll up to look for
+
+00:06:16.370 --> 00:06:26.440
+the start of this function, which contains this string. So, now let's go up, scroll up,
+
+00:06:27.880 --> 00:06:32.680
+and here is the start of the function. Now make sure that before you start this exercise,
+
+00:06:33.400 --> 00:06:40.520
+you have already disabled ASLR for your virtual machine and also for this binary. Otherwise,
+
+00:06:40.520 --> 00:06:47.420
+the address you see here will be different from mine. If you forgot how to
+
+00:06:47.420 --> 00:06:51.140
+disable ASLR, please review the earlier lessons on
+
+00:06:51.140 --> 00:07:01.390
+disabling ASLR. So, now I want Codex to analyze the code starting from
+
+00:07:01.390 --> 00:07:18.300
+here. So, what I do is I go back to Codex, and I say, "Connect to x64dbg, then
+
+00:07:18.300 --> 00:07:33.420
+disassemble this function, which starts from address," and then you
+
+00:07:33.420 --> 00:07:41.640
+copy this address, right-click and copy address, and right-click and paste it
+
+00:07:41.640 --> 00:07:50.450
+here. This disassembles the function, which starts from address, to understand
+
+00:07:50.450 --> 00:08:07.380
+how the algorithm works to show the message, "Wrong serial," including the
+
+00:08:07.380 --> 00:08:23.840
+control flow logic, and whether and how it will show
+
+00:08:23.840 --> 00:08:32.280
+alternative messages, if any. So, this is the prompt: "Read the skill file on how to
+
+00:08:32.280 --> 00:08:39.960
+connect to the x64dbg MCP server." I give it the path to the skill, and then I say, "Connect
+
+00:08:39.960 --> 00:08:46.840
+to x64dbg, and then disassemble the function which starts from address, this address here,
+
+00:08:46.840 --> 00:08:54.120
+maybe I should put a 0x prefix to indicate that this is a hex number, to understand how
+
+00:08:54.120 --> 00:09:00.060
+the algorithm works to show the message, "Wrong serial," including the control flow logic and
+
+00:09:00.060 --> 00:09:06.160
+how it will show alternative messages, if any. And then I make sure I select the highest
+
+00:09:06.160 --> 00:09:14.300
+possible model that I have at the time of recording. So, I currently see GPT-5.5, and
+
+00:09:14.300 --> 00:09:20.560
+I select that one. And for the reasoning effort, I also select High because I want it to think.
+
+00:09:20.560 --> 00:09:28.640
+This might be a bit complex because it needs to understand the algorithm. Then, the last
+
+00:09:28.640 --> 00:09:38.780
+part of the problem, I say, "Then explain to me the control flow logic, or
+
+00:09:38.780 --> 00:09:56.300
+how it shows, or how it decides to show either the wrong serial message or
+
+00:09:56.300 --> 00:10:05.900
+alternative message, if any. So, that is what I want to know." So, I click on Go and
+
+00:10:05.900 --> 00:10:17.180
+let it go to work. So, now it is thinking. It says, "I will read the x64dbg MCP
+
+00:10:17.180 --> 00:10:25.620
+connection skill first," and so on. And now it says, "I'm going through the handshake
+
+00:10:25.620 --> 00:10:35.860
+directly," and so on. And now it says, "I have the main control flow block," and after six minutes,
+
+00:10:36.660 --> 00:10:44.740
+it came back with the result, and it managed to disassemble, and it reports the function has two
+
+00:10:44.740 --> 00:10:54.260
+normal message paths. It managed to convert the assembly code into C language, which is actually
+
+00:10:54.260 --> 00:11:01.700
+the pseudocode over here. You can see that this is the approximate control logic. It gets the text
+
+00:11:01.700 --> 00:11:11.380
+and then it computes the length, and it sets up numeric control. It converts to computed, and then
+
+00:11:12.580 --> 00:11:21.220
+from here, if computed is not one, then show unregistered; else, show the text registered
+
+00:11:21.220 --> 00:11:26.340
+and say thank you. And here, it shows the key branch
+
+00:11:26.340 --> 00:11:32.980
+for this, and then here it says this address is the string
+
+00:11:32.980 --> 00:11:36.500
+compare routine and returns zero when the strings are
+
+00:11:36.500 --> 00:11:40.980
+equal. Other alternative message is "Correct key. Thank you."
+
+00:11:40.980 --> 00:11:45.700
+Okay, so this is the path which jumps to the
+
+00:11:45.700 --> 00:11:50.740
+success path. This one, this one. So, I'll just copy this and
+
+00:11:50.740 --> 00:12:11.260
+confirm with it: "Would you say that this jump determines which message to show?" Click Go.
+
+00:12:13.020 --> 00:12:20.620
+Yes, it says this jump is the decisive branch for which message is shown, and it says ESI
+
+00:12:20.620 --> 00:12:27.340
+holds the string compare result from comparing the computed value against one. So, we go to this
+
+00:12:27.340 --> 00:12:35.340
+location now and look for this jump. So, we right-click this address, copy, and then right-click here,
+
+00:12:36.300 --> 00:12:46.780
+and go to this location expression, paste it there, click OK, and you can see here now the jump.
+
+00:12:46.780 --> 00:12:54.880
+In order to cause this to jump, we just do assembly here. Just right-click on this,
+
+00:12:54.880 --> 00:12:59.960
+and then do an assembly here. Assemble, and then make sure you click Keep Size,
+
+00:12:59.960 --> 00:13:07.800
+and change this to an unconditional jump like this. So, the instruction set is the same size. Simply OK.
+
+00:13:07.800 --> 00:13:14.420
+Right, so now it will jump. No matter whether the test is true or false, it will jump. It doesn't
+
+00:13:14.420 --> 00:13:24.270
+depend on the result of the test. So, now we can patch it, patch file, and over here we can rename
+
+00:13:24.270 --> 00:13:38.580
+it as client, and at the back, we put dash v2 for version 2. Click OK, and now we can go to the
+
+00:13:38.580 --> 00:13:47.340
+version 2 and run it and see how it works. Just give it any wrong serial key. Click Activate,
+
+00:13:47.340 --> 00:13:54.740
+and it says, "Correct key." So, it works. So, this is how you can use Codex to help
+
+00:13:54.740 --> 00:13:59.960
+you understand the control flow logic so that you will know where to
+
+00:13:59.960 --> 00:14:05.780
+patch. So, that's all for this video. Thank you for watching.
+

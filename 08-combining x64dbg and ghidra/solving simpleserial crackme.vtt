@@ -1,0 +1,191 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.700
+Welcome back. In this lesson, we will try using both x64dbg and Ghidra together to solve a crackme.
+
+00:00:07.700 --> 00:00:32.220
+me. But before we do that, let's take a snapshot of our Ghidra MCP setup. Then, we start our
+
+00:00:32.220 --> 00:00:44.620
+Windows 11 virtual machine. We see that openclaw gateway is starting. We also open telegram.
+
+00:00:44.620 --> 00:00:48.420
+Clear the history first if necessary
+
+00:00:48.420 --> 00:00:59.660
+Then, type the command slash new to start a fresh session so that we get new context
+
+00:00:59.660 --> 00:01:03.680
+This time, we will use the simple serial crack me
+
+00:01:03.680 --> 00:01:08.850
+We run it and see how it behaves
+
+00:01:08.850 --> 00:01:24.800
+Then, we start Ghidra
+
+00:01:24.800 --> 00:01:36.850
+Drag simple serial into Ghidra
+
+00:01:36.850 --> 00:02:00.170
+Then, drag it into the dragon icon to begin analysis
+
+00:02:00.170 --> 00:02:23.770
+Let's run x32dbg as administrator
+
+00:02:23.770 --> 00:02:28.460
+Then open the simple serial crack me
+
+00:02:28.460 --> 00:02:43.660
+Click on the log tab to confirm that the MCP server is listening
+
+00:02:43.660 --> 00:02:54.450
+Rearrange the windows side by side
+
+00:02:54.450 --> 00:03:03.230
+Go back to telegram and give openClaw your instructions
+
+00:03:03.950 --> 00:03:10.940
+Ask it to check if it can connect to both x64dbg and also Ghidra
+
+00:03:10.940 --> 00:03:16.380
+Remind it to refer to its memory since it has done this before
+
+00:03:16.380 --> 00:03:29.960
+OpenClaw is now checking both MCP connections
+
+00:03:29.960 --> 00:03:37.700
+It tells me that it can connect to x64 DBG but fails to connect to Ghidra
+
+00:03:37.700 --> 00:03:43.890
+It seems I have forgotten to start the Ghidra bridge
+
+00:03:43.890 --> 00:03:45.570
+Let's do that now
+
+00:03:45.570 --> 00:03:53.180
+Go to the Ghidra MCP folder and activate your Python environment
+
+00:03:53.180 --> 00:04:10.740
+Then run the bridge script
+
+00:04:10.740 --> 00:04:38.040
+Confirm that it has started, then go back to Telegram and inform OpenClaw and ask it to try again.
+
+00:04:38.040 --> 00:04:47.320
+OpenClaw confirms it can now connect to Ghidra.
+
+00:04:47.320 --> 00:05:07.870
+Now, we give our instructions to ask it to analyze the Crackme.
+
+00:05:07.870 --> 00:05:10.870
+You should give as much details as you can.
+
+00:05:10.870 --> 00:05:17.010
+The more details, the better it can do its job.
+
+00:05:17.010 --> 00:05:45.300
+We take another look at the simple serial CrackMe to see its behavior.
+
+00:05:45.300 --> 00:05:57.940
+and we then inform OpenClaw what we find.
+
+00:05:57.940 --> 00:06:03.820
+Tell it the strings and messages you see.
+
+00:06:03.820 --> 00:06:07.820
+Ask it to use both x64DBG and Ghidra together
+
+00:06:07.820 --> 00:06:23.620
+so that the insights from one tool can help with the other.
+
+00:06:23.620 --> 00:06:26.620
+OpenClaw is now tracing the message strings.
+
+00:06:26.620 --> 00:06:35.060
+It successfully found the control flow logic
+
+00:06:35.060 --> 00:06:37.060
+which shows the error message.
+
+00:06:37.060 --> 00:07:36.060
+It also suggests going deeper
+
+00:07:36.060 --> 00:07:38.060
+and we confirm doing that.
+
+00:07:38.060 --> 00:07:55.380
+After digging deeper, it got more insights where the serial key might be located.
+
+00:08:24.240 --> 00:08:27.980
+It suggested running the binary after it has set some breakpoints.
+
+00:08:47.090 --> 00:09:04.260
+I asked if I should run the binary and it replies yes and gives further instructions.
+
+00:09:15.980 --> 00:09:31.380
+I enter some wrong serial number and inform OpenClaw that it has hit a breakpoint.
+
+00:09:57.700 --> 00:10:00.780
+OpenClaw says it is reading the live arguments.
+
+00:10:10.670 --> 00:10:13.550
+It then asked me to give it a screenshot of the stack.
+
+00:10:31.980 --> 00:10:54.080
+So I used the snipping tool to take a screenshot of the stack and pasted it into Telegram.
+
+00:11:04.130 --> 00:11:07.570
+Then informed OpenClaw that I have sent it a screenshot.
+
+00:11:13.890 --> 00:11:20.690
+It asked me to press F7 to step into each line until it reaches a specific EIP address.
+
+00:11:24.000 --> 00:11:25.760
+So I will try that now.
+
+00:11:43.580 --> 00:11:45.820
+After trying this for a while, I got lost.
+
+00:11:45.820 --> 00:12:06.590
+So, I told OpenClaw I missed it and asked to retry again.
+
+00:12:06.590 --> 00:12:29.280
+OpenClaw replies telling me to rerun the binary and re-enter the serial key.
+
+00:12:29.280 --> 00:12:35.140
+I did that and this time it hits the correct breakpoint that OpenClaw is looking for.
+
+00:12:35.140 --> 00:12:53.740
+I inform OpenClaw.
+
+00:12:53.740 --> 00:13:15.620
+I then took a screenshot of the stack and pasted it into Telegram.
+
+00:13:15.620 --> 00:13:35.690
+OpenClaw then replies that the correct serial is ABC-123456.
+
+00:13:35.690 --> 00:13:58.730
+We then run simple serial and key it in, and it is correct.
+
+00:13:58.730 --> 00:14:24.020
+I then ask OpenClaw if it could have used Ghidra to solve it as well.
+
+00:14:24.020 --> 00:14:51.940
+It replies that Ghidra also shows the same serial.
+
+00:14:51.940 --> 00:14:58.680
+It then shows me the insights it got from Ghidra.
+
+00:14:58.680 --> 00:15:04.620
+So this is how we could use both x64 DBG and Ghidra together, where the insights from one
+
+00:15:04.620 --> 00:15:08.080
+tool could be used to help the other tool.
+
+00:15:08.080 --> 00:15:10.400
+That's all for this video.
+
+00:15:10.400 --> 00:15:11.240
+Thanks for watching.
+

@@ -1,0 +1,59 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.200
+Hello and welcome back. In the previous video, I showed you how to add DeepSeek as a model for
+
+00:00:05.200 --> 00:00:14.210
+OpenClaw. I later found out that DeepSeek version 4 Pro is available. In this video, I will show
+
+00:00:14.210 --> 00:00:21.330
+you how I upgraded the DeepSeek model to version 4 Pro. I had asked ChatGPT how to upgrade
+
+00:00:24.380 --> 00:00:34.480
+and it gave a reply. In Telegram, I gave the instruction saying I want to change to DeepSeek
+
+00:00:34.480 --> 00:00:45.780
+version 4 pro. I then copied the chat gpt output and pasted it into telegram
+
+00:01:10.190 --> 00:01:15.470
+open claw replied saying it will check the configurations and also list down what it
+
+00:01:15.470 --> 00:01:33.380
+needs to do. It then made the changes and verified the result and gave a summary of what it did.
+
+00:01:35.300 --> 00:01:41.540
+It also reminded me to restart open claw for the new primary model to take effect and ask if it
+
+00:01:41.540 --> 00:01:47.780
+should do that and I replied yes. If it had not restarted you would have to use
+
+00:01:47.780 --> 00:01:54.500
+this command: open claw gateway restart. After restarting I cleared the telegram
+
+00:01:54.500 --> 00:02:07.820
+chat history and started a new session. I then listed the models using the command:
+
+00:02:07.820 --> 00:02:18.910
+open claw models list, and it showed me the list of the models. I can see that it
+
+00:02:18.910 --> 00:02:24.830
+It has successfully upgraded the primary model to Deep Seek version 4 Pro and made it the
+
+00:02:24.830 --> 00:02:26.190
+default model.
+
+00:02:26.190 --> 00:02:33.270
+Also note that the fallback model is now GPT 5.4.
+
+00:02:33.270 --> 00:02:39.680
+Back in Telegram, I asked it, what model are you on?
+
+00:02:39.680 --> 00:02:43.700
+And it replies, Deep Seek version 4 Pro.
+
+00:02:43.700 --> 00:02:45.820
+That's all for this video.
+
+00:02:45.820 --> 00:02:46.760
+Thanks for watching.
+

@@ -1,0 +1,62 @@
+WEBVTT
+
+00:00:00.080 --> 00:00:06.800
+Hello and welcome back. In this practical, we will disable ASLR for the program we want to run.
+
+00:00:09.140 --> 00:00:15.300
+The easiest way to disable ASLR is not by doing it manually, but using DIE to do it for you.
+
+00:00:19.010 --> 00:00:32.670
+Let's load a CrackMe into DetectItEasy and then go to DIE. Go to the PE header, expand it,
+
+00:00:32.670 --> 00:00:42.270
+select optional header pull this down and then go to the dll characteristics
+
+00:00:43.230 --> 00:00:52.190
+click on flags drop down list. You need to uncheck dynamic base and high entropy va. But you cannot
+
+00:00:52.190 --> 00:00:59.550
+uncheck this because this is read only. So you have to uncheck the read only here and that allows you
+
+00:00:59.550 --> 00:01:05.710
+to uncheck this. The moment you uncheck this be careful, it will overwrite your original exe.
+
+00:01:06.510 --> 00:01:11.790
+But it will make a copy of it as a backup.
+
+00:01:11.790 --> 00:01:13.610
+Let me show you.
+
+00:01:13.610 --> 00:01:20.950
+When I uncheck this now, uncheck this immediately, you get a backup here, the backup file.
+
+00:01:20.950 --> 00:01:22.310
+See this?
+
+00:01:22.310 --> 00:01:25.630
+This is the backup and this one is overwritten.
+
+00:01:25.630 --> 00:01:28.710
+Alright, so now you can close.
+
+00:01:28.710 --> 00:01:35.360
+You don't need to click save.
+
+00:01:35.360 --> 00:01:43.330
+And now, when you load this new version and you open with DIE, and you go to the optional
+
+00:01:43.330 --> 00:01:50.160
+header and you pull this down, look at the DLL characteristics and you see
+
+00:01:50.160 --> 00:02:01.230
+dynamic base is unchecked. The final check. Now we want to run it with x64dbg
+
+00:02:01.230 --> 00:02:16.120
+and you see it works. It loads at the base address there. It shows you the base
+
+00:02:16.120 --> 00:02:22.060
+address rather than the ASLR randomized address. So that's all for this lesson.
+
+00:02:22.060 --> 00:02:23.660
+lesson. Thank you for watching.
+

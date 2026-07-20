@@ -1,0 +1,272 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.520
+Hello and welcome back. In this new section, we are going to study .NET assemblies and how
+
+00:00:05.520 --> 00:00:12.000
+to reverse engineer them using MCP servers connected to dnspy. So first, we take a look
+
+00:00:12.000 --> 00:00:20.960
+at the evolution of .NET from framework to unified platform. The .NET framework era starts from 2002
+
+00:00:20.960 --> 00:00:28.000
+and lasts up to 2019. The original .NET framework was Microsoft's first implementation
+
+00:00:28.000 --> 00:00:34.880
+designed exclusively for Windows. Versions range from 1 to 4.8, with each release adding new
+
+00:00:34.880 --> 00:00:40.080
+features but maintaining Windows-only compatibility. Applications built on .NET
+
+00:00:40.080 --> 00:00:45.360
+Framework are tied to the specific version installed on the target machine. So initially,
+
+00:00:45.360 --> 00:00:50.000
+.NET Framework was only for Windows, does not run on Linux or Mac.
+
+00:00:50.000 --> 00:00:59.880
+Then came the .NET Core . Microsoft created .NET Core as a complete rewrite
+
+00:00:59.880 --> 00:01:05.620
+to address the framework's limitations. This version was cross-platform. It runs on
+
+00:01:05.620 --> 00:01:12.760
+Windows, Mac OS, Linux. It is open-source and modular. .NET Core went through versions
+
+00:01:12.760 --> 00:01:22.860
+from 1.0 to 3.1. Then came .NET 5 Plus from 2020 to present. Starting with .NET 5, Microsoft unified
+
+00:01:22.860 --> 00:01:30.200
+the ecosystem under a single .NET brand, dropping Core from the name. So now, you won't see .NET
+
+00:01:30.200 --> 00:01:37.860
+Core, you will just see .NET. So .NET is the modern version of the .NET platform. This represents
+
+00:01:37.860 --> 00:01:44.420
+the convergence of .NET Framework and .NET Core into one platform. The versioning jumped from .NET
+
+00:01:44.420 --> 00:01:52.980
+Core 3.1 directly to .NET 5 to avoid confusion with .NET Framework 4.x. So the last .NET
+
+00:01:52.980 --> 00:02:01.060
+Framework was 4.8 and the last .NET Core was 3.1 and the latest .NET is 10. So let's take a look
+
+00:02:01.060 --> 00:02:08.580
+at some differences. The key differences are as follows: Platform support: dotnet framework is
+
+00:02:08.580 --> 00:02:17.060
+windows only while dotnet core or dotnet 5 plus runs everywhere. Performance. dotnet core and later
+
+00:02:17.060 --> 00:02:23.460
+versions are significantly faster and more memory efficient. For deployment, dotnet framework requires
+
+00:02:23.460 --> 00:02:28.740
+a runtime to be pre-installed on the target machine while dotnet supports self-contained
+
+00:02:28.740 --> 00:02:34.980
+deployments that include runtime but most of the time we will require the end user to install the
+
+00:02:34.980 --> 00:02:40.900
+dotnet desktop runtime one time and then it can run all the dotnet applications from there on
+
+00:02:40.900 --> 00:02:48.100
+if you were to make it self-contained the binary would be too big. Open source: dotnet framework is
+
+00:02:48.100 --> 00:02:56.580
+proprietary while dotnet core or dotnet 5 plus is open source and community driven evolution timeline
+
+00:02:56.580 --> 00:03:03.580
+The evolution reflects Microsoft's shift from Windows-centric to cloud-first cross-platform development.
+
+00:03:03.580 --> 00:03:08.580
+However, there are still some older .NET framework binaries lying around,
+
+00:03:08.580 --> 00:03:12.580
+and therefore we need to be able to reverse engineer them as well.
+
+00:03:12.580 --> 00:03:17.580
+So there are actually three kinds of binaries which we should be able to reverse engineer.
+
+00:03:17.580 --> 00:03:20.580
+Let's take a look at some of the examples.
+
+00:03:20.580 --> 00:03:28.920
+So, as it stands today, you can see that basically there are two main types of assemblies.
+
+00:03:28.920 --> 00:03:34.140
+You have the .NET framework, which is a legacy one.
+
+00:03:34.140 --> 00:03:37.280
+And this is one example of a crack me.
+
+00:03:37.280 --> 00:03:41.000
+You can download all this from the resource section.
+
+00:03:41.000 --> 00:03:44.240
+And then there is .NET 8.
+
+00:03:44.240 --> 00:03:51.120
+Recently Microsoft has released .NET 10 and now we don't call it .NET Core anymore.
+
+00:03:51.120 --> 00:03:59.840
+Previously, it was .NET Core after .NET Framework, .NET Core and then from .NET Core, now we
+
+00:03:59.840 --> 00:04:06.940
+have just .NET and .NET is .NET 8 and now .NET 10.
+
+00:04:06.940 --> 00:04:09.700
+So how do we install the MCP server?
+
+00:04:09.700 --> 00:04:18.260
+Let me show you where the MCP server project lies.
+
+00:04:18.260 --> 00:04:21.120
+It is created by Agent Smithers in this GitHub.
+
+00:04:21.120 --> 00:04:28.050
+Although here it shows the releases, but the release here seems to be incomplete.
+
+00:04:28.050 --> 00:04:31.530
+So what I've done was to build the complete package for you.
+
+00:04:31.530 --> 00:04:36.770
+I had to download this git clone this and make a lot of modifications to it to get it
+
+00:04:36.770 --> 00:04:40.690
+to build for the modern .NET as well as the .NET framework.
+
+00:04:40.690 --> 00:04:45.810
+So you can download my final build from the resource section for this lecture.
+
+00:04:45.810 --> 00:04:51.490
+Just go to the resource section and download the MCP server zip.
+
+00:04:51.490 --> 00:04:56.850
+The password to unzip this is www.crackinglessons.net.
+
+00:04:56.850 --> 00:05:01.430
+After unzipping it, you will find there are two folders here.
+
+00:05:01.430 --> 00:05:07.490
+One first folder is .NET, the modern .NET, the current one, and the other is the legacy
+
+00:05:07.490 --> 00:05:10.830
+one, which is .NET Framework 4.8.
+
+00:05:10.830 --> 00:05:15.390
+So inside here, you will find there are two files which you can put on your desktop as
+
+00:05:15.390 --> 00:05:28.350
+shortcuts the dnspy which is for 64-bit and the dnspy x86 which is for the x86 binaries
+
+00:05:28.350 --> 00:05:37.390
+the 32-bit binaries. So this is dotnet 8. Then for the legacy one the folder is here
+
+00:05:38.990 --> 00:05:46.270
+and over here you also have two main binaries the dnspy for the 64-bit legacy .net framework
+
+00:05:48.350 --> 00:05:56.590
+and the dnspy x86 for the 32-bit version. Also note that this dnspy that is created by
+
+00:05:56.590 --> 00:06:04.030
+agent smithers is a custom built dnspy. This custom build would open a port which is port
+
+00:06:04.030 --> 00:06:12.590
+3003 and listen for connections from mcp clients and in order for that to work agent smithers
+
+00:06:12.590 --> 00:06:18.830
+also created extensions that will work together with this custom built dnspy. In this project
+
+00:06:18.830 --> 00:06:24.990
+that agent smithers did when you want to run this dnspy you need to run it from the command line
+
+00:06:24.990 --> 00:06:30.910
+because you're supposed to give the path to the extension so you must put a parameter dash dash
+
+00:06:30.910 --> 00:06:38.030
+extension directory and provide the path so what i did was to simplify it for you guys instead of
+
+00:06:38.030 --> 00:06:43.550
+having to run from the command line and specify the path to the extensions i've copied the
+
+00:06:43.550 --> 00:06:49.950
+extensions inside here i created a new folder called extensions and put extensions inside here
+
+00:06:50.590 --> 00:06:57.790
+so all you need to do is just run no need to open a command line right click this run as administrator
+
+00:06:57.790 --> 00:07:05.710
+so that it will listen on port 3003 you need to run as administrator or if you want the 32-bit
+
+00:07:05.710 --> 00:07:12.050
+version, you run this one. Right click and run as administrator. It will automatically load the
+
+00:07:12.050 --> 00:07:18.990
+extensions from the extensions folder over here. Same thing with the .NET Framework 4.8. I've
+
+00:07:18.990 --> 00:07:24.870
+created the extensions folder here. When you want to run .NET Framework, you also choose the
+
+00:07:24.870 --> 00:07:31.470
+appropriate one. If you want the 64-bit one, you right click this and run as administrator
+
+00:07:31.470 --> 00:07:39.160
+and it will automatically load the extensions from here, from this folder.
+
+00:07:39.160 --> 00:07:44.320
+And also, if you want to run the 32-bit one, you do the same.
+
+00:07:44.320 --> 00:07:46.540
+Just right-click this.
+
+00:07:46.540 --> 00:07:51.700
+Now note carefully that in Agent Smithers' original GitHub project, Extension Example
+
+00:07:51.700 --> 00:07:55.540
+1, there were no extensions for .NET 8.
+
+00:07:55.540 --> 00:08:01.890
+So I had to manually tweak the project to make it built for .NET 8.
+
+00:08:01.890 --> 00:08:06.030
+Agent Smithers only created it for .NET 4.8.
+
+00:08:06.030 --> 00:08:12.130
+I had to tweak it to build extensions for .NET 8 as well as .NET 4.8.
+
+00:08:12.130 --> 00:08:16.390
+You can see the example given by Agent Smithers over here.
+
+00:08:16.390 --> 00:08:23.090
+If I go back, the example Agent Smithers did is to run the .NET framework 4.8.
+
+00:08:23.090 --> 00:08:29.270
+Over here you see 4.8.
+
+00:08:29.270 --> 00:08:35.100
+Agent Smith has got 2 extensions projects.
+
+00:08:35.100 --> 00:08:42.740
+example 1 and 2 over here. Only example 1 will work with the MCP server. Extension 2 does not
+
+00:08:42.740 --> 00:08:53.050
+have an MCP server. You can still build for .NET 8, but it doesn't run the MCP server. So, if you're
+
+00:08:53.050 --> 00:08:58.770
+trying to build this on your own, you will need to use extensions example 1 and make the modification
+
+00:08:58.770 --> 00:09:04.890
+to build for .NET 8 as well. But I've saved you all that headache and already built the release
+
+00:09:04.890 --> 00:09:09.570
+for you all you need to do is just download my final release and it will
+
+00:09:09.570 --> 00:09:15.150
+work out of the box so in the next lesson I will show you how to run it and
+
+00:09:15.150 --> 00:09:20.590
+use it for reverse engineering. So that's all for this video. Thank you for
+
+00:09:20.590 --> 00:09:22.970
+watching
+

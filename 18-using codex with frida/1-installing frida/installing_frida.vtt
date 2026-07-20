@@ -1,0 +1,182 @@
+WEBVTT
+
+00:00:00.530 --> 00:00:08.050
+Hello and welcome back. In this new section, I'm going to show you how to use Codex with Frida.
+
+00:00:08.050 --> 00:00:14.050
+Frida is a dynamic instrumentation toolkit for developers, reverse engineers,
+
+00:00:14.050 --> 00:00:18.850
+and security researchers. And this is the website where you can read more about Frida.
+
+00:00:18.850 --> 00:00:26.160
+So the first step is to install Frida. In order to do that, I will use Codex.
+
+00:00:26.160 --> 00:00:33.960
+So let's open up Codex first, start the new chat, and close the sidebar, and make
+
+00:00:33.960 --> 00:00:41.660
+sure you are using GPT-5.5, which is the highest model at time of recording, and
+
+00:00:41.660 --> 00:00:49.660
+set the reasoning effort to extra high. And now let's type in the prompt.
+
+00:00:49.660 --> 00:01:01.740
+Install Frida reverse engineering tool for this machine. You may use this folder
+
+00:01:01.740 --> 00:01:12.200
+for the Frida project tool. So let's open File Explorer and take a look at
+
+00:01:12.200 --> 00:01:14.600
+the C drive.
+
+00:01:14.600 --> 00:01:16.820
+We have RADARE2AI.
+
+00:01:16.820 --> 00:01:23.400
+So let's create a new folder called Frida_AI
+
+00:01:23.400 --> 00:01:25.080
+and open it.
+
+00:01:25.080 --> 00:01:31.420
+Let us now copy the path and paste it into the prompt.
+
+00:01:31.420 --> 00:01:34.380
+So this will be our prompt to Codex
+
+00:01:34.380 --> 00:01:37.440
+to help us install Frida.
+
+00:01:37.440 --> 00:01:40.660
+It reads, install Frida reverse engineering tool
+
+00:01:40.660 --> 00:01:41.820
+for this machine.
+
+00:01:41.820 --> 00:01:44.900
+You may use this folder for the Frida project tool.
+
+00:01:44.900 --> 00:02:00.620
+And then, we also say, if you are unsure of anything, don't guess, don't assume, ask me,
+
+00:02:00.620 --> 00:02:02.300
+and then click send.
+
+00:02:02.300 --> 00:02:09.440
+It replies by saying that it will set up this as a local Frida environment, tool environment
+
+00:02:09.440 --> 00:02:14.960
+under this folder and then verify the command line tools run from this machine so it checks
+
+00:02:14.960 --> 00:02:22.000
+for the availability of Python. It confirms the virtual environment is in place, and now it is
+
+00:02:22.000 --> 00:02:28.800
+going to do the installation. It also helpfully installs a tiny launcher script so that we can
+
+00:02:28.800 --> 00:02:34.880
+open a ready-to-use shell without remembering the virtual environment path each time. It is now doing
+
+00:02:34.880 --> 00:02:41.080
+some tests, and now it is cleaning up some leftover processes. Finally, it confirms
+
+00:02:41.080 --> 00:02:43.700
+that it has completed installation.
+
+00:02:43.700 --> 00:02:51.200
+So now we write our skill file, so let's ask it to do that for us.
+
+00:02:51.200 --> 00:03:06.880
+Write a skill file in MD format so that in future, if I ask you to analyze a binary and provide
+
+00:03:06.880 --> 00:03:17.260
+you with the skill file, you will be able to know how to use Frida.
+
+00:03:17.260 --> 00:03:30.590
+If you are unsure of anything, don't guess, don't assume, ask me and click send.
+
+00:03:30.590 --> 00:03:35.390
+So we are also using the same workflow when installing new tools.
+
+00:03:35.390 --> 00:03:44.750
+Every time you finish installing a new tool, you always ask Codex to write a new skill file.
+
+00:03:44.750 --> 00:03:49.730
+It is now doing some checking on the JavaScript API names as well.
+
+00:03:49.730 --> 00:03:54.350
+And it now knows enough of the context in order to write a skill file.
+
+00:03:54.350 --> 00:03:57.370
+And finally it is now writing the actual skill file.
+
+00:03:57.370 --> 00:04:02.190
+So the skill file will be called Frida binary analysis skill.
+
+00:04:02.190 --> 00:04:07.430
+It has finally completed writing the standalone Markdown skill file.
+
+00:04:07.430 --> 00:04:10.170
+So let's ask it where it saved it to.
+
+00:04:10.170 --> 00:04:15.350
+Where did you save the file?
+
+00:04:15.350 --> 00:04:19.970
+So let's open it in explorer.
+
+00:04:19.970 --> 00:04:27.010
+So this is the location. Let's go there now and copy out the skill file. We can cut it out
+
+00:04:27.650 --> 00:04:42.260
+and put it in our skills folder, AI skills, and paste it here. Let us open and read it. Press
+
+00:04:42.260 --> 00:04:50.900
+Ctrl+Shift+V to view the preview output. So it reads Frida binary analysis ground rules.
+
+00:04:50.900 --> 00:04:56.580
+All right, maybe we don't want this first line, so we delete it. And this first line
+
+00:04:56.580 --> 00:05:02.880
+here, we want it to work on any binary. It's not just those that I own, so let's
+
+00:05:02.880 --> 00:05:08.040
+delete that. That is not helpful. Press Ctrl+Shift+V again, then Ctrl+S to save
+
+00:05:08.040 --> 00:05:12.960
+it. All right, so we just read through this, and if you're
+
+00:05:12.960 --> 00:05:21.810
+happy with it, we can confirm this skill file. All right, I think it's fine, so we
+
+00:05:21.810 --> 00:05:27.690
+can close this now. So next thing to do is to shut down this virtual
+
+00:05:27.690 --> 00:05:33.950
+machine and create a snapshot if you want to. And before you do that, it is
+
+00:05:33.950 --> 00:05:40.470
+always a good idea to copy out this new skill into a separate location so
+
+00:05:40.470 --> 00:05:47.250
+that in future if you ever do a restore to a previous snapshot you won't lose
+
+00:05:47.250 --> 00:05:53.330
+this new skill. So that's all. In this video, we have learned how to use Codex to install this
+
+00:05:53.330 --> 00:05:59.650
+new skill on using Frida, and also how to create the skill file. So in future, if you wanted to
+
+00:05:59.650 --> 00:06:08.210
+run any binary analysis using Frida, you will point Codex to this skill file, ask it to
+
+00:06:08.210 --> 00:06:16.610
+read it first, and then it will know how to use Frida. So in the next lesson, we are going to
+
+00:06:16.610 --> 00:06:24.610
+do a practical on using this new skill to analyze a binary. So that's all for this video. Thank you
+
+00:06:24.610 --> 00:06:25.090
+for watching
+

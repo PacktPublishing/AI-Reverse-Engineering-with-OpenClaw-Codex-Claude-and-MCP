@@ -1,0 +1,197 @@
+WEBVTT
+
+00:00:00.160 --> 00:00:05.120
+Alright, so in this lecture, we're going to step back a little bit and look at the historical
+
+00:00:05.120 --> 00:00:10.400
+background of OpenClaw. Now this is important because before we start using tools like
+
+00:00:10.400 --> 00:00:15.840
+OpenClaw for reverse engineering or automation, we need to understand where it came from and
+
+00:00:15.840 --> 00:00:20.560
+why it became such a big deal so quickly. What you see is actually quite interesting.
+
+00:00:20.560 --> 00:00:25.120
+OpenClaw didn't come from a big company, it didn't start as a billion dollar project,
+
+00:00:25.120 --> 00:00:29.600
+it started as something very small and then exploded into a global movement.
+
+00:00:30.000 --> 00:00:34.520
+So first, who actually created OpenClaw?
+
+00:00:34.520 --> 00:00:39.920
+It was created by Peter Steinberger, he's an Austrian developer and entrepreneur.
+
+00:00:39.920 --> 00:00:44.980
+And importantly, he already had experience building serious developer tools, for example
+
+00:00:44.980 --> 00:00:47.520
+PSPDFKit.
+
+00:00:47.520 --> 00:00:52.520
+But what's interesting here is this, OpenClaw wasn't originally meant to be a huge platform,
+
+00:00:52.520 --> 00:00:57.220
+it started as a weekend experiment, just something he was building on the side.
+
+00:00:57.220 --> 00:01:00.000
+And this is a pattern you see very often in tech.
+
+00:01:00.000 --> 00:01:04.460
+of the biggest ideas start as small experiments.
+
+00:01:04.460 --> 00:01:10.080
+Now let's talk about the core idea behind OpenClaw. This is probably the most important
+
+00:01:10.080 --> 00:01:15.940
+concept in this entire lecture. The philosophy is AI should not just answer, it should do
+
+00:01:15.940 --> 00:01:22.300
+things. Now, think about that for a moment. Most AI tools, like traditional chatbots,
+
+00:01:22.300 --> 00:01:29.320
+they respond to you. You ask a question, they give an answer. But OpenClaw shifts this completely.
+
+00:01:29.320 --> 00:01:35.640
+of just answering, it takes action. It can send messages, run workflows, control systems. So this
+
+00:01:35.640 --> 00:01:42.200
+is a transition from passive AI to active agent-based AI. And this idea is what made OpenClaw
+
+00:01:42.200 --> 00:01:50.120
+so powerful. All right, now let's look at how OpenClaw evolved over time. We'll go through this
+
+00:01:50.120 --> 00:01:57.080
+step by step. It starts in late 2025. Then very quickly, within just a few months, we see rebranding,
+
+00:01:57.080 --> 00:02:02.120
+explosive growth and global adoption so this is not a slow story this is a very
+
+00:02:02.120 --> 00:02:10.040
+fast moving timeline so in november 2025 open claw was first
+
+00:02:10.040 --> 00:02:15.000
+released but not under that name it was originally called cloudbot
+
+00:02:15.000 --> 00:02:20.760
+at that stage the idea was already there an ai agent connected to messaging apps
+
+00:02:20.760 --> 00:02:25.480
+capable of executing real-world tasks so even in the earliest version the concept
+
+00:02:25.480 --> 00:02:34.440
+of autonomous agents was already present. Now, very quickly after that, in January 2026,
+
+00:02:34.440 --> 00:02:41.160
+things started changing. The project went through multiple names. Cloudbot, then to Modbot,
+
+00:02:41.160 --> 00:02:47.240
+then to OpenClaw. Now, this might sound messy, but actually it tells us something important.
+
+00:02:47.800 --> 00:02:53.880
+The development cycle was extremely fast. The community was actively influencing direction.
+
+00:02:53.880 --> 00:02:59.720
+some of the changes were due to trademark issues others were just improvements in branding but
+
+00:02:59.720 --> 00:03:07.160
+overall this shows rapid iteration now this is where things get really interesting between
+
+00:03:07.160 --> 00:03:14.840
+january and february 2026 open claw experienced explosive growth we're talking about 100 000
+
+00:03:14.840 --> 00:03:22.680
+github stars in just weeks nearly 250 000 by march millions of users interacting with it
+
+00:03:22.680 --> 00:03:28.040
+this is extremely rare most open source projects take years to reach this level
+
+00:03:28.040 --> 00:03:37.960
+open claw did it in weeks by march 2026 open claw crossed over 250 000 github stars and at that
+
+00:03:37.960 --> 00:03:44.360
+point it became one of the fastest growing open source projects in history now to put this into
+
+00:03:44.360 --> 00:03:50.440
+perspective projects like linux took years to build that level of traction so what we're seeing
+
+00:03:50.440 --> 00:03:58.360
+here is not normal growth this is historical level acceleration after that open claw moved
+
+00:03:58.360 --> 00:04:05.960
+into a global adoption phase it started being used by developers startups even solo entrepreneurs
+
+00:04:05.960 --> 00:04:12.360
+and importantly it was integrated into real systems enterprise workflows automation pipelines
+
+00:04:12.360 --> 00:04:18.360
+messaging ecosystems so it moved from being just a tool into something used in real world operations
+
+00:04:18.360 --> 00:04:27.560
+then in february 2026 we see a major validation moment the creator peter steinberger joins open
+
+00:04:27.560 --> 00:04:33.800
+ai now this is significant because it shows recognition from one of the top ai organizations
+
+00:04:33.800 --> 00:04:39.560
+in the world and at the same time open claw starts transitioning from a project into an ecosystem
+
+00:04:39.560 --> 00:04:47.340
+with more structured governance and long-term direction so the question now is why did open
+
+00:04:47.340 --> 00:04:55.500
+claw grow so fast there are four main reasons and we'll go through each one first and most important
+
+00:04:55.500 --> 00:05:01.980
+ai that actually does things this is fundamentally different from chat based ai instead of just
+
+00:05:01.980 --> 00:05:07.980
+generating text it performs actions sending messages automating workflows interacting
+
+00:05:07.980 --> 00:05:15.420
+with systems and this is what people really wanted second timing open claw was built at
+
+00:05:15.420 --> 00:05:23.340
+exactly the right moment right after gpt models matured cloud became powerful mcp style integrations
+
+00:05:23.340 --> 00:05:30.940
+became possible so the technology stack was finally ready third open source anyone could
+
+00:05:30.940 --> 00:05:37.900
+modify it extend it run it locally and this created massive community involvement people
+
+00:05:37.900 --> 00:05:45.180
+contributed features improvements and the project grew very quickly fourth this idea of the one
+
+00:05:45.180 --> 00:05:51.340
+person company. OpenClaw made it possible for a single individual to automate entire workflows.
+
+00:05:51.900 --> 00:05:56.700
+Tasks that used to require multiple people can now be handled by AI agents.
+
+00:05:56.700 --> 00:05:59.580
+And this idea alone drove a lot of global interest.
+
+00:06:00.860 --> 00:06:06.540
+So if we zoom out, what does OpenClaw really represent? It represents a shift from tools to
+
+00:06:06.540 --> 00:06:13.260
+agents, apps to ecosystems, users to operators. We are moving into a world where AI doesn't just
+
+00:06:13.260 --> 00:06:19.660
+assist you it acts on your behalf all right so that brings us to the end of this lecture
+
+00:06:19.660 --> 00:06:25.980
+now you understand where open claw came from how it evolved and why it became so important so
+
+00:06:25.980 --> 00:06:31.580
+quickly in the next lectures we're going to move from theory into actually using open claw in
+
+00:06:31.580 --> 00:06:37.260
+practice so stay with me that's where things get really interesting and as always thank you for
+
+00:06:37.260 --> 00:06:39.660
+watching
+

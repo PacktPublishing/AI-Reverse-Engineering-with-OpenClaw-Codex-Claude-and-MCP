@@ -1,0 +1,185 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.780
+Hello and welcome back. In this lesson, I will show you an easy way to fix all your open claw
+
+00:00:05.780 --> 00:00:12.860
+problems using AI using the Codex app. The Codex app is included with your ChatGPT subscription.
+
+00:00:13.480 --> 00:00:20.120
+All you have to do is to download and use it. With a normal ChatGPT chat, you typically need
+
+00:00:20.120 --> 00:00:26.200
+to copy error messages and code into the chat window and let it output the solution. Then you
+
+00:00:26.200 --> 00:00:31.640
+would copy the solution out and paste it into your machine or manually edit your
+
+00:00:31.640 --> 00:00:36.760
+local files based on the suggested solution. However, if you have the Codex
+
+00:00:36.760 --> 00:00:42.760
+app installed, you tell it your problem and ask it to fix it directly. You then
+
+00:00:42.760 --> 00:00:48.640
+give full access to your PC and it will directly access the files and do the fix.
+
+00:00:48.640 --> 00:00:54.340
+Don't worry, it is quite safe. You can set the level of access and permission. It
+
+00:00:54.340 --> 00:00:58.840
+It could ask you to approve certain actions before it proceeds.
+
+00:00:58.840 --> 00:01:02.900
+Head over to its official website to read all about it.
+
+00:01:02.900 --> 00:01:09.640
+Codex is OpenAI's coding agent and is included with ChatGPT Plus subscription.
+
+00:01:09.640 --> 00:01:15.680
+It can write code, understand and explain complex code and explain it to you.
+
+00:01:15.680 --> 00:01:19.860
+Check your code to identify problems and fix them.
+
+00:01:19.860 --> 00:01:21.860
+And much more.
+
+00:01:21.860 --> 00:01:28.420
+you can give it access to your PC, it can perform all those tasks effectively and efficiently,
+
+00:01:28.420 --> 00:01:35.940
+saving you a lot of headache. Let's download it now. There is also a CLI command line interface
+
+00:01:35.940 --> 00:01:42.820
+version, but the app version is easier to use as it has a graphical user interface like ChatGPT.
+
+00:01:44.260 --> 00:01:50.180
+But before we install it, let us take a snapshot of our virtual machine where we had already
+
+00:01:50.180 --> 00:02:05.490
+installed deep seek version 4 pro. Give it a suitable name. You could also take snapshots
+
+00:02:05.490 --> 00:02:10.370
+from the oracle virtual box manager but the virtual machine needs to be shut down first.
+
+00:02:15.570 --> 00:02:24.630
+Now we download the installer for the codex app. Go to the downloads folder and double click to begin
+
+00:02:24.630 --> 00:02:38.600
+the installation. There is a notice saying: "Included with all chat gpt plans". Click continue with chat
+
+00:02:38.600 --> 00:02:44.840
+GPT. I normally use my Google account to authenticate. Just login with the method
+
+00:02:44.840 --> 00:02:54.440
+you normally use to login to chat GPT. Click on continue. This is optional. Just select the type
+
+00:02:54.440 --> 00:03:00.680
+of work you do so that it will customize codex for you. You can skip this step if you like.
+
+00:03:03.000 --> 00:03:07.960
+You could try GPT 5.5 but I find that you might hit the rate limit faster.
+
+00:03:08.920 --> 00:03:14.920
+I prefer GPT 5.4 which might have higher quotas allowing you to go longer before hitting the rate
+
+00:03:14.920 --> 00:03:22.600
+limits. Just click try button or close this dialog. You can change model later. Here is where you set
+
+00:03:22.600 --> 00:03:31.880
+the model you want. Select GPT 5.4 with medium setting. Now I give it full access to my machine.
+
+00:03:40.950 --> 00:03:46.790
+Next step is to pin it to the taskbar so that we can launch it easily again in future.
+
+00:03:48.390 --> 00:03:51.830
+This is needed because it does not have a desktop shortcut.
+
+00:03:53.190 --> 00:04:09.880
+Let's test the new taskbar icon. And it works. You can access the documentation and help here.
+
+00:04:15.650 --> 00:04:19.570
+You can tile the windows by hovering your mouse over the maximize icon.
+
+00:04:20.210 --> 00:04:26.210
+Then select the tile pattern you want. You can also collapse the sidebar menus.
+
+00:04:26.210 --> 00:04:41.060
+Let's type in hello.
+
+00:04:41.060 --> 00:04:45.080
+It wants us to set up the agent sandbox first.
+
+00:04:45.080 --> 00:04:54.000
+So we click on the setup button. Confirm it.
+
+00:04:54.000 --> 00:05:03.640
+Now send the hello message. And it replies.
+
+00:05:03.640 --> 00:05:06.840
+So it is just like chat GPT.
+
+00:05:06.840 --> 00:05:15.010
+Now we are going to ask it to create a folder on the desktop.
+
+00:05:15.010 --> 00:05:20.870
+Then ask it to write a simple hello program in python and put it in that folder.
+
+00:05:20.870 --> 00:05:33.050
+The program will ask for our name and then print a hello message with our name.
+
+00:05:33.050 --> 00:05:37.290
+It asks for confirmation and I confirm it.
+
+00:05:37.290 --> 00:05:41.150
+It completes the task and tells us how to run the program.
+
+00:05:41.150 --> 00:05:44.750
+On the desktop, I notice the new folder called greeting app.
+
+00:05:44.750 --> 00:05:46.110
+Let's enter the folder.
+
+00:05:46.110 --> 00:05:50.170
+To run it, I right click and select open in terminal.
+
+00:05:50.170 --> 00:05:52.790
+A PowerShell window opens.
+
+00:05:52.790 --> 00:05:59.580
+I then type Python followed by the name of the program.
+
+00:05:59.580 --> 00:06:03.500
+I enter my name and it prints, Hello Paul.
+
+00:06:03.500 --> 00:06:07.800
+It works.
+
+00:06:07.800 --> 00:06:11.160
+On the left sidebar menu, we can open new chats.
+
+00:06:11.160 --> 00:06:15.000
+And there is also a list of previous chats.
+
+00:06:15.000 --> 00:06:17.660
+There is so much more Codex can do.
+
+00:06:17.660 --> 00:06:20.340
+This is only a quick taste of its power.
+
+00:06:20.340 --> 00:06:26.160
+You can tell it where you install OpenClaw and ask it to configure new models for you.
+
+00:06:26.160 --> 00:06:31.600
+If open claw is not working as expected, just describe your problem and ask it to fix it
+
+00:06:31.600 --> 00:06:32.600
+for you.
+
+00:06:32.600 --> 00:06:34.280
+That's all for this video.
+
+00:06:34.280 --> 00:06:35.260
+Thanks for watching.
+

@@ -1,0 +1,245 @@
+WEBVTT
+
+00:00:00.050 --> 00:00:01.750
+Hello and welcome back.
+
+00:00:02.470 --> 00:00:07.610
+In this lesson, I will show you how to switch models between OpenAI and DeepSeek.
+
+00:00:08.050 --> 00:00:10.810
+But you could switch to other models too if you like.
+
+00:00:11.490 --> 00:00:15.270
+However, for demonstration purposes, I will use DeepSeek.
+
+00:00:15.710 --> 00:00:19.170
+Head over to the DeepSeek website and sign up for an account.
+
+00:00:19.790 --> 00:00:22.350
+If you see Chinese text, you can switch to English.
+
+00:00:24.790 --> 00:00:28.190
+After logging in, click on Access API.
+
+00:00:31.120 --> 00:00:32.220
+Top up some money.
+
+00:00:33.540 --> 00:00:36.300
+You could use PayPal or credit card.
+
+00:00:37.380 --> 00:00:40.060
+Then, create new API key.
+
+00:00:42.600 --> 00:00:45.500
+Once it is created, copy it to a file.
+
+00:00:47.220 --> 00:00:50.300
+If you forgot the key, you won't be able to view it again.
+
+00:00:51.260 --> 00:00:55.180
+In that case, just delete the old key and create a new one.
+
+00:00:56.600 --> 00:00:58.400
+There is no extra charge.
+
+00:00:59.500 --> 00:01:02.020
+Then, we open a command prompt.
+
+00:01:02.020 --> 00:01:08.090
+List the existing modules using this command
+
+00:01:08.090 --> 00:01:13.080
+You will see that there is only one model configured
+
+00:01:13.080 --> 00:01:16.540
+which is OpenAI GPT 5.4
+
+00:01:16.540 --> 00:01:18.880
+and it is listed as the default
+
+00:01:18.880 --> 00:01:28.040
+To add another model, we run this command
+
+00:01:28.040 --> 00:01:29.900
+OpenClaw Onboard
+
+00:01:29.900 --> 00:01:33.380
+Use arrow keys to select Yes
+
+00:01:33.380 --> 00:01:37.150
+Select Manual
+
+00:01:37.150 --> 00:01:45.250
+Select Update Values
+
+00:01:45.250 --> 00:01:50.160
+Select Local Gateway
+
+00:01:50.160 --> 00:01:53.900
+Do not change the workspace directory
+
+00:01:53.900 --> 00:01:57.460
+Scroll down to DeepSeek
+
+00:01:57.460 --> 00:02:03.970
+Paste in the API key
+
+00:02:03.970 --> 00:02:07.500
+Select Keep Current
+
+00:02:07.500 --> 00:02:12.010
+Accept the default gateway port
+
+00:02:12.010 --> 00:02:14.290
+Select Loopback
+
+00:02:14.290 --> 00:02:16.050
+Select Token
+
+00:02:16.050 --> 00:02:17.910
+Select Off
+
+00:02:17.910 --> 00:02:21.690
+Press Enter for generate Plaintext token
+
+00:02:21.690 --> 00:02:25.170
+Use arrow button to select No
+
+00:02:25.170 --> 00:02:31.290
+We already have telegram configured previously and do not wish to add another channel.
+
+00:02:31.290 --> 00:02:35.710
+Select skip for now.
+
+00:02:35.710 --> 00:02:42.550
+For skills, select no.
+
+00:02:42.550 --> 00:02:50.380
+Press spacebar to select skip for now.
+
+00:02:50.380 --> 00:02:53.980
+Again press spacebar to select skip for now.
+
+00:02:53.980 --> 00:02:57.920
+Again select yes.
+
+00:02:57.920 --> 00:03:00.940
+Just press enter.
+
+00:03:00.940 --> 00:03:03.260
+Select restart.
+
+00:03:03.260 --> 00:03:10.280
+Press enter yes.
+
+00:03:10.280 --> 00:03:15.690
+Clear screen using command cls.
+
+00:03:15.690 --> 00:03:32.820
+To open web UI, type in command, open claw dashboard, type in hello. It replies. Ask
+
+00:03:32.820 --> 00:03:44.810
+it what model are you on, it replies saying it is on deep seek. So it works.
+
+00:03:44.810 --> 00:04:05.260
+Go to telegram, clear history, start a new session, ask it the same question, and it
+
+00:04:05.260 --> 00:04:09.120
+also confirms it is on deep seek.
+
+00:04:09.120 --> 00:04:16.580
+In the terminal, clear the screen, then type in command, open claw models list.
+
+00:04:16.580 --> 00:04:27.640
+You can see deep seek is the default, but GPT is still there.
+
+00:04:27.640 --> 00:04:31.500
+Let's set it to GPT.
+
+00:04:31.500 --> 00:04:35.240
+Use the command, open claw models set.
+
+00:04:35.240 --> 00:04:45.000
+Highlight the model you want to set, and right click to copy it.
+
+00:04:45.000 --> 00:04:50.960
+It confirms changing the default model to GPT 5.4.
+
+00:04:50.960 --> 00:04:54.380
+We need to restart the gateway.
+
+00:04:54.380 --> 00:04:58.820
+Use this command, openclaw gateway restart.
+
+00:04:58.820 --> 00:05:10.620
+After restarting, ask it what model are you on, and it confirms it is on GPT 5.4.
+
+00:05:10.620 --> 00:05:20.390
+In the terminal, we clear the screen, then list the models again.
+
+00:05:20.390 --> 00:05:26.390
+Now, it shows the default model has been changed to GPT 5.4.
+
+00:05:26.390 --> 00:05:29.270
+But DeepSeek is still there.
+
+00:05:29.270 --> 00:05:32.390
+Let's change it back to DeepSeek.
+
+00:05:32.390 --> 00:05:35.090
+Use the same command we used previously,
+
+00:05:35.090 --> 00:05:38.770
+openclaw Model Set, select the DeepSeek full name,
+
+00:05:38.770 --> 00:05:40.630 
+and right-click to copy.
+
+00:05:40.630 --> 00:05:42.550
+Paste it in.
+
+00:05:42.550 --> 00:05:46.670
+It confirms changing the default model to DeepSeek.
+
+00:05:46.670 --> 00:05:50.290
+Now, let's restart the gateway.
+
+00:05:50.290 --> 00:06:00.190
+After restarting, we ask it, what model are you on?
+
+00:06:00.190 --> 00:06:06.090
+If it still says GPT, we need to refresh the web UI.
+
+00:06:06.090 --> 00:06:11.800
+Click on the Refresh button.
+
+00:06:11.800 --> 00:06:15.740
+Then repeat the question.
+
+00:06:15.740 --> 00:06:18.950
+Ask it to check again.
+
+00:06:18.950 --> 00:06:24.540
+And now it confirms it is back on DeepSeek.
+
+00:06:24.540 --> 00:06:27.980
+In the terminal, we clear the screen
+
+00:06:27.980 --> 00:06:32.220
+and list the models again.
+
+00:06:32.220 --> 00:06:35.760
+We see that the default model is now DeepSeek.
+
+00:06:36.540 --> 00:06:42.540
+So this is how we can add another model and also how to easily switch models.
+
+00:06:42.540 --> 00:06:46.540
+The same technique applies to other models as well.
+
+00:06:46.540 --> 00:06:48.540
+That is all for this video.
+
+00:06:48.540 --> 00:06:50.540
+Thanks for watching.
+

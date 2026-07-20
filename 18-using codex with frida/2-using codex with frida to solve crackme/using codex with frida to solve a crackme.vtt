@@ -1,0 +1,142 @@
+WEBVTT
+
+00:00:00.570 --> 00:00:02.690
+Hello and welcome back.
+
+00:00:02.690 --> 00:00:09.990
+In this lesson, we are going to make use of the new skill which we created last lesson,
+
+00:00:09.990 --> 00:00:15.170
+where we gave Codex the skill to use Frida binary analysis.
+
+00:00:15.170 --> 00:00:19.210
+And we are going to use that skill to solve crackme1.
+
+00:00:19.210 --> 00:00:26.650
+If you remember, crackme1 is a command-line crackme which we created using Codex.
+
+00:00:26.650 --> 00:00:33.210
+To refresh your memory, we are going to run this one more time. So head over to my crackmes folder,
+
+00:00:33.930 --> 00:00:42.730
+open the command-line terminal, and run crackme1. So it asks you to enter the serial number.
+
+00:00:43.370 --> 00:00:49.370
+If I enter one two three four five six and hit Enter, it tells me wrong serial. So we are going
+
+00:00:49.370 --> 00:00:56.250
+to use this skill now, Frida binary analysis skill, which we created and which we put in this folder,
+
+00:00:56.250 --> 00:01:18.620
+AI skills. So let us now start Codex. We create a new chat and close the sidebar.
+
+00:01:19.900 --> 00:01:26.380
+Here we set the GPT to the highest model, which is GPT-5.5 at time of recording.
+
+00:01:27.020 --> 00:01:33.260
+And for the reasoning effort, we set it to extra high. Then we give it the path to this skill.
+
+00:01:33.260 --> 00:01:44.940
+Skill, right-click and copy as path. And in here, we ask it to read this skill and
+
+00:01:44.940 --> 00:01:56.820
+paste the skill file location, then analyze the crackme.
+
+00:01:56.820 --> 00:02:06.470
+So in crackme, we also get the path location, right-click, copy as path, then paste it here.
+
+00:02:06.470 --> 00:02:17.260
+Analyze this to look for string compare functions. So we know that when we enter
+
+00:02:17.260 --> 00:02:22.560
+a string, it will definitely compare to the real actual serial number. So it has
+
+00:02:22.560 --> 00:02:27.480
+to use some kind of function to do that. So that's why we ask it to analyze to
+
+00:02:27.480 --> 00:02:38.710
+look for string compare functions, then let me know when the program runs.
+
+00:02:38.710 --> 00:02:51.840
+It asks me to input some string.
+
+00:02:51.840 --> 00:03:02.750
+It then compares the string with some other constant string.
+
+00:03:02.750 --> 00:03:14.960
+And if it does not match, it prints the message wrong serial.
+
+00:03:14.960 --> 00:03:17.220
+So this is the background context.
+
+00:03:17.220 --> 00:03:23.040
+Read this skill, then analyze this crackme to look for string compare functions. When
+
+00:03:23.040 --> 00:03:27.540
+the program runs, it asks me to input some string. It then compares the string
+
+00:03:27.540 --> 00:03:31.800
+with some other constant string. And if it does not match, it prints the message
+
+00:03:31.800 --> 00:03:47.940
+wrong serial. If you are unsure of anything, ask me, and then click Go. It has started
+
+00:03:47.940 --> 00:03:58.130
+with its job. And surprisingly, even though the skill file is Frida binary
+
+00:03:58.130 --> 00:04:06.950
+analysis, it still uses radare2. It is okay. Let's see what happens, and again, it
+
+00:04:06.950 --> 00:04:16.130
+has already solved it by getting the comparison parameter, and it found that
+
+00:04:16.130 --> 00:04:21.290
+this is the actual serial it is comparing with, and this we already solved
+
+00:04:21.290 --> 00:04:30.630
+previously using radare2. And it helpfully tells us the serial itself is this, and the serial check
+
+00:04:30.630 --> 00:04:38.710
+path as well. All right, so now let us try an experiment. We'll ask it if you can use Frida
+
+00:04:38.710 --> 00:04:55.540
+tools to solve this. Could you use Frida tools instead of radare2, maybe put a hook on
+
+00:04:55.540 --> 00:05:06.900
+the relevant functions? Click Go. So it has understood what I need, and now it is
+
+00:05:06.900 --> 00:05:15.660
+looking at the Frida tools and creating a small trace script. Now it is going to
+
+00:05:15.660 --> 00:05:30.740
+write the agent hook and driver. It experimented with some scripts and made
+
+00:05:30.740 --> 00:05:57.260
+some adjustments, and now it is trying the final run. So finally, it gave the report.
+
+00:05:57.260 --> 00:06:03.800
+It says that it has hooked the runtime modules and showed us some of these
+
+00:06:03.800 --> 00:06:10.920
+offsets. And when Frida ran, it showed the expected serial in memory. So again,
+
+00:06:10.920 --> 00:06:16.980
+we managed to use Frida to solve this, and this is the serial number. So let's
+
+00:06:16.980 --> 00:06:23.300
+test it now. We will copy this, and then we run this crackme1 again, and we
+
+00:06:23.300 --> 00:06:33.060
+paste the serial, and correct, congrats. So it works, and here is the remaining report. So as you can
+
+00:06:33.060 --> 00:06:39.780
+see, if we had, if you were to do this manually with Frida, we would probably have a lot of errors,
+
+00:06:39.780 --> 00:06:45.860
+a lot of problems. But using Codex, it is so easy. We don't have to figure out all the errors.
+
+00:06:45.860 --> 00:06:52.660
+Codex can fix it for us. So this is the power of using AI in reverse engineering. So that's all for
+
+00:06:52.660 --> 00:06:56.420
+this video. Thank you for watching.

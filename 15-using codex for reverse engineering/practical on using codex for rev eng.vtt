@@ -1,0 +1,611 @@
+WEBVTT
+
+00:00:00.180 --> 00:00:09.160
+Hello and welcome back. In this lesson, we are going to do a practical on using Codex to connect to MCP services.
+
+00:00:10.080 --> 00:00:18.260
+And for this session, we are going to look at how to connect Codex to the x64DBG MCP server.
+
+00:00:18.940 --> 00:00:20.100
+So let's get started.
+
+00:00:21.460 --> 00:00:28.340
+The first thing we need to do is create a new folder where we can store our skills.
+
+00:00:28.340 --> 00:00:41.540
+So head over to the C drive and create a new folder. Let us call it AI skills and inside here
+
+00:00:41.540 --> 00:00:51.260
+we will store all our MD files. Remember MD stands for markdown files. Next we will now
+
+00:00:51.260 --> 00:01:01.530
+fire up our x64dbg. So we need to run it as an administrator. So, you right click on this
+
+00:01:01.530 --> 00:01:13.470
+x32 version and run it as administrator. Then we are going to open a crackme. So let's look for
+
+00:01:13.470 --> 00:01:22.380
+crackme from the practice crackmes folder. We are going to try a different crackme. Let's choose
+
+00:01:22.380 --> 00:01:32.480
+anti-debugger. Let's run it first. So this crackme, it will detect whether or not a debugger is
+
+00:01:32.480 --> 00:01:39.920
+attached to it. If the debugger is not attached then the status will show debugger not detected.
+
+00:01:42.190 --> 00:01:52.440
+Now let us try to open this with x32dbg.  Now you run it. It says debugger detected.
+
+00:01:54.280 --> 00:02:01.960
+So, our task is to try to to bypass the debugger detection algorithm.
+
+00:02:01.960 --> 00:02:06.680
+So we need to find out where in this code the code detects the debugger.
+
+00:02:07.720 --> 00:02:15.100
+That is the primary purpose. We are not going to try to crack the serial, we just want to try to overcome the debugger.
+
+00:02:15.100 --> 00:02:21.100
+So in order to do that, we must make sure that the service is running, the MCP service.
+
+00:02:21.100 --> 00:02:33.100
+So we go to the log tab, and we scroll to the top, and here we can see the server is listening on port 50300.
+
+00:02:33.100 --> 00:02:49.540
+And we go to command line, open the command line prompt, and type the netstat command, dash tan, and we should see 50300.
+
+00:02:49.540 --> 00:03:05.300
+Now we need to tell codex regarding this and then remember if we go back to the x64dbg
+
+00:03:05.300 --> 00:03:25.100
+mcp server by agent smithers, the sse endpoint is this, 127.0.0.1:50300/sse.
+
+00:03:25.100 --> 00:03:28.040
+So this is the endpoint SSE.
+
+00:03:28.040 --> 00:03:33.340
+So now remember that we are going to fire up our codex now.
+
+00:03:33.340 --> 00:03:47.020
+And over here, we will tell codex that we have started a new server, MCP server.
+
+00:03:47.020 --> 00:04:03.240
+So we say: connect to mcp to x64dbg mcp server which is running on endpoint and we give the
+
+00:04:03.240 --> 00:04:16.340
+endpoint 0.0.0.0 and the port number is 50300.
+
+00:04:16.340 --> 00:04:21.460
+And we slash forward sse.
+
+00:04:21.460 --> 00:04:36.410
+MCP protocol and JSON. So here we select GPT 5.5 the best model available and we
+
+00:04:36.410 --> 00:04:41.830
+select high. That means it has higher thinking abilities and then we click go.
+
+00:04:41.830 --> 00:04:50.920
+So now it reports that it will try to handshake against the local SSE endpoint
+
+00:04:50.920 --> 00:05:01.650
+using protocol using IP 127.0.0.1 so it's running a script a
+
+00:05:01.650 --> 00:05:12.420
+PowerShell script.  It is running another PowerShell script. Here it says the MCP
+
+00:05:12.420 --> 00:05:22.800
+initialized handshake succeeded and so it says the discovery worked and
+
+00:05:22.800 --> 00:05:28.800
+discovered the debugger commands. This is good news and finally reports
+
+00:05:28.800 --> 00:05:40.850
+successfully connected using the MCP SSE using JSON RPC. Okay so now I'm going to
+
+00:05:40.850 --> 00:05:54.750
+ask it to list down what API will be used to detect debugger. List down what
+
+00:05:54.750 --> 00:06:15.670
+are the common Win32 API used for detecting debuggers. Okay, so it lists down a few. We are
+
+00:06:15.670 --> 00:06:22.010
+going to try the first one. So it's quite a number here. Alright, so these are the common
+
+00:06:22.010 --> 00:06:29.330
+ones used by malware when they want to avoid being debugged. We are not doing a malware
+
+00:06:29.330 --> 00:06:35.250
+but the principle is the same if a software has got software protection it also will detect
+
+00:06:35.250 --> 00:06:41.250
+debuggers and prevent you from reversing from reverse engineering it. Okay so now there's good
+
+00:06:41.250 --> 00:06:49.590
+news. It has managed to connect and it lists down the most common API: isdebuggerpresent.
+
+00:06:50.390 --> 00:06:56.710
+So now we can go here to the cpu right click and search for current module,
+
+00:06:57.590 --> 00:07:04.870
+intermodular calls. That will list down all the windows 32 api that this crack me uses.
+
+00:07:06.390 --> 00:07:13.110
+Right it is done. Quite a lot so we want to filter isdebuggerpresent. So we go to the search box
+
+00:07:13.110 --> 00:07:22.470
+here and type in isdebuggerpresent and we can see there are three instances of isdebuggerpresent.
+
+00:07:22.470 --> 00:07:31.590
+So what we do is we can put breakpoints on all three of them. Select highlight and select all
+
+00:07:31.590 --> 00:07:38.950
+and then select toggle breakpoint. Now we run and see which one hits. We restart click the restart
+
+00:07:39.990 --> 00:07:47.190
+and then it will reload the crack me and now we run. It has hit the first instance of isdebuggerpresent.
+
+00:07:47.190 --> 00:08:01.540
+We continue to run. It has hit it again. Continue to run. It has hit it again. Continue to run.
+
+00:08:03.460 --> 00:08:10.900
+Click on running so it's always hitting this breakpoint. We go back to the breakpoint tab
+
+00:08:10.900 --> 00:08:16.100
+and see how many times it's hit. 11 times. Right so this is the one which is the correct
+
+00:08:16.100 --> 00:08:20.720
+address which we should investigate.
+
+00:08:20.720 --> 00:08:25.540
+So now we go to that address, we double click to go to that address and here we can see
+
+00:08:25.540 --> 00:08:27.800
+it.
+
+00:08:27.800 --> 00:08:37.820
+So we now copy this address, copy this address and we are going to give this address to codex,
+
+00:08:37.820 --> 00:08:44.540
+to ask codex to disassemble it and analyze and explain to us how it works.
+
+00:08:44.540 --> 00:08:58.540
+So disassemble the code at address, then we paste the address, put the 0x prefix and
+
+00:08:58.540 --> 00:09:06.020
+explain what it does and how it works.
+
+00:09:06.020 --> 00:09:09.240
+So just click go.
+
+00:09:09.240 --> 00:09:17.680
+So now the codex reports that it will now decode the control flow and call out any API
+
+00:09:17.680 --> 00:09:24.480
+level behavior it's implementing and now it is disassembling the target address and then thinking.
+
+00:09:24.480 --> 00:09:31.200
+So it is stumbling over some of the commands but don't worry I'm pretty sure it knows how to
+
+00:09:31.200 --> 00:09:37.440
+fix it just give it time to figure it out because this is the first time codex is trying to connect
+
+00:09:37.440 --> 00:09:44.480
+this mcp service. Okay it says it has the main branch structure now now it is trying to resolve
+
+00:09:44.480 --> 00:09:47.220
+labels and nearby code.
+
+00:09:47.220 --> 00:09:51.380
+So it successfully detected that at this address,
+
+00:09:51.380 --> 00:09:56.260
+it is calling the API isDebuggerPresent
+
+00:09:56.260 --> 00:10:00.080
+and identify it as anti-debug check.
+
+00:10:00.080 --> 00:10:03.260
+After a while, it reports back that the code
+
+00:10:03.260 --> 00:10:06.600
+is an anti-debug check built around isDebuggerPresent
+
+00:10:06.600 --> 00:10:10.560
+and dumps the disassembled code over here.
+
+00:10:10.560 --> 00:10:19.260
+As you can see, it is similar to what you see in the XDBG.
+
+00:10:19.260 --> 00:10:21.320
+So what it does, it explains to you.
+
+00:10:21.320 --> 00:10:25.500
+It calls isDebuggerPresent and saves the return value in EDI.
+
+00:10:25.500 --> 00:10:30.420
+If isDebugger returns non-zero, it treats the debugger as present.
+
+00:10:30.420 --> 00:10:34.600
+If it returns zero, it treats the process as not being debugged.
+
+00:10:34.600 --> 00:10:38.000
+It then writes the result into global byte at last.
+
+00:10:38.000 --> 00:10:39.900
+One means debugger detected.
+
+00:10:39.900 --> 00:10:44.690
+Zero means no debugger detected.
+
+00:10:44.690 --> 00:10:46.670
+It is quite detailed.
+
+00:10:46.670 --> 00:10:49.550
+And it even tries to decompile it
+
+00:10:49.550 --> 00:10:54.770
+into pseudocode language, which is very handy.
+
+00:10:54.770 --> 00:11:00.570
+As you can see, this is the decompiled version of the assembly
+
+00:11:00.570 --> 00:11:02.130
+code over here.
+
+00:11:02.130 --> 00:11:03.350
+So it isdebuggerpresent.
+
+00:11:03.350 --> 00:11:08.330
+We then return the result into a Boolean variable detector.
+
+00:11:08.330 --> 00:11:09.650
+And then it tests.
+
+00:11:09.650 --> 00:11:11.530
+And then it jumps accordingly.
+
+00:11:11.530 --> 00:11:13.150
+So the important behavior is this block
+
+00:11:13.150 --> 00:11:15.350
+detects a debugger using the Win32 API,
+
+00:11:15.350 --> 00:11:18.430
+isdebuggerpresent, records the result globally,
+
+00:11:18.430 --> 00:11:20.530
+and then performs different follow-up handling depending
+
+00:11:20.530 --> 00:11:24.520
+on whether a debugger is attached.
+
+00:11:24.520 --> 00:11:26.620
+So over here, it already tells us
+
+00:11:26.620 --> 00:11:31.600
+that it saves the return value in EDI.
+
+00:11:31.600 --> 00:11:33.460
+It calls isdebuggerpresent.
+
+00:11:33.460 --> 00:11:36.400
+If we step over this now, we will
+
+00:11:36.400 --> 00:11:39.940
+see that it saves the value in eax first,
+
+00:11:39.940 --> 00:11:41.800
+and then it moves eax to EDI.
+
+00:11:41.800 --> 00:11:47.800
+We can ask Codex to explain, what does this next line do?
+
+00:11:47.800 --> 00:11:53.730
+What does this two lines do?
+
+00:11:53.730 --> 00:12:01.820
+Explain these two lines.
+
+00:12:01.820 --> 00:12:03.920
+So it explains now, these two lines
+
+00:12:03.920 --> 00:12:06.920
+are the actual debugger check and result save.
+
+00:12:06.920 --> 00:12:09.300
+So isdebuggerpresent checks whether the current process is
+
+00:12:09.300 --> 00:12:13.580
+being debugged, it returns this non-zero result.
+
+00:12:13.580 --> 00:12:17.720
+And then it says, on 32-bit windows,
+
+00:12:17.720 --> 00:12:20.140
+the function return values are placed in eax.
+
+00:12:20.140 --> 00:12:23.960
+So after isdebuggerpresent, returns eax contains the result.
+
+00:12:23.960 --> 00:12:26.800
+So as you can see from here, it returns 1.
+
+00:12:26.800 --> 00:12:29.020
+1 means debugger detected.
+
+00:12:29.020 --> 00:12:32.960
+And then the next line here, move eax to edi.
+
+00:12:32.960 --> 00:12:37.000
+So it says here that this instruction copies
+
+00:12:37.000 --> 00:12:39.180
+the result into edi so the program can
+
+00:12:39.180 --> 00:12:41.400
+preserve and test it later.
+
+00:12:41.400 --> 00:12:45.960
+So this is how we can bypass the debugger.
+
+00:12:45.960 --> 00:12:47.820
+We can confirm it.
+
+00:12:47.820 --> 00:12:52.660
+If eax was 1, in this case, it is 1,
+
+00:12:52.660 --> 00:12:57.540
+it means that 1 will be saved to EDI.
+
+00:12:57.540 --> 00:12:59.260
+So if we want to bypass the debugger,
+
+00:12:59.260 --> 00:13:05.020
+we should modify the value of eax to make it non-1.
+
+00:13:05.020 --> 00:13:08.060
+So we can do that now.
+
+00:13:08.060 --> 00:13:09.380
+We can assemble.
+
+00:13:09.380 --> 00:13:10.140
+We can patch this.
+
+00:13:10.140 --> 00:13:12.540
+We right-click, and we assemble here.
+
+00:13:12.540 --> 00:13:14.340
+Click Assemble.
+
+00:13:14.340 --> 00:13:19.440
+And for eax, we change it to 0.
+
+00:13:19.440 --> 00:13:26.340
+then here okay we can't because instruction is bigger by three bytes so
+
+00:13:26.340 --> 00:13:34.260
+we can't do that. What we can do is so now we can we know that eax is saved into
+
+00:13:34.260 --> 00:13:53.910
+edi so we can ask codex this instruction move edi, eax causes edi to become 1 how.
+
+00:13:53.910 --> 00:14:14.080
+How will we modify EDI to become, how will we, how will we, how will one change EDI to
+
+00:14:14.080 --> 00:14:18.330
+become 0?
+
+00:14:18.330 --> 00:14:23.000
+Let's see what it says.
+
+00:14:23.000 --> 00:14:29.480
+Okay so it replies that if you want EDI to become 0, there are a few ways to do it.
+
+00:14:29.480 --> 00:14:36.160
+You can, after the call, eax contains isDebuggerPresent, you can either set eax to 0 before executing
+
+00:14:36.160 --> 00:14:37.160
+it.
+
+00:14:37.160 --> 00:14:40.480
+That means you manually go here, double click on this, and change it to 0.
+
+00:14:40.480 --> 00:14:41.480
+But we don't want that.
+
+00:14:41.480 --> 00:14:42.640
+We want to patch it.
+
+00:14:42.640 --> 00:14:46.680
+So it's good that Codex tells us this first option.
+
+00:14:46.680 --> 00:14:50.660
+And then the other way is the patch option.
+
+00:14:50.660 --> 00:14:58.860
+So the patch option is where this instruction, you can replace it with xor edi,edi.
+
+00:14:58.860 --> 00:15:03.860
+So this is also 2 bytes, so it fits perfectly over the original instruction.
+
+00:15:03.860 --> 00:15:05.440
+So we can try this.
+
+00:15:05.440 --> 00:15:12.930
+So we right click this, assemble, XOR EDI, EDI.
+
+00:15:12.930 --> 00:15:16.790
+So instruction is the same size, make sure you click check same size because if it's
+
+00:15:16.790 --> 00:15:21.390
+bigger than the original 2 bytes here, it will overwrite the next instruction.
+
+00:15:21.390 --> 00:15:26.650
+So we click ok, and now EDI is going to be 0 after this.
+
+00:15:26.650 --> 00:15:37.880
+So now we patch it, file patch, and then click patch file, and we rename it with a dash v2
+
+00:15:37.880 --> 00:15:43.800
+for version 2 at the back, save it, alright.
+
+00:15:43.800 --> 00:15:54.620
+Now we're going to load version 2 and run, and it says debugger not detected.
+
+00:15:54.620 --> 00:15:55.740
+So it works.
+
+00:15:55.740 --> 00:15:59.180
+So you can see, this is how useful codex can be.
+
+00:15:59.180 --> 00:16:04.880
+It can give you analysis in detail and even tell you how to solve the problem that
+
+00:16:04.880 --> 00:16:09.660
+you're asking it to solve. Alright so now the next step is very important you're
+
+00:16:09.660 --> 00:16:15.320
+going to save this skill into a skill file. The skill that you want to save is
+
+00:16:15.320 --> 00:16:22.760
+how to connect to x64DBG MCP service. So ask it to do this now and give it the
+
+00:16:22.760 --> 00:16:28.920
+path to the folder we created earlier so we copy this path you want to save the
+
+00:16:28.920 --> 00:16:48.110
+skill here so we ask you to create a skill file markdown file to save how you
+
+00:16:48.110 --> 00:17:05.450
+successfully connected to the x64DBG MCP service. Include enough details so
+
+00:17:05.450 --> 00:17:22.010
+that in future when I ask you to connect to x64dbg again and I give you this .md
+
+00:17:22.010 --> 00:17:42.560
+file you can refer to it to connect to do the connection. The file should be
+
+00:17:42.560 --> 00:17:57.980
+model agnostic - meaning agnostic meaning it should work on codex and also claude code.
+
+00:17:57.980 --> 00:18:06.480
+Save the .md file in this folder and then paste the folder that you copied and then
+
+00:18:06.480 --> 00:18:08.940
+click go.
+
+00:18:08.940 --> 00:18:15.600
+So it's going to go ahead and create the skills file and save it in this folder.
+
+00:18:15.600 --> 00:18:25.100
+So now it reports saying that it will use the skill creator guidance and create a markdown
+
+00:18:25.100 --> 00:18:32.380
+file inside this folder as requested. As you can see it is successfully saved
+
+00:18:32.380 --> 00:18:38.030
+here x64dbg mcp connection.md
+
+00:18:38.030 --> 00:18:42.350
+and then finally it reports back created the skill markdown file here.
+
+00:18:42.350 --> 00:18:46.030
+It includes the successful mcp or sse connection flow
+
+00:18:46.030 --> 00:18:50.270
+json rpc handshake language a handshake message,
+
+00:18:50.270 --> 00:18:54.430
+javascript reference client, observe tools two core examples troubleshooting
+
+00:18:54.430 --> 00:18:59.350
+notes, everything there great. So let's open it now - we can open it with any text
+
+00:18:59.350 --> 00:19:06.460
+editor. I will use visual studio code and take a look at what it looks like. All
+
+00:19:06.460 --> 00:19:13.320
+right so this is the raw markdown. If you want to view it as a markdown you in
+
+00:19:13.320 --> 00:19:18.920
+visual studio code you press ctrl shift V, ctrl shift V and you will render in
+
+00:19:18.920 --> 00:19:22.980
+the preview format and you can see now so here it goes.
+
+00:19:22.980 --> 00:19:31.580
+It's got the description, the key facts, the port number, and very detailed descriptions,
+
+00:19:31.580 --> 00:19:39.120
+successful handshake sequence, the minimal JSON-RPC message, initialize, list tools,
+
+00:19:39.120 --> 00:19:43.580
+verify tools, JavaScript reference, and so on.
+
+00:19:43.580 --> 00:19:52.440
+So it is quite detailed, and so in future, whenever you want to do another job on reverse
+
+00:19:52.440 --> 00:20:01.640
+engineering using x64 debugger all you need to do is go here and tell codex the location of this
+
+00:20:01.640 --> 00:20:11.130
+folder and this file. So what you need to do is go here and copy this location or even directly
+
+00:20:11.130 --> 00:20:18.410
+here right click copy as path and paste inside here like this and then you can tell it refer
+
+00:20:18.410 --> 00:20:27.370
+to this file for how to connect to x64 debugger mcp service and then you go and read this file
+
+00:20:27.370 --> 00:20:33.450
+and connect to x64 debugger based on the information there. So not put the double quotes
+
+00:20:34.570 --> 00:20:48.490
+you can just type that is refer to this skill file then you can say now connect to x64 dbg
+
+00:20:48.490 --> 00:20:52.590
+and you just click go and you should be able to do that. And then after that once it's connected
+
+00:20:52.590 --> 00:20:57.810
+you can just ask it to do tasks. So it saves you a lot of headache you don't have to wait for it to
+
+00:20:57.810 --> 00:21:05.510
+rediscover again how to connect. The skill file will save you a lot of time just save the skill
+
+00:21:05.510 --> 00:21:11.290
+file and then reload it in the next session and it automatically knows how to connect. And you can
+
+00:21:11.290 --> 00:21:18.130
+repeat this process for Ghidra and for DnSpy or any other tools which you want to use. Okay so.
+
+00:21:18.130 --> 00:21:24.670
+So before we end this lesson, if you want to, it's a good idea to go and take a snapshot.
+
+00:21:24.670 --> 00:21:35.040
+Close all these first, close everything, and then take a snapshot, machine, take snapshot,
+
+00:21:35.040 --> 00:21:40.440
+or you can close everything down and go to the Oracle VirtualBox Manager and take a snapshot
+
+00:21:40.440 --> 00:21:42.440
+from there.
+
+00:21:42.440 --> 00:21:48.860
+And one thing you should note that these skills files are very valuable, so before you restore
+
+00:21:48.860 --> 00:21:55.020
+machine to a previous snapshot make sure you copy this up and save it somewhere safe otherwise you
+
+00:21:55.020 --> 00:22:00.060
+might lose all the skills. So remember to do that if ever you want to revert back to the earlier snapshot
+
+00:22:00.620 --> 00:22:05.100
+make sure you save the skills folder somewhere else first then you revert to an earlier snapshot.
+
+00:22:05.740 --> 00:22:08.300
+So these are the tips that you might be
+
+00:22:08.300 --> 00:22:12.800
+useful for you. So that's all for this video. Thank you for watching.
+

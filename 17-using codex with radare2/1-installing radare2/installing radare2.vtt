@@ -1,0 +1,335 @@
+WEBVTT
+
+00:00:00.860 --> 00:00:06.620
+Hello and welcome back. In this section I'm going to show you how to use codex
+
+00:00:07.260 --> 00:00:14.220
+to work with radare2 a very powerful reverse engineering tool and I'm going to ask codex
+
+00:00:14.220 --> 00:00:23.340
+to install radare2 and also any accompanying relevant tools and also to set up the radare2
+
+00:00:24.140 --> 00:00:28.300
+reverse engineering lab. And before you start to do anything
+
+00:00:28.300 --> 00:00:35.900
+I would recommend highly that you head over to Oracle VirtualBox Manager and take a snapshot
+
+00:00:35.900 --> 00:00:43.740
+of the current state of the virtual machine and call it pre-radare2, so that in case
+
+00:00:43.740 --> 00:00:48.120
+anything goes wrong and you want to restore, you can just easily come back here and restore
+
+00:00:48.120 --> 00:00:56.020
+to the state it was in before you install radare2. Then the next thing I did was I created
+
+00:00:56.020 --> 00:01:06.420
+a prompt. I use this prompt to ask chatgpt to create the necessary installation prompt.
+
+00:01:07.220 --> 00:01:14.420
+So this is what I pasted into chatgpt. I said I want to use codex to install radare2
+
+00:01:14.420 --> 00:01:20.580
+and r2-pipe on windows 11. r2-pipe is a part of the tool used by radare2 as well.
+
+00:01:21.540 --> 00:01:28.420
+So I can show it to you here. If you head over to radare website, you will see that there are two
+
+00:01:28.420 --> 00:01:35.860
+main tools, Radare2 and R2Pipe. And Radare2 is the main tool itself and R2Pipe is the scripting
+
+00:01:35.860 --> 00:01:45.060
+tool. So you can let Codex use both. So that's why in here I mentioned Radare2 and also R2Pipe.
+
+00:01:45.060 --> 00:01:50.900
+I want to use Codex to install Radare2 and R2Pipe on Windows 11 to reverse engineer Windows
+
+00:01:50.900 --> 00:01:57.460
+binaries. It should install them for me and for usage, it should be able to use the proper tools,
+
+00:01:57.460 --> 00:02:04.100
+either radare2 or r2-pipe, depending on what it needs to be done to analyze a binary.
+
+00:02:05.140 --> 00:02:11.780
+Create this project folder, see radare2-AI, for any related work with radare2.
+
+00:02:12.500 --> 00:02:18.100
+Write a suitable prompt in .md format for me. So this prompt here is actually an installation
+
+00:02:18.100 --> 00:02:23.620
+prompt. And all these prompts you can download from the resource section, including this one.
+
+00:02:23.620 --> 00:02:31.860
+After I gave this to ChatGPT, ChatGPT came up with radare2 install and this is
+
+00:02:31.860 --> 00:02:39.280
+the radare2 install. So radare2 install is also a markdown file and you can
+
+00:02:39.280 --> 00:02:44.980
+open this markdown file and if you want to see it being rendered as markdown
+
+00:02:44.980 --> 00:02:52.540
+preview, all you need to do is press ctrl shift V. So here it lays out the
+
+00:02:52.540 --> 00:02:59.860
+objective, the important rules, and how to check for existing environment, how to
+
+00:02:59.860 --> 00:03:06.860
+install radare 2, and many many more things. So this is the installation skill
+
+00:03:06.860 --> 00:03:10.680
+which you are going to give to Codex so that Codex can install and set up
+
+00:03:10.680 --> 00:03:20.680
+your engineering lab for radare 2. And then I also asked ChatGPT to create a
+
+00:03:20.680 --> 00:03:26.840
+skills file. Once Codex has finished installing radare2 and r2pipe using this prompt file,
+
+00:03:26.840 --> 00:03:34.520
+I asked ChatGPT to generate another skill file. A skill file to let any AI agent use the installed
+
+00:03:34.520 --> 00:03:42.040
+r2pipe and radare2 lab. And ChatGPT came up with a second one here. This is the skills file.
+
+00:03:42.600 --> 00:03:48.200
+So again press ctrl shift v and you can see this. So this skill tells Codex how to use the existing
+
+00:03:48.200 --> 00:03:54.200
+R2, radare 2 and R2 pipe environment on Windows 11 for reverse engineering. This file you give to
+
+00:03:54.200 --> 00:03:59.720
+Codex to ask Codex to use this file to install radare 2 and R2 pipe and once it is finished
+
+00:03:59.720 --> 00:04:06.200
+installing and you want it to use the radare 2 and R2 pipe then you ask it to read this file.
+
+00:04:07.000 --> 00:04:12.200
+So basically these are the two files you need. So you can download these three files 1, 2, 3
+
+00:04:12.200 --> 00:04:18.440
+from the resource section for this lesson for this section so now let's head over to our
+
+00:04:19.560 --> 00:04:31.050
+virtual machine. So over here I'm going to boot up my oracle virtualbox this one and it's already
+
+00:04:31.050 --> 00:04:38.430
+booted up let's go to full screen so now i'm going to open the first prompt which is this one
+
+00:04:38.430 --> 00:04:48.820
+this one I already used it to generate the other two prompts so this prompt was
+
+00:04:48.820 --> 00:04:55.240
+the first prompt that I used to create this installation prompt and this skill
+
+00:04:55.240 --> 00:04:58.960
+file. Okay so this we don't need to do this anymore now since I've done it for
+
+00:04:58.960 --> 00:05:02.180
+you but if you want to start from scratch then you can start with this one
+
+00:05:02.180 --> 00:05:08.900
+paste into chatgpt ask chatgpt to create this and this. Right so since we have
+
+00:05:08.900 --> 00:05:17.220
+that now let's go to this let's open installation md okay so this installation md you are going to
+
+00:05:17.220 --> 00:05:28.220
+give it to codex to read so let's open codex now okay so now i'm going to tell it i'm going
+
+00:05:28.220 --> 00:05:32.380
+to upload this file that means I can just drag the install file here and put it here
+
+00:05:32.380 --> 00:05:42.480
+and ask it to read this file close the sidebar read this file for this project
+
+00:05:42.480 --> 00:05:59.040
+if you are unsure of anything don't guess don't assume ask me. Alright so
+
+00:05:59.040 --> 00:06:03.960
+let's take a look at the contents of this one installation press ctrl shift V.
+
+00:06:03.960 --> 00:06:10.080
+So this file is basically telling codex that our objective is to set up a
+
+00:06:10.080 --> 00:06:14.420
+Windows 11 reverse engineering environment using all these tools
+
+00:06:14.420 --> 00:06:19.440
+whatever is necessary and the goal is to allow codex to use either this or
+
+00:06:19.440 --> 00:06:25.800
+this whatever is necessary and these are some important rules now I'll write. Once
+
+00:06:25.800 --> 00:06:32.900
+you are sure go ahead with the project give it full
+
+00:06:32.900 --> 00:06:38.980
+access and here make sure you choose the latest gpt this is gpt 5.5 the best model right now
+
+00:06:38.980 --> 00:06:45.060
+and then here you set the reasoning to high. Okay and let it go so just click send and see what it
+
+00:06:45.060 --> 00:06:51.060
+does so now it is thinking. While it is thinking maybe I can do some changes to the settings
+
+00:06:52.900 --> 00:07:02.280
+appearance maybe I change this to dark mode. Now back to app and close the sidebar.
+
+00:07:02.280 --> 00:07:10.480
+So it reports that the file is clear enough to proceed and now it's checking
+
+00:07:10.480 --> 00:07:18.340
+whether python is present so it's going to start the installation now and it
+
+00:07:18.340 --> 00:07:25.900
+reports that it has found an official Windows zip asset and it's going to put
+
+00:07:25.900 --> 00:07:30.500
+everything in this folder which we recommended and suggested and it reports
+
+00:07:30.500 --> 00:07:36.800
+that the zip is downloaded cleanly and even checked the hash to make sure it is
+
+00:07:36.800 --> 00:07:45.440
+your genuine files and it reports that radare2 is now on the user path and now moving on to the
+
+00:07:45.440 --> 00:07:51.680
+python site. And now it reports that it has successfully imported the virtual environment
+
+00:07:52.560 --> 00:07:59.040
+and now creating some reusable helper scripts. And now it says that the scripts and readme are
+
+00:07:59.040 --> 00:08:06.000
+written and now it's going to perform a test. So you can see how useful it is to use codex
+
+00:08:06.000 --> 00:08:13.840
+to install. If we had to do this manually probably we would have tripped up on something. And now it
+
+00:08:13.840 --> 00:08:24.240
+reports that the helper scripts are successful. And now it's doing the final verification checks
+
+00:08:24.240 --> 00:08:31.200
+from the configured workspace. Finally it says done. It has set up this radare 2 ai lab
+
+00:08:31.200 --> 00:08:40.800
+with the helper R2 pipe scripts and other scripts as well and also created all the other documents
+
+00:08:40.800 --> 00:08:47.080
+and tools which we require it to do. So now we will ask it to check our skills file to see if
+
+00:08:47.080 --> 00:08:52.140
+anything needs to be updated so we will drag this skill file here before that let's take a look at
+
+00:08:52.140 --> 00:08:59.460
+the skills file control shift V. And you can see that this skill file is to tell Codex how to use
+
+00:08:59.460 --> 00:09:06.180
+the existing radare2 and R2Pipe environment on Windows 11 for reverse engineering.
+
+00:09:06.180 --> 00:09:08.260
+This is not the installation guide.
+
+00:09:08.260 --> 00:09:14.220
+And this assumes that radare2 and R2Pipe have already been installed and verified. And this
+
+00:09:14.220 --> 00:09:22.020
+skill file is to be used so that Codex knows where the lab folder is located, where binary
+
+00:09:22.020 --> 00:09:25.360
+should be placed, where report should be saved and so on.
+
+00:09:25.360 --> 00:09:31.040
+So now we're going to give this to Codex to ask it if it needs to be updated.
+
+00:09:31.040 --> 00:09:38.330
+So just drag it in here.
+
+00:09:38.330 --> 00:09:50.710
+This was the skill file generated prior to installation of radare 2.
+
+00:09:50.710 --> 00:10:01.280
+Check it to see if anything in it needs to be updated.
+
+00:10:01.280 --> 00:10:09.110
+Hit enter.
+
+00:10:09.110 --> 00:10:14.650
+So it says it will inspect the existing skill file against what was actually installed and
+
+00:10:14.650 --> 00:10:20.330
+verified, and then update only the parts that are now stale or misleading.
+
+00:10:20.330 --> 00:10:24.610
+And it says that a few things are stale, the file says logs and skills should exist, but
+
+00:10:24.610 --> 00:10:31.570
+the installed workspace didn't include them yet, and so on.
+
+00:10:31.570 --> 00:10:35.730
+So it's going to update the skill file to match the live setup, and create the missing
+
+00:10:35.730 --> 00:10:42.450
+organizational folders so filter sessions don't trip on mismatched assumptions and it reports
+
+00:10:42.450 --> 00:10:48.690
+that it has added the missing logs and skills files to the lab root and now it is editing
+
+00:10:48.690 --> 00:10:55.410
+the skill text itself so that its folder tree verification commands and so on reflect the actual
+
+00:10:55.410 --> 00:11:02.610    
+machine state. So for your case when you are doing this I would recommend that you also perform what
+
+00:11:02.610 --> 00:11:08.130
+I did because this file even though you download it from the resource section it might not work
+
+00:11:08.130 --> 00:11:12.690
+for your machine which might be different and every codex session runs differently. So
+
+00:11:14.530 --> 00:11:22.450
+so use it skillfully. Ask codex to help you double check and update as needed. Fnally it has updated
+
+00:11:22.450 --> 00:11:30.610
+the skill file and made the following changes. It also created the missing logs and skills folders
+
+00:11:30.610 --> 00:11:36.970
+and copy the updated skill to the to this file and updated the readme file. So
+
+00:11:36.970 --> 00:11:42.970
+let's go and take a look at the final output now we'll go to the C Drive to
+
+00:11:42.970 --> 00:11:47.730
+the radare 2 AI folder and take a look at the skills here. And you can see
+
+00:11:47.730 --> 00:11:52.030
+radare2 skills are there. This is the updated one. So it seems that
+
+00:11:52.030 --> 00:12:01.870
+installation is complete. So we one more time confirm. So
+
+00:12:01.870 --> 00:12:15.530
+is radare radare 2 and r2 pipe now fully installed and ready for use. Just a
+
+00:12:15.530 --> 00:12:25.940
+confirmation question. And we confirm yes radare 2 and r2 pipe are installed and
+
+00:12:25.940 --> 00:12:30.860
+ready for use and it even tells you how to use it. But of course we are not going
+
+00:12:30.860 --> 00:12:37.000
+to use it by hand manually we are going to use it using codex. So that's all for
+
+00:12:37.000 --> 00:12:41.040
+this video we have completely installed it and completed installation now. In the
+
+00:12:41.040 --> 00:12:46.340
+next video  we are going to start using this radare 2 and R2 pipe by
+
+00:12:46.340 --> 00:12:50.540
+using codex to do it for us. So that's all for this lesson thank you for
+
+00:12:50.540 --> 00:12:52.840
+watching.
+

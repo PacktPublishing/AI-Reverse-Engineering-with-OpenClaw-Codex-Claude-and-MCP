@@ -1,0 +1,140 @@
+WEBVTT
+
+00:00:00.460 --> 00:00:08.380
+Hello and welcome back. In this lecture, I'm going to show you how to use Codex with radare2
+
+00:00:08.380 --> 00:00:16.060
+to solve crackme number 2, which is a GUI-based crackme. So head over to my crackme folder
+
+00:00:16.780 --> 00:00:27.340
+and run crackme2. You will see it will open up Windows GUI and ask you to input the serial
+
+00:00:27.340 --> 00:00:35.980
+number. Let us enter 123456 and click on the check button and it says
+
+00:00:35.980 --> 00:00:41.320
+wrong serial. So we will remember this string wrong serial and use the same
+
+00:00:41.320 --> 00:00:49.780
+strategy to solve this crackme. Now let's open our Codex. You can also use
+
+00:00:49.780 --> 00:01:12.220
+Claude Code if you have a Claude Code subscription. Let's click on new chat and
+
+00:01:12.220 --> 00:01:21.030
+close the sidebar. We will now get the README file. We will now get the skill
+
+00:01:21.030 --> 00:01:34.320
+file. So head over to the AI skills folder and copy the path to this skill
+
+00:01:34.320 --> 00:01:44.460
+file. Right-click Copy as Path, and then we give our prompt to Codex. Ask it to
+
+00:01:44.460 --> 00:01:58.200
+read this skill file and paste in the skill file. Then analyze this crackme
+
+00:01:58.200 --> 00:02:04.700
+and then give it the path to the crackme. So we right-click and copy the path
+
+00:02:04.700 --> 00:02:14.120
+and paste the path in here. So we ask Codex to analyze this crackme to find
+
+00:02:14.120 --> 00:02:33.140
+the control flow logic which decides to show the string wrong serial and
+
+00:02:33.140 --> 00:02:48.220
+understand how it decides to show that string or any other string message then
+
+00:02:48.220 --> 00:02:56.020
+explain to me how it works. So this is the prompt. Read the skill file then
+
+00:02:56.020 --> 00:03:01.000
+analyze this crack me to find the control flow logic which decides to show
+
+00:03:01.000 --> 00:03:06.040
+the string wrong serial and understand how it decides to show that string or
+
+00:03:06.040 --> 00:03:13.840
+any other string message. Then explain to me how it works. Then click on
+
+00:03:13.840 --> 00:03:24.140
+Go. Make sure your GPT model is the highest one, which is at time of recording GPT 5.5,
+
+00:03:24.700 --> 00:03:30.940
+and make sure your reasoning effort is set to extra high. Extra high is needed because doing
+
+00:03:30.940 --> 00:03:39.980
+reverse engineering does involve complex reasoning. So now it has gone to work and says that
+
+00:03:39.980 --> 00:03:55.970
+it is reading the skill file first and straight away it has already found the interesting strings
+
+00:03:55.970 --> 00:04:04.610
+for example, CM2-91A7-2026, and also the congrats and the wrong serial messages. So let us copy this.
+
+00:04:04.610 --> 00:04:13.890
+This could be the password, the serial key, and we paste it in here and click Check, and congrats.
+
+00:04:13.890 --> 00:04:21.120
+It has managed to solve it for us so easily, but let us see what else it has to say.
+
+00:04:21.120 --> 00:04:23.480
+And here is another confirmation.
+
+00:04:23.480 --> 00:04:29.600
+It says that the program compares the edit box text against the hardcoded string, which
+
+00:04:29.600 --> 00:04:38.250
+is the serial key we just saw.
+
+00:04:38.250 --> 00:04:40.870
+And finally, it gives the report.
+
+00:04:40.870 --> 00:04:46.090
+It says the relevant logic is in this address here.
+
+00:04:46.090 --> 00:04:49.450
+And the valid serial is hardcoded as this.
+
+00:04:49.450 --> 00:04:53.260
+Another confirmation.
+
+00:04:53.260 --> 00:04:59.500
+And here it has got the core logic written down as pseudocode, which resembles C programming
+
+00:04:59.500 --> 00:05:02.640
+language.
+
+00:05:02.640 --> 00:05:09.740
+So as you can see, it gets the text that the user inputs using this function, this API.
+
+00:05:09.740 --> 00:05:18.020
+It then uses the string compare function from C and it compares this string, this constant
+
+00:05:18.020 --> 00:05:21.060
+with the input from the user.
+
+00:05:21.060 --> 00:05:25.500
+And then if it is correct, it is the same. It will return 0.
+
+00:05:25.500 --> 00:05:28.920
+And then 0 means that the strings are identical.
+
+00:05:28.920 --> 00:05:29.920
+That means success.
+
+00:05:29.920 --> 00:05:35.660
+So it prints the window message, congrats, at the bottom of the window.
+
+00:05:35.660 --> 00:05:42.840
+However, if the comparison fails, that means it's a wrong serial key, which means the key
+
+00:05:42.840 --> 00:05:48.760
+that the user enters does not match this key, then it will do the else part and show the
+
+00:05:48.760 --> 00:05:59.200
+wrong serial message instead. So very efficient and very concise. So this is how useful using
+
+00:05:59.200 --> 00:06:04.620
+Codex with radare2 can be. So that's all for this video. Thank you for watching.
+

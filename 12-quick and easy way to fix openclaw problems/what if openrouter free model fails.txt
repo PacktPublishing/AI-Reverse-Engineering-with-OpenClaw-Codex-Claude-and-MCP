@@ -1,0 +1,20 @@
+What if OpenRouter models fail to connect to x64dbg MCP?
+
+Sometimes, free models may be too weak or unreliable when attempting to connect to MCP services.
+This is because some free models are not smart enough to properly generate or adapt the scripts required to communicate with MCP servers.
+
+In such cases, you have several options:
+
+1. Try a different OpenRouter free model, preferably one with a larger parameter count.
+2. Switch back to a paid frontier model, such as GPT-5.5.
+3. Ask Codex or Claude Code to troubleshoot the issue.
+
+For example, when I used OpenRouter’s free Nemotron model, OpenClaw initially did not know how to connect to x64dbg, despite there already being instructions stored in the MEMORY.md file explaining how to do it.
+
+So I used option 3 above — I asked Claude Code to troubleshoot the issue. Claude Code then modified the MEMORY.md file by adding more specific instructions telling the model to reuse a script that had previously worked successfully for connecting to x64dbg.
+
+After updating the memory file, Nemotron was finally able to connect to x64dbg successfully.
+
+So at the end of the day, paid frontier models such as GPT-5.5 are still generally the better choice for reliability and reasoning quality.
+
+Remember: OpenClaw is only as smart (or as dumb) as the model powering it.

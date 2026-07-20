@@ -1,0 +1,212 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.780
+Welcome back. In this lesson, we will install Ghidra MCP. This is the website for Ghidra MCP.
+
+00:00:07.540 --> 00:00:14.010
+Besides that, you will also need to install Ghidra itself. If you haven't done so,
+
+00:00:14.210 --> 00:00:34.420
+here's where you can get Ghidra. First, let us download Ghidra MCP. Then, download Ghidra.
+
+00:00:50.850 --> 00:01:02.930
+We will also create a folder called ghidra underscore mcp. Go to the downloads folder
+
+00:01:02.930 --> 00:01:28.660
+and unzip Ghidra. Then rename it to make it shorter. Copy the rename folder and
+
+00:01:28.660 --> 00:01:49.280
+paste it in the folder program files. We will now create a shortcut on the
+
+00:01:49.280 --> 00:01:54.100
+desktop. Enter the folder and right click and drag the Ghidra run file to the
+
+00:01:54.100 --> 00:02:00.940
+desktop. Then select create shortcut here. Now we will assign an icon to it. Right
+
+00:02:00.940 --> 00:02:06.880
+click and select properties. Click on change icon. Then navigate to the support
+
+00:02:06.880 --> 00:02:27.840
+folder and select the Ghidra icon image. Ghidra also needs Java in order to run. We first
+
+00:02:27.840 --> 00:02:55.020
+check if we have Java. Since I don't have it, I will search for Java Adoptium. I now
+
+00:02:55.020 --> 00:03:21.020
+download installer for the Tamurin JDK for Windows. Now I run the installer. Make sure
+
+00:03:21.020 --> 00:03:27.360
+you install for all users of this machine. Also make sure you set or override Java home
+
+00:03:27.360 --> 00:04:05.680
+variable. Now, we start Ghidra to see if it works. Next, we cut the Ghidra MCP and put it in the Ghidra
+
+00:04:05.680 --> 00:04:33.780
+MCP folder we created earlier. Then, we unzip it. Note that there is another zip file and also a
+
+00:04:33.780 --> 00:04:40.340
+Python script but we won't use this Python script. Instead, go and download the improved version from
+
+00:04:40.340 --> 00:04:52.520
+the resource section for this lecture, put it in the same folder. The original script is out of date
+
+00:04:52.520 --> 00:05:31.870
+it uses SSE endpoint but the version 3 uses MCP endpoint and also
+
+00:05:31.870 --> 00:05:43.800
+streamable HTTP. This is the current best practice for MCP communication. Now we
+
+00:05:43.800 --> 00:05:55.050
+cut all files and put them into the parent folder and delete the old folder.
+
+00:05:55.050 --> 00:06:11.000
+Next we need to install the Ghidra MCP zip file into Ghidra. We start Ghidra then
+
+00:06:11.000 --> 00:06:18.850
+Then click on file, install extensions, then click on the add icon, navigate to the folder
+
+00:06:18.850 --> 00:06:28.320
+containing the MCP zip file.
+
+00:06:28.320 --> 00:06:31.640
+It will say extension version mismatch.
+
+00:06:31.640 --> 00:06:33.280
+Click install anyway.
+
+00:06:33.280 --> 00:06:39.670
+Then confirm Ghidra MCP is installed and checked.
+
+00:06:39.670 --> 00:07:01.150
+Restart Ghidra.
+
+00:07:01.150 --> 00:07:11.510
+Create a new folder called Ghidra underscore project.
+
+00:07:11.510 --> 00:07:18.280
+Create a new non-shared project.
+
+00:07:18.280 --> 00:07:24.640
+Navigate to new folder and select it.
+
+00:07:24.640 --> 00:07:42.460
+it Crackmes. We will now load a Crackme from the practice folder, select cmdline
+
+00:07:42.460 --> 00:08:05.130
+and drag it to Ghidra, then drag the 64-bit Cragme to the dragon icon to
+
+00:08:05.130 --> 00:08:11.290
+start analysis. It will detect the new plugin and ask to configure. Click yes,
+
+00:08:11.290 --> 00:08:27.480
+click the checkbox for the MCP plugin, then analyze the Crackme. Select Windows
+
+00:08:27.480 --> 00:08:33.780
+Use PE x86 propagate external parameters then click analyze.
+
+00:08:33.780 --> 00:08:37.880
+Keep a lookout on bottom right corner for the progress.
+
+00:08:37.880 --> 00:08:52.720
+You can also configure the new plugin by clicking on file, configure, select developer, configure.
+
+00:08:52.720 --> 00:09:00.520
+Make sure the Ghidra MCP plugin is checked.
+
+00:09:00.520 --> 00:09:04.160
+Now we check if the MCP port is opened.
+
+00:09:04.160 --> 00:09:13.880
+a cmd line terminal and type the netstat-tan command, you should see port 8080.
+
+00:09:13.880 --> 00:09:17.100
+This port is coming from the ghidra plugin.
+
+00:09:17.100 --> 00:09:29.330
+We will use the bridge script to connect to this port, but we need python for that.
+
+00:09:29.330 --> 00:09:43.100
+So we check if we have python.
+
+00:09:43.100 --> 00:09:46.420
+If we don't have it, you can download it here and install it.
+
+00:09:46.420 --> 00:09:51.760
+After installing python, we want to create a new python virtual environment for the bridge
+
+00:09:51.760 --> 00:09:52.760
+script to run.
+
+00:09:53.100 --> 00:10:09.730
+We open cmd terminal in the ghidra-mcp folder and type this command.
+
+00:10:10.610 --> 00:10:15.270
+The new virtual environment folder will be called ghidra-env.
+
+00:10:27.800 --> 00:10:32.020
+To activate it, we run the activate command which is in the scripts folder.
+
+00:10:38.200 --> 00:10:42.880
+To confirm the virtual environment has been activated, you should see this.
+
+00:10:45.330 --> 00:10:49.570
+We will install all our Python modules for Ghidra inside this virtual environment.
+
+00:10:50.130 --> 00:11:21.520
+The first thing we do is to upgrade pip. Next, we install fastmcp and requests.
+
+00:11:43.640 --> 00:11:47.240
+Now we run our bridge script. Make sure you run version 3.
+
+00:11:57.970 --> 00:12:01.170
+Next, we open a command line terminal to check the ports.
+
+00:12:07.730 --> 00:12:13.970
+We find a new port 8081. Port 8080 comes from the Ghidra plugin.
+
+00:12:37.430 --> 00:12:40.150
+Port 8081 comes from the bridge script.
+
+00:12:40.150 --> 00:13:11.650
+In practice, the bridge scripts connects to port 8080 and spawns a new port 8081 for communication
+
+00:13:11.650 --> 00:13:21.460
+with OpenClaw.
+
+00:13:21.460 --> 00:13:41.350
+Now let me close everything and show you the sequence of firing up everything from scratch.
+
+00:13:41.350 --> 00:13:53.000
+First we run Ghidra.
+
+00:13:53.000 --> 00:14:18.130
+Then we analyze the crack me.
+
+00:14:18.130 --> 00:14:32.420
+Next we check to confirm port 8080 is started.
+
+00:14:32.420 --> 00:14:46.880
+Then we go to our Github MCP folder and activate the Python virtual environment.
+
+00:14:46.880 --> 00:14:50.520
+Make sure your virtual environment has started.
+
+00:14:50.520 --> 00:15:11.360
+Then start the bridge script.
+
+00:15:11.360 --> 00:15:15.120
+Confirm port 8081 is running.
+
+00:15:15.120 --> 00:15:16.120
+That's it.
+
+00:15:16.120 --> 00:15:18.240
+Now we are ready to connect to OpenClaw.
+
+00:15:18.240 --> 00:15:21.440
+In the next lesson, I will show you how to do that.
+
+00:15:21.440 --> 00:15:22.400
+Thanks for watching.
+

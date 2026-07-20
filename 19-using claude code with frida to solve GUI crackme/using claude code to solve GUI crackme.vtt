@@ -1,0 +1,236 @@
+WEBVTT
+
+00:00:00.590 --> 00:00:08.350
+Hello and welcome back. In this new practical, we are going to try using Claude Code instead of
+
+00:00:08.350 --> 00:00:16.430
+Codex. And we are going to use Claude Code together with the new skill which we created earlier,
+
+00:00:17.070 --> 00:00:23.310
+which is the Frida binary analysis skill. And this time, we are going to try to solve
+
+00:00:23.310 --> 00:00:33.550
+crackme2. And crackme2, if you remember, is a GUI crackme, so let us run this now and see how it is.
+
+00:00:35.390 --> 00:00:42.590
+So it asks for an input serial number. And if I enter one, two, three, four, five, six
+
+00:00:43.950 --> 00:00:49.470
+And click the check button, I get the message wrong serial.
+
+00:00:49.470 --> 00:01:01.450
+So let us now run Claude Code. However, if you do not have a Claude subscription, it is fine.
+
+00:01:01.450 --> 00:01:11.490
+You can use Codex to do this. So since I have a Claude Desktop subscription, I can use Claude Code.
+
+00:01:11.490 --> 00:01:22.780
+So let me just log in first. I am now logged into
+
+00:01:22.780 --> 00:01:26.280
+Claude, and I will go to my top-left corner.
+
+00:01:26.280 --> 00:01:31.560
+I will select the Code tab and I will create a new session.
+
+00:01:31.560 --> 00:01:34.680
+And now I will ask it
+
+00:01:34.680 --> 00:01:39.440
+To read the skill file.
+
+00:01:39.440 --> 00:01:43.860
+So I will copy the skill file path
+
+00:01:43.860 --> 00:01:48.020
+by right-clicking the Frida
+
+00:01:48.020 --> 00:01:57.200
+Binary analysis skill, select copy as path, and I come back down here and I say,
+
+00:01:57.200 --> 00:02:09.520
+Read this skill file. I paste the path to the file that I want Claude to read, then
+
+00:02:09.520 --> 00:02:18.060
+Analyze this GUI crackme. And I give it the path of the GUI crackme, which is
+
+00:02:18.060 --> 00:02:25.400
+Over here under my crackme folder. I right-click the crackme tool, copy as
+
+00:02:25.400 --> 00:02:37.150
+Path, and then paste it in here. Analyze this GUI crackme to find out the
+
+00:02:37.150 --> 00:02:53.970
+functions that compare the input string to some constant string. And if the string
+
+00:02:53.970 --> 00:03:13.680
+does not match, it will show the message wrong serial. Find out the parameter
+
+00:03:13.680 --> 00:03:25.980
+of the string comparison functions to which it compares the input
+
+00:03:25.980 --> 00:03:40.900
+String with. Then explain how it works. Use Frida tools to solve this challenge.
+
+00:03:40.900 --> 00:03:48.740
+So this is the prompt that I will give to Claude Code. And then I will select the
+
+00:03:48.740 --> 00:03:54.600
+Highest model which is available, which is at time of recording Opus 4.8, and
+
+00:03:54.600 --> 00:04:04.260
+Over here I select the effort to extra high so that it can think more in depth.
+
+00:04:04.260 --> 00:04:15.040
+And now I will click go. Before that, I should say, if you are unsure of what I
+
+00:04:15.040 --> 00:04:33.050
+Want, don't guess, don't assume, ask me. And then I click go. So over here, I click
+
+00:04:33.050 --> 00:04:40.750
+Always allow. Maybe I will select auto mode so that it will always approve
+
+00:04:40.750 --> 00:04:47.750
+Instead of asking me for permission every time. So now I'm in auto mode. Let's
+
+00:04:47.750 --> 00:05:07.030
+Close the sidebar. It reports that Frida is working, and it is now extracting the strings
+
+00:05:07.830 --> 00:05:15.030
+and looking at what string comparison APIs it imports. It is now looking for the functions
+
+00:05:15.030 --> 00:05:23.270
+And it has found two functions: GetWindowText and string compare. And it is now looking
+
+00:05:23.270 --> 00:05:32.150
+for UI message strings and any embedded wide strings. Wide strings are Unicode strings,
+
+00:05:32.150 --> 00:05:49.220
+32-byte wide strings. Each character is 2-byte wide. And it has found it. The UTF-16 strings
+
+00:05:49.220 --> 00:05:58.900
+Include this CM291A2026, congrats, wrong string, and so on. So it confirms that the expected serial is
+
+00:05:58.900 --> 00:06:12.500
+almost certainly CM291A2026. So now it is writing a script, a Python driver that
+
+00:06:12.500 --> 00:06:27.980
+Spawns the GUI app, and it has spawned the GUI app. So I will allow this. I click
+
+00:06:27.980 --> 00:06:36.880
+enable computer use, turn on computer use, continue. Computer use gives Claude Code
+
+00:06:36.880 --> 00:06:47.520
+access to your PC so that it can run commands on your PC. So here it asks for
+
+00:06:47.520 --> 00:07:01.940
+permission. Click allow for this one. Allow for this session. So it has input the
+
+00:07:01.940 --> 00:07:23.110
+wrong serial and got the wrong serial message. It is now checking the log files
+
+00:07:23.110 --> 00:08:01.640
+And finally, after some tests, it gave me the pseudocode for the solution and
+
+00:08:01.640 --> 00:08:12.980
+And now, it even launch another GUI app, the crackme GUI app, and enter the correct serial and confirm that it shows congrats.
+
+00:08:17.910 --> 00:08:18.690
+Quite impressive.
+
+00:08:22.500 --> 00:08:25.000
+As you can see, here it inputs the serial for me.
+
+00:08:25.520 --> 00:08:30.600
+I mean, it clicks the check button for me and confirms that the congrats message showed.
+
+00:08:31.780 --> 00:08:36.300
+And so now it confirms that the GUI shows congrats for this serial number.
+
+00:08:36.300 --> 00:08:44.760
+And the beautiful thing is that it even shows the pseudocode here: GetWindowText
+
+00:08:44.760 --> 00:08:52.780
+reads input and then compares the input string with the
+
+00:08:52.780 --> 00:08:59.450
+Constant, which is the real serial, so that we can understand what's happening.
+
+00:08:59.450 --> 00:09:08.850
+So it seems to be working, and now it is running further tests. But I don't think I
+
+00:09:08.850 --> 00:09:14.850
+Need to do that anymore since Claude already successfully solved it. But let's wait and
+
+00:09:14.850 --> 00:09:40.290
+See what it's trying to do. So it is running confirmation, entering the wrong serial, and it got
+
+00:09:40.290 --> 00:09:55.960
+The wrong serial message. And now it enters the correct serial, and this time it prints the
+
+00:09:55.960 --> 00:10:12.820
+congrats message. Very impressive. So this is the complete definitive proof captured live via Frida.
+
+00:10:12.820 --> 00:10:23.860
+And now it is doing the cleanup processes.
+
+00:10:23.860 --> 00:10:32.510
+And now it gives the final analysis, the full analysis, which you can read here.
+
+00:10:32.510 --> 00:10:36.770
+The string comparison function is lsStringCompare.
+
+00:10:36.770 --> 00:10:39.990
+It is called inside the program's CheckSerialRoutine.
+
+00:10:39.990 --> 00:10:46.250
+The parameter that it is comparing with is this serial number, which is the correct serial
+
+00:10:46.250 --> 00:10:47.250
+number.
+
+00:10:47.250 --> 00:10:55.110
+And here, it goes into great detail on how it proved it using Frida: step 1, step 2, and so on.
+
+00:10:56.090 --> 00:10:57.630
+And it's so detailed. Look at that.
+
+00:11:01.300 --> 00:11:08.100
+And it even offers to patch the string compare return at runtime to force acceptance of any serial.
+
+00:11:08.840 --> 00:11:10.880
+Wow, this is very impressive.
+
+00:11:11.500 --> 00:11:12.500
+It can even do that.
+
+00:11:12.900 --> 00:11:14.540
+But I don't think we need to go that far.
+
+00:11:14.540 --> 00:11:23.060
+Suffice it to say, this demonstrates that using Claude Code together with Frida, we can also solve
+
+00:11:23.060 --> 00:11:32.720
+this GUI crackme easily. So this shows how useful it is to use AI agents together with
+
+00:11:32.720 --> 00:11:42.320
+the binary analysis tools like Frida, for example, to solve crackme. If you are doing
+
+00:11:42.320 --> 00:11:46.320
+this manually, you probably won't be able to figure all this out on your own.
+
+00:11:46.320 --> 00:11:49.040
+How to write the scripts and so on.
+
+00:11:49.040 --> 00:11:53.540
+But using Claude Code, it is so easily done.
+
+00:11:53.540 --> 00:11:59.860
+And we could also have used Codex and achieved the same results.
+
+00:11:59.860 --> 00:12:01.880
+So that's all for this video.
+
+00:12:01.880 --> 00:12:03.000
+Thank you for watching.
+

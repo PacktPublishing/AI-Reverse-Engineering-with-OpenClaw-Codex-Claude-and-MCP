@@ -1,0 +1,24 @@
+[ net core - modern ]
+
+Choose one of these:
+
+(1) E:\dnspyex_mcp_server\DnSpy-MCPserver-Extension\dnSpy\dnSpy\bin\Release\net8.0-windows\dnSpy.exe
+(2) E:\dnspyex_mcp_server\DnSpy-MCPserver-Extension\dnSpy\dnSpy\bin\Release\net8.0-windows\dnSpy-x86.exe
+
+--extension-directory
+
+E:\dnspyex_mcp_server\DnSpy-MCPserver-Extension\Extensions\Examples\Example1.Extension\bin\Release\net8.0-windows
+
+
+
+
+[ net48 - legacy ]
+
+Choose one of these:
+
+(1) E:\dnspyex_mcp_server\DnSpy-MCPserver-Extension\dnSpy\dnSpy\bin\Release\net48\dnSpy.exe
+(2) E:\dnspyex_mcp_server\DnSpy-MCPserver-Extension\dnSpy\dnSpy\bin\Release\net48\dnSpy-x86.exe
+
+--extension-directory
+
+E:\dnspyex_mcp_server\DnSpy-MCPserver-Extension\Extensions\Examples\Example1.Extension\bin\Release\net48

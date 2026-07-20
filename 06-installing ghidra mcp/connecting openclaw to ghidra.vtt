@@ -1,0 +1,95 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.240
+Welcome back. In this lesson, we will connect OpenClaw to Ghidra MCP server.
+
+00:00:06.880 --> 00:00:13.040
+First, make sure the OpenClaw gateway is already started. As you can see here, it is already
+
+00:00:13.040 --> 00:00:19.800
+running. Next, open Telegram. You should also clear history so that we have a new clean chat.
+
+00:00:20.220 --> 00:00:32.650
+Now, we start Ghidra. Then, drag the CrackMe to the dragon icon to begin the analysis process.
+
+00:00:32.650 --> 00:00:52.070
+Now, we will start the bridge script.
+
+00:00:52.070 --> 00:00:55.050
+Head over to the location of the script.
+
+00:00:55.050 --> 00:00:57.330
+Open a CMD terminal.
+
+00:00:57.330 --> 00:00:59.790
+Then activate the Python environment.
+
+00:00:59.790 --> 00:01:28.030
+Next, we run the bridge script.
+
+00:01:28.030 --> 00:01:35.090
+Take note of the URL for the MCP endpoint.
+
+00:01:35.090 --> 00:01:43.880
+Go back to Telegram and start a new session with the slash new command.
+
+00:01:43.880 --> 00:01:49.660
+Then give your instructions to openClaw to connect to the Ghidra MCP server.
+
+00:01:49.660 --> 00:01:53.580
+Be sure to mention the URL and MCP endpoint.
+
+00:01:53.580 --> 00:01:59.340
+Also tell OpenClaw to use standard MCP and JSON communication protocols.
+
+00:01:59.340 --> 00:02:06.660
+Remind OpenClaw that it used to connect to x64-dbg-mcp using SSE endpoint, and ask it
+
+00:02:06.660 --> 00:02:15.210
+to consult its memory for insight.
+
+00:02:15.210 --> 00:02:24.770
+OpenClaw manages to connect successfully and lists down the available tools.
+
+00:02:24.770 --> 00:02:46.720
+To test, I ask it to get the name of the binary which is loaded in Ghidra.
+
+00:02:46.720 --> 00:02:52.720
+I then ask it to decompile the main function.
+
+00:02:52.720 --> 00:02:58.230
+It successfully did it and even found the password.
+
+00:02:58.230 --> 00:03:27.000
+I then ask it to rename things to make it cleaner and clearer.
+
+00:03:27.000 --> 00:03:56.460
+Again it successfully did it and decompiled the function to show us the cleaned up version.
+
+00:03:56.460 --> 00:04:06.680
+We check the Ghidra decompiler window and see that it also shows the updated version.
+
+00:04:06.680 --> 00:04:12.920
+Next, I ask to save to memory how it connects to the Ghidra MCP server.
+
+00:04:12.920 --> 00:04:23.320
+In future, it will remember it.
+
+00:04:23.320 --> 00:04:26.940
+OpenClaw then writes to long term memory as before.
+
+00:04:26.940 --> 00:04:35.340
+It also informs us to configure the local git repo.
+
+00:04:35.340 --> 00:04:42.340
+So I gave it my name and email and ask it to do it.
+
+00:04:42.340 --> 00:04:45.380
+And it did it successfully.
+
+00:04:45.380 --> 00:04:50.380
+So this is how we can connect OpenClaw to Ghidra MCP server.
+
+00:04:50.380 --> 00:04:52.540
+That's all for this video, thanks for watching.
+
